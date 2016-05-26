@@ -25,9 +25,12 @@ void processPupilSignal();
 int main(int argc, const char **argv) {
 
     const string videoFilePath = "/Users/redeian/Documents/data/ID265484/xpMULTIPLICATION_DifficultyMedium_Iter4.wmv";
+    const string faceCascadePath = "/Users/redeian/Documents/data/haarcascade_frontalface_alt.xml";
 
 
     Pupilware *pupilware = new Pupilware();
+
+    pupilware->loadFaceDetectionCascade(faceCascadePath);
     pupilware->loadVideo(videoFilePath);
 
     //pupilware->setAlgorithm(new DummyAlgo());

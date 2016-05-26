@@ -22,11 +22,10 @@ using namespace cv;
 
 namespace pw {
 
-    const cv::String face_cascade_name = "/Users/redeian/Documents/data/haarcascade_frontalface_alt.xml";
 
     Pupilware::Pupilware() {
         cv::VideoCapture capture = cv::VideoCapture();
-        face_cascade.load(face_cascade_name);
+
     }
 
 
@@ -36,6 +35,14 @@ namespace pw {
         }
     }
 
+    void Pupilware::loadFaceDetectionCascade(const std::string &filePath)
+    {
+        assert(!filePath.empty());
+
+        if(!faceCascade.load(filePath)){
+            cout << "[Error] Cannor read cascade file. Make sure you have a valided file." << endl;
+        }
+    }
 
     void Pupilware::loadVideo(const std::string &videoFilePath) {
         assert(!videoFilePath.empty());
@@ -46,7 +53,7 @@ namespace pw {
 
 
         if (!capture.open(videoFilePath)) {
-            cout << "Cannot read the video. Please check path name." << endl;
+            cout << "[Error] Cannot read the video. Please check path name." << endl;
         }
 
 
@@ -62,6 +69,8 @@ namespace pw {
 
     void Pupilware::execute() {
         assert(algorithm != nullptr);
+        assert(!faceCascade.empty());
+
         if (algorithm == nullptr) {
             cout << "Algorithm is missing";
             return;
@@ -72,16 +81,16 @@ namespace pw {
 
             algorithm->init();
 
-            Mat frame;
+            Mat colorFrame;
 
             while (true) {
-                capture >> frame;
+                capture >> colorFrame;
 
-                if (!frame.empty()) {
+                if (!colorFrame.empty()) {
 
 
                     std::vector<Mat> frameChannels;
-                    split(frame, frameChannels);
+                    split(colorFrame, frameChannels);
 
 
                     //! Use only the red channel.
@@ -90,7 +99,7 @@ namespace pw {
                     cv::Rect faceRect;
 
                     if (!findFace(frameGray, faceRect)) {
-                        cout << "There is no face found this frame." << endl;
+                        cout << "[Waning] There is no face found this frame." << endl;
                         continue;
                     }
 
@@ -108,7 +117,7 @@ namespace pw {
 
 
                     //! Compute pupil size
-                    Mat colorFace = frame(faceRect);
+                    Mat colorFace = colorFrame(faceRect);
 
                     PupilMeta leftEyeMeta;
                     leftEyeMeta.setEyeCenter(leftEyeCenter);
@@ -134,7 +143,7 @@ namespace pw {
 
         }
         else {
-            cout << "the video has not yet loaded." << endl;
+            cout << "[Waning] the video has not yet loaded." << endl;
         }
     }
 
@@ -144,7 +153,7 @@ namespace pw {
         std::vector<cv::Rect> faces;
 
         // Detect faces
-        face_cascade.detectMultiScale(grayFrame,
+        faceCascade.detectMultiScale(grayFrame,
                                       faces, 1.1, 2,
                                       0 | CV_HAAR_SCALE_IMAGE | CV_HAAR_FIND_BIGGEST_OBJECT,
                                       cv::Size(150, 150));
@@ -158,7 +167,7 @@ namespace pw {
 
         }
         else {
-            cout << "a face not found.";
+            cout << "[Info] A face has not found.";
         }
 
         return false;

@@ -23,6 +23,7 @@ namespace pw {
 
         ~Pupilware();
 
+        void loadFaceDetectionCascade(const std::string &filePath);
         void loadVideo(const std::string &videoFilePath);
 
         void setAlgorithm(PWAlgorithm *algorithm);
@@ -31,7 +32,7 @@ namespace pw {
 
     private:
         cv::VideoCapture capture;
-        cv::CascadeClassifier face_cascade;
+        cv::CascadeClassifier faceCascade;
 
         PWAlgorithm *algorithm;
 
