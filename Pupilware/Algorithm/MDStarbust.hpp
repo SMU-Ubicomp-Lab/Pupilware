@@ -20,7 +20,11 @@ namespace pw {
         virtual ~MDStarbust();
         
         virtual void init();
-        virtual PWResult process(const cv::Mat colorEyeImage, PupilMeta &pupilMeta);
+
+        virtual PWResult process(const cv::Mat colorLeftEye,
+                                 const cv::Mat colorRightEye,
+                                 PupilMeta &pupilMeta);
+
         virtual void exit();
         
     private:
@@ -33,6 +37,9 @@ namespace pw {
 
         float degreeOffset;
         float primer;
+
+        float _oldLeftRadius;
+        float _oldRightRadius;
 
         void increaseContrast(const cv::Mat &grayEye, const cv::Point &eyeCenter) const;
 
@@ -47,6 +54,10 @@ namespace pw {
         bool isValidEllipse(const cv::RotatedRect &theEllipse) const;
 
         float getCost(int step) const;
+
+        float findPupilSize(const cv::Mat &colorEyeFrame,
+                            cv::Point eyeCenter,
+                            const char* name) const;
     };
 }
 

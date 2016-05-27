@@ -14,8 +14,11 @@ using namespace cv;
 namespace pw {
     
     MDStarbust::MDStarbust():
-    degreeOffset(25){
-        
+    degreeOffset(25),
+    primer(1.0f),
+    _oldLeftRadius(0.0f),
+    _oldRightRadius(0.0f){
+
     }
     
     MDStarbust::~MDStarbust()
@@ -28,32 +31,48 @@ namespace pw {
         // Init code here
     }
     
-    PWResult MDStarbust::process(const Mat colorEyeImage, PupilMeta &pupilMeta)
+    PWResult MDStarbust::process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta)
     {
-        std::vector<cv::Mat> rgbChannels(3);
-        split(colorEyeImage, rgbChannels);
+        float leftPupilRadius = max(findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye"), _oldLeftRadius);
+        float rightPupilRadius = max(findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye"), _oldRightRadius);
+
+        //! Store data for next frame used.
+        _oldLeftRadius = leftPupilRadius;
+        _oldRightRadius = rightPupilRadius;
+
+        pupilMeta.setLeftRadius(leftPupilRadius);
+        pupilMeta.setRightRadius(rightPupilRadius);
+
+        return AL_SUCCESS;
+    }
+
+    float MDStarbust::findPupilSize(const Mat &colorEyeFrame,
+                                    cv::Point eyeCenter,
+                                    const char * name) const {
+
+        vector<Mat> rgbChannels(3);
+        split(colorEyeFrame, rgbChannels);
 
         // Only use a red channel.
         Mat grayEye = rgbChannels[2];
 
-        cv::Point eyeCenter = pupilMeta.getEyeCenter();
         increaseContrast(grayEye, eyeCenter);
 
         vector<Point2f>rays;
         constructRays(rays);
 
-        Mat debugColorEye = colorEyeImage.clone();
+        Mat debugColorEye = colorEyeFrame.clone();
 
         vector<Point2f>edgePoints;
         findEdgePoints(grayEye, eyeCenter, rays, edgePoints, debugColorEye);
 
-        if( edgePoints.size() > MIN_NUM_RAYS)
+        if(edgePoints.size() > MIN_NUM_RAYS)
         {
             const float MAX_ERROR_FROM_EDGE_OF_THE_CIRCLE = 1;
-            std::vector<cv::Point2f> inliers;
+            vector<Point2f> inliers;
 
             //TODO: Parameterized RANSAC class. Can be done after clean up RANSAC class.
-            pw::Ransac r;
+            Ransac r;
             r.ransac_circle_fitting(edgePoints,
                                     static_cast<int>(edgePoints.size()),
                                     edgePoints.size()*0.2f,
@@ -70,39 +89,36 @@ namespace pw {
             {
                 RotatedRect myEllipse = fitEllipse( inliers );
 
+                float eyeRadius = 0.0f;
+
                 if(isValidEllipse(myEllipse))
                 {
                     //TODO: Use RANSAC Circle radius? How about Ellipse wight?
-                    pupilMeta.setRadius(r.bestModel.GetRadius());
-
-                    //TODO: Change the eye center with ellipse center? Test it then?
-                    pupilMeta.setEyeCenter( myEllipse.center);
+                    eyeRadius = r.bestModel.GetRadius();
                 }
                 else
                 {
                     //TODO: Make it not ZERO. Use the old frame maybe?
-                    pupilMeta.setRadius(0.0f);
+                    eyeRadius = 0.0f;
                 }
 
                 //---------------------------------------------------------------------------------
                 //! Draw debug image
                 //---------------------------------------------------------------------------------
                 ellipse( debugColorEye, myEllipse, Scalar(0,50,255) );
-                cv::circle( debugColorEye,
+                circle( debugColorEye,
                             *r.bestModel.GetCenter(),
                             r.bestModel.GetRadius(),
                             Scalar(255,50,255) );
 
-                const char* winName[] = {"Left Eye", "Right Eye"};
-                cw::showImage(winName[pupilMeta.getEyeType()], debugColorEye, 1);
+                cw::showImage(name, debugColorEye, 1);
 
-                return AL_SUCCESS;
+                return eyeRadius;
             }
 
         }
 
-        return AL_ERROR;
-
+        return 0.0f;
     }
 
 

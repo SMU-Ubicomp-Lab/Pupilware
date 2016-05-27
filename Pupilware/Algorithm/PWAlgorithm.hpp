@@ -32,7 +32,7 @@ namespace pw{
         
         virtual void init();
         
-        virtual PWResult process(const cv::Mat colorEyeImage, PupilMeta &pupilMeta)=0;
+        virtual PWResult process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta) =0;
         
         virtual void exit();
         

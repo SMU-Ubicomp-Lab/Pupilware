@@ -14,35 +14,35 @@
 #include <opencv2/opencv.hpp>
 
 namespace pw {
-    enum EyeType {
-        PW_LEFT_EYE,
-        PW_RIGHT_EYE
-    };
 
     class PupilMeta {
     private:
-        float       radius;
-        cv::Point   eyeCenter;
-        EyeType     eyeType;
+        float       leftRadius;
+        float       rightRadius;
+        cv::Point   leftEyeCenter;
+        cv::Point   rightEyeCenter;
 
+        unsigned int frameNumber;
 
     public:
         PupilMeta();
         PupilMeta(const PupilMeta& other);
         virtual ~PupilMeta();
 
+        unsigned int getFrameNumber() const;
+        void         setFrameNumber(unsigned int frameNumber);
 
-        float       getRadius() const;
+        float       getLeftPupilRadius() const;
+        void        setLeftRadius(float radius);
 
-        void        setRadius(float radius);
+        float       getRightPupilRadius() const;
+        void        setRightRadius(float radius);
 
-        cv::Point   getEyeCenter() const;
+        cv::Point   getLeftEyeCenter() const;
+        cv::Point   getRightEyeCenter() const;
+        void        setEyeCenter(cv::Point leftEyeCenter,
+                                 cv::Point rightEyeCenter);
 
-        void        setEyeCenter(cv::Point eyeCenter);
-
-        EyeType     getEyeType() const;
-
-        void        setEyeType(EyeType type);
     };
 }
 

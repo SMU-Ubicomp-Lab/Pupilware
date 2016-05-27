@@ -39,7 +39,8 @@ namespace pw {
     PWResult DummyAlgo::process(cv::Mat colorEyeImage, PupilMeta& outPupilMeta)
     {
         // Processing code here
-        outPupilMeta.setRadius(10.0f);
+        outPupilMeta.setLeftRadius(10.0f);
+        outPupilMeta.setRightRadius(20.0f);
 
         // push data to test drawing a graph.
         dummyGraphData.push_back(cw::randomRange(0, 1000) / 100.0f);

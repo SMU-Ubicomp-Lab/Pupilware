@@ -134,32 +134,31 @@ namespace pw {
         //
         Mat colorFace = colorFrame(faceRect);
 
-        PupilMeta leftEyeMeta;
-        leftEyeMeta.setEyeCenter(leftEyeCenter);
-        leftEyeMeta.setEyeType(PW_LEFT_EYE);
-        computePupilSize(colorFace(leftEyeRegion), leftEyeMeta, algorithm);
+        PupilMeta eyeMeta;
 
-        PupilMeta rightEyeMeta;
-        rightEyeMeta.setEyeCenter(rightEyeCenter);
-        rightEyeMeta.setEyeType(PW_RIGHT_EYE);
-        computePupilSize(colorFace(rightEyeRegion), rightEyeMeta, algorithm);
+        eyeMeta.setEyeCenter(leftEyeCenter, rightEyeCenter);
+        computePupilSize(colorFace(leftEyeRegion),
+                         colorFace(rightEyeRegion),
+                         eyeMeta, algorithm);
+
 
         //! Store data to lists
         //
-        leftPupilRadius.push_back(leftEyeMeta.getRadius());
-        rightPupilRadius.push_back(rightEyeMeta.getRadius());
-        eyeDistance.push_back(cw::calDistance(leftEyeCenter, rightEyeCenter));
+        leftPupilRadius.push_back( eyeMeta.getLeftPupilRadius() );
+        rightPupilRadius.push_back( eyeMeta.getRightPupilRadius() );
+        eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
     }
 
 
-    void Pupilware::computePupilSize(const Mat colorEyeFrame,
+    void Pupilware::computePupilSize(const Mat colorLeftEyeFrame,
+                                     const Mat colorRightEyeFrame,
                                      PupilMeta &pupilMeta,
                                      std::shared_ptr<PWAlgorithm> algorithm
     ) {
 
         assert(algorithm != nullptr);
 
-        algorithm->process(colorEyeFrame, pupilMeta);
+        algorithm->process(colorLeftEyeFrame, colorRightEyeFrame, pupilMeta);
 
     }
 

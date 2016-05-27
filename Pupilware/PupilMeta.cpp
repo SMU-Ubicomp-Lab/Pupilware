@@ -15,39 +15,56 @@ namespace pw {
     PupilMeta::~PupilMeta(){}
 
 
-    float PupilMeta::getRadius() const {
-        return radius;
+    float PupilMeta::getLeftPupilRadius() const {
+        return leftRadius;
     }
 
 
-    void PupilMeta::setRadius(float radius) {
+    void PupilMeta::setLeftRadius(float radius) {
         if (radius > 0) {
-            this->radius = radius;
+            this->leftRadius = radius;
         }
         else {
-            this->radius = 0;
+            this->leftRadius = 0;
         }
 
     }
 
+    float PupilMeta::getRightPupilRadius() const {
+        return rightRadius;
+    }
 
-    cv::Point PupilMeta::getEyeCenter() const {
-        return eyeCenter;
+    void PupilMeta::setRightRadius(float radius){
+        if (radius > 0) {
+            this->rightRadius = radius;
+        }
+        else {
+            this->rightRadius = 0;
+        }
+
+    }
+
+    cv::Point PupilMeta::getLeftEyeCenter() const {
+        return leftEyeCenter;
+    }
+
+    cv::Point PupilMeta::getRightEyeCenter() const {
+        return rightEyeCenter;
+    }
+
+    void PupilMeta::setEyeCenter(cv::Point leftEyeCenter,
+                                 cv::Point rightEyeCenter) {
+        this->leftEyeCenter = leftEyeCenter;
+        this->rightEyeCenter = rightEyeCenter;
+    }
+
+    unsigned int PupilMeta::getFrameNumber() const{
+        return frameNumber;
     }
 
 
-    void PupilMeta::setEyeCenter(cv::Point eyeCenter) {
-        this->eyeCenter = eyeCenter;
-    }
-
-
-    EyeType PupilMeta::getEyeType() const {
-        return eyeType;
-    }
-
-
-    void PupilMeta::setEyeType(EyeType type) {
-        this->eyeType = type;
+    void PupilMeta::setFrameNumber(unsigned int frameNumber){
+        this->frameNumber = frameNumber;
     }
 
 }

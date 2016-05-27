@@ -64,9 +64,11 @@ namespace pw {
         /*!
          * Compute pupil size with PWAlgorithm object
          * */
-        void computePupilSize( const cv::Mat    colorEyeFrame,
-                               PupilMeta        &pupilMeta,
+        void computePupilSize( const cv::Mat colorLeftEyeFrame,
+                               const cv::Mat colorRightEyeFrame,
+                               PupilMeta &pupilMeta,
                                std::shared_ptr<PWAlgorithm> algorithm );
+
 
 
         /*!
