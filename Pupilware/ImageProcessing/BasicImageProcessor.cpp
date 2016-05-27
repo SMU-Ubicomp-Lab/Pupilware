@@ -18,6 +18,8 @@ namespace pw{
         loadFaceDetectionCascade(fileFaceCascadePath);
     }
 
+    BasicImageProcessor::BasicImageProcessor( const BasicImageProcessor &other ){ }
+
     BasicImageProcessor::~BasicImageProcessor(){
 
     }

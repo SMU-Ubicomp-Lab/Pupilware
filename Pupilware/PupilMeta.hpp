@@ -21,9 +21,9 @@ namespace pw {
 
     class PupilMeta {
     private:
-        float radius;
-        cv::Point eyeCenter;
-        EyeType eyeType;
+        float       radius;
+        cv::Point   eyeCenter;
+        EyeType     eyeType;
 
 
     public:
@@ -32,17 +32,17 @@ namespace pw {
         virtual ~PupilMeta();
 
 
-        float getRadius() const;
+        float       getRadius() const;
 
-        void setRadius(float radius);
+        void        setRadius(float radius);
 
-        cv::Point getEyeCenter() const;
+        cv::Point   getEyeCenter() const;
 
-        void setEyeCenter(cv::Point eyeCenter);
+        void        setEyeCenter(cv::Point eyeCenter);
 
-        EyeType getEyeType() const;
+        EyeType     getEyeType() const;
 
-        void setEyeType(EyeType type);
+        void        setEyeType(EyeType type);
     };
 }
 

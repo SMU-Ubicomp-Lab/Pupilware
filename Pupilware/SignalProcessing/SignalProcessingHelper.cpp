@@ -25,6 +25,7 @@ namespace cw {
         return cpy[n];
     }
 
+
     float trimMean( std::vector<float> &v)
     {
         if (v.size() <= 0)
@@ -39,6 +40,7 @@ namespace cw {
         double sum_of_elems = std::accumulate(v.begin()+trimSize,v.end()-trimSize, 0);
         return sum_of_elems/(v.size() - (trimSize*2));
     }
+
 
     float average( std::vector<float> &v)
     {
@@ -87,7 +89,6 @@ namespace cw {
         if (windowSize <= 0) {
             return;
         }
-
 
         if (input.size() < windowSize) {
             windowSize = (int) input.size();

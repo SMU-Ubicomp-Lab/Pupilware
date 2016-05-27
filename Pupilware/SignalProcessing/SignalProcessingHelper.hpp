@@ -12,22 +12,23 @@ namespace cw{
 
     typedef float (*filterFunc) ( std::vector<float>&v);
 
-    void medfilt( std::vector<float> &input,
-                 std::vector<float> &output,
-                 int windowSize);
 
-    void movingAverage( std::vector<float> &input,
-                       std::vector<float> &output,
-                       int windowSize);
+    void medfilt(           std::vector<float> &input,
+                            std::vector<float> &output,
+                            int windowSize);
 
-    void trimMeanFilt( std::vector<float> &input,
-                      std::vector<float> &output,
-                      int windowSize);
+    void movingAverage(     std::vector<float> &input,
+                            std::vector<float> &output,
+                            int windowSize);
 
-    void filterSignal( std::vector<float> &input,
-                      std::vector<float> &output,
-                      int windowSize,
-                      filterFunc filtFunc );
+    void trimMeanFilt(      std::vector<float> &input,
+                            std::vector<float> &output,
+                            int windowSize);
+
+    void filterSignal(      std::vector<float> &input,
+                            std::vector<float> &output,
+                            int windowSize,
+                            filterFunc filtFunc);
 
 }
 

@@ -8,21 +8,10 @@
 
 #include "Pupilware.hpp"
 
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv/ml.h>
-
-#include "etc/CWCVUtility.hpp"
-#include "ImageProcessing/BasicImageProcessor.hpp"
 #include "SignalProcessing/BasicSignalProcessor.hpp"
-#include "constants.h"
-
-#include <iostream>
 
 using namespace std;
 using namespace cv;
-
 
 
 namespace pw {
@@ -63,7 +52,8 @@ namespace pw {
         this->algorithm = algorithm;
     }
 
-    void Pupilware::setImageProcessor(std::shared_ptr<IImageProcessor> imgProcessor){
+
+    void Pupilware::setImageProcessor(std::shared_ptr<IImageProcessor> imgProcessor) {
         this->imgProcessor = imgProcessor;
     }
 
@@ -110,7 +100,7 @@ namespace pw {
         }
     }
 
-    void Pupilware::executeFrame(const Mat colorFrame){
+    void Pupilware::executeFrame(const Mat colorFrame) {
 
         assert(!colorFrame.empty());
 
@@ -153,15 +143,15 @@ namespace pw {
         computePupilSize(colorFace(leftEyeRegion), leftEyeMeta);
 
         PupilMeta rightEyeMeta;
-        rightEyeMeta.setEyeCenter( rightEyeCenter );
-        rightEyeMeta.setEyeType( PW_RIGHT_EYE );
-        computePupilSize( colorFace( rightEyeRegion ), rightEyeMeta );
+        rightEyeMeta.setEyeCenter(rightEyeCenter);
+        rightEyeMeta.setEyeType(PW_RIGHT_EYE);
+        computePupilSize(colorFace(rightEyeRegion), rightEyeMeta);
 
         //! Store data to lists
         //
-        leftPupilRadius.push_back( leftEyeMeta.getRadius() );
-        rightPupilRadius.push_back( rightEyeMeta.getRadius() );
-        eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
+        leftPupilRadius.push_back(leftEyeMeta.getRadius());
+        rightPupilRadius.push_back(rightEyeMeta.getRadius());
+        eyeDistance.push_back(cw::calDistance(leftEyeCenter, rightEyeCenter));
     }
 
 
@@ -173,9 +163,10 @@ namespace pw {
 
     }
 
-    void Pupilware::processPupilSignal(){
 
-        std::unique_ptr<BasicSignalProcessor>sp(new BasicSignalProcessor());
+    void Pupilware::processPupilSignal() {
+
+        std::unique_ptr<BasicSignalProcessor> sp(new BasicSignalProcessor());
 
         std::vector<float> result;
 
