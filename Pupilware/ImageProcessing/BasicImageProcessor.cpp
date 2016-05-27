@@ -27,7 +27,7 @@ namespace pw{
         assert(!filePath.empty());
 
         if(!faceCascade.load(filePath)){
-            cout << "[Error] Cannor read cascade file. Make sure you have a valided file." << endl;
+            cout << "[Error] It cannot read cascade file :( . Make sure you have a valid file." << endl;
         }
     }
 

@@ -312,7 +312,7 @@ IplImage* drawUCharGraph(const uchar *arraySrc, int nArrayLength, IplImage *imag
 		//cvInitFont(&font,CV_FONT_HERSHEY_PLAIN,0.5,0.6, 0,1, CV_AA);	// For OpenCV 2.0
 		CvScalar clr = GREY;
 		char text[16];
-		sprintf(text, "%.1f", maxV);
+		sprintf(text, "%.1f", (float)maxV);
 
 		cvPutText(imageGraph, text, cvPoint(1, b+4), &font, clr);
 		// Write the scale of the x axis

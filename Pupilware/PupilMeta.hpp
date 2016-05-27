@@ -27,6 +27,11 @@ namespace pw {
 
 
     public:
+        PupilMeta();
+        PupilMeta(const PupilMeta& other);
+        virtual ~PupilMeta();
+
+
         float getRadius() const;
 
         void setRadius(float radius);

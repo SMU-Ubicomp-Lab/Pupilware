@@ -25,7 +25,7 @@ set(SOURCE_FILES
         Pupilware/PupilMeta.cpp
         Pupilware/PupilMeta.hpp
         Pupilware/Pupilware.cpp
-        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageProcessor.cpp Pupilware/ImageProcessing/IImageProcessor.hpp Pupilware/ImageProcessing/BasicImageProcessor.cpp Pupilware/ImageProcessing/BasicImageProcessor.hpp)
+        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageProcessor.cpp Pupilware/ImageProcessing/IImageProcessor.hpp Pupilware/ImageProcessing/BasicImageProcessor.cpp Pupilware/ImageProcessing/BasicImageProcessor.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/BasicSignalProcessor.cpp Pupilware/SignalProcessing/BasicSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp)
 
 find_package( OpenCV REQUIRED )
 add_executable( Pupilware ${SOURCE_FILES})

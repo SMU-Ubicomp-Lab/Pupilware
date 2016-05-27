@@ -16,7 +16,18 @@ namespace cw {
     
     void erosion( const cv::Mat src, cv::Mat& dst, int erosionSize=2, int erosionType=cv::MORPH_ELLIPSE );
 
-    int randomRange(int from, int to);
+
+    /*!
+     * Inline Functions
+     * ---------------------------------------------------------------- */
+    inline int randomRange(int from, int to){
+        return rand() % to + from;
+    }
+
+
+    inline float calDistance( cv::Point2f p1, cv::Point2f p2 ){
+        return sqrt( float( (p1.x * p2.x) + (p1.y * p2.y) ) );
+    }
 }
 
 

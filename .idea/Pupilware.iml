@@ -9,13 +9,14 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWUIHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/helpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/GraphUtils.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/GraphUtils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Circle.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/GraphUtils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWUIHelper.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/PupilMeta.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.hpp" isTestSource="false" />
@@ -29,7 +30,12 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/PupilMeta.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

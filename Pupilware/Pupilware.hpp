@@ -21,7 +21,7 @@ namespace pw {
 
     public:
         Pupilware();
-
+        Pupilware(const Pupilware &other);
         ~Pupilware();
 
         void loadVideo(const std::string &videoFilePath);
@@ -39,8 +39,16 @@ namespace pw {
 
         std::shared_ptr<IImageProcessor> imgProcessor;
 
+        //TODO: Make these to circular buffers.
+        std::vector<float> eyeDistance;
+        std::vector<float> leftPupilRadius;
+        std::vector<float> rightPupilRadius;
+
         void executeFrame(const cv::Mat colorFrame);
+
         void computePupilSize(const cv::Mat colorEyeFrame, PupilMeta &pupilMeta);
+
+        void processPupilSignal();
     };
 }
 

@@ -15,8 +15,10 @@
 
 #include "etc/CWCVUtility.hpp"
 #include "ImageProcessing/BasicImageProcessor.hpp"
+#include "SignalProcessing/BasicSignalProcessor.hpp"
 #include "constants.h"
 
+#include <iostream>
 
 using namespace std;
 using namespace cv;
@@ -31,6 +33,7 @@ namespace pw {
 
     }
 
+    Pupilware::Pupilware(const Pupilware &other) { }
 
     Pupilware::~Pupilware() {
         if (capture.isOpened()) {
@@ -93,6 +96,8 @@ namespace pw {
 
                     algorithm->exit();
 
+                    processPupilSignal();
+
                     cout << " No captured frame -- Break";
                     break;
                 }
@@ -148,9 +153,15 @@ namespace pw {
         computePupilSize(colorFace(leftEyeRegion), leftEyeMeta);
 
         PupilMeta rightEyeMeta;
-        rightEyeMeta.setEyeCenter(rightEyeCenter);
-        rightEyeMeta.setEyeType(PW_RIGHT_EYE);
-        computePupilSize(colorFace(rightEyeRegion), rightEyeMeta);
+        rightEyeMeta.setEyeCenter( rightEyeCenter );
+        rightEyeMeta.setEyeType( PW_RIGHT_EYE );
+        computePupilSize( colorFace( rightEyeRegion ), rightEyeMeta );
+
+        //! Store data to lists
+        //
+        leftPupilRadius.push_back( leftEyeMeta.getRadius() );
+        rightPupilRadius.push_back( rightEyeMeta.getRadius() );
+        eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
     }
 
 
@@ -162,4 +173,20 @@ namespace pw {
 
     }
 
+    void Pupilware::processPupilSignal(){
+
+        std::unique_ptr<BasicSignalProcessor>sp(new BasicSignalProcessor());
+
+        std::vector<float> result;
+
+        sp->process(leftPupilRadius,
+                    rightPupilRadius,
+                    eyeDistance, result);
+
+        cw::showGraph("left pupil size", leftPupilRadius, 1);
+        cw::showGraph("right pupil size", rightPupilRadius, 1);
+        cw::showGraph("eye distance", eyeDistance, 1);
+        cw::showGraph("after signal processing", result, 0);
+
+    }
 }

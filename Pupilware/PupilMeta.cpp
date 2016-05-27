@@ -10,6 +10,10 @@
 
 namespace pw {
 
+    PupilMeta::PupilMeta(){}
+    PupilMeta::PupilMeta(const PupilMeta& other){}
+    PupilMeta::~PupilMeta(){}
+
     float PupilMeta::getRadius() const {
         return radius;
     }

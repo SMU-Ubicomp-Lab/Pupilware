@@ -35,21 +35,13 @@ int main(int argc, const char **argv) {
 
     pupilware->loadVideo(videoFilePath);
 
-    //pupilware->setAlgorithm(new DummyAlgo());
-
     pupilware->setAlgorithm( std::shared_ptr<MDStarbust>(new MDStarbust()));
 
     pupilware->execute();
 
-    processPupilSignal();
-
     return 0;
 }
 
-
-void processPupilSignal() {
-    // TODO: Add something man! FASTER!
-}
 
 
 
