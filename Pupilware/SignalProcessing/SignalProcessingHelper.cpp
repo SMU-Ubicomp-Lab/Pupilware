@@ -35,7 +35,7 @@ namespace cw {
 
         sort(v.begin(), v.end());
 
-        int trimSize = (int) v.size() * 0.2;
+        int trimSize = static_cast<int>(v.size() * 0.2);
 
         double sum_of_elems = std::accumulate(v.begin()+trimSize,v.end()-trimSize, 0);
         return sum_of_elems/(v.size() - (trimSize*2));

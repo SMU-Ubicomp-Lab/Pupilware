@@ -8,7 +8,7 @@
 
 #include "Pupilware.hpp"
 
-#include "SignalProcessing/BasicSignalProcessor.hpp"
+#include "SignalProcessing/SimpleSignalProcessor.hpp"
 
 using namespace std;
 using namespace cv;
@@ -46,24 +46,19 @@ namespace pw {
     }
 
 
-    void Pupilware::setAlgorithm(std::shared_ptr<PWAlgorithm> algorithm) {
+    void Pupilware::execute( std::shared_ptr<IImageSegmenter>   imgSeg,
+                             std::shared_ptr<PWAlgorithm>       algorithm   ) {
+
         assert(algorithm != nullptr);
-
-        this->algorithm = algorithm;
-    }
-
-
-    void Pupilware::setImageProcessor(std::shared_ptr<IImageProcessor> imgProcessor) {
-        this->imgProcessor = imgProcessor;
-    }
-
-
-    void Pupilware::execute() {
-        assert(algorithm != nullptr);
-        assert(imgProcessor != nullptr);
+        assert(imgSeg != nullptr);
 
         if (algorithm == nullptr) {
             cout << "[Warning] Algorithm is missing";
+            return;
+        }
+
+        if (imgSeg == nullptr) {
+            cout << "[Warning] Image Segmenter is missing";
             return;
         }
 
@@ -79,7 +74,7 @@ namespace pw {
 
                 if (!colorFrame.empty()) {
 
-                    executeFrame(colorFrame);
+                    executeFrame( colorFrame, imgSeg, algorithm );
 
                 }
                 else {
@@ -100,7 +95,9 @@ namespace pw {
         }
     }
 
-    void Pupilware::executeFrame(const Mat colorFrame) {
+    void Pupilware::executeFrame(const Mat colorFrame,
+                                 std::shared_ptr<IImageSegmenter> imgSeg,
+                                 std::shared_ptr<PWAlgorithm> algorithm) {
 
         assert(!colorFrame.empty());
 
@@ -113,7 +110,7 @@ namespace pw {
 
         cv::Rect faceRect;
 
-        if (!imgProcessor->findFace(frameGray, faceRect)) {
+        if (!imgSeg->findFace(frameGray, faceRect)) {
             cout << "[Waning] There is no face found this frame." << endl;
             return;
         }
@@ -123,14 +120,14 @@ namespace pw {
         //
         cv::Rect leftEyeRegion;
         cv::Rect rightEyeRegion;
-        imgProcessor->extractEyes(faceRect, leftEyeRegion, rightEyeRegion);
+        imgSeg->extractEyes(faceRect, leftEyeRegion, rightEyeRegion);
 
 
         //! Find eye center
         //
         Mat grayFace = frameGray(faceRect);
-        Point2f leftEyeCenter = imgProcessor->fineEyeCenter(grayFace(leftEyeRegion));
-        Point2f rightEyeCenter = imgProcessor->fineEyeCenter(grayFace(rightEyeRegion));
+        Point2f leftEyeCenter = imgSeg->fineEyeCenter(grayFace(leftEyeRegion));
+        Point2f rightEyeCenter = imgSeg->fineEyeCenter(grayFace(rightEyeRegion));
 
 
         //! Compute pupil size
@@ -140,12 +137,12 @@ namespace pw {
         PupilMeta leftEyeMeta;
         leftEyeMeta.setEyeCenter(leftEyeCenter);
         leftEyeMeta.setEyeType(PW_LEFT_EYE);
-        computePupilSize(colorFace(leftEyeRegion), leftEyeMeta);
+        computePupilSize(colorFace(leftEyeRegion), leftEyeMeta, algorithm);
 
         PupilMeta rightEyeMeta;
         rightEyeMeta.setEyeCenter(rightEyeCenter);
         rightEyeMeta.setEyeType(PW_RIGHT_EYE);
-        computePupilSize(colorFace(rightEyeRegion), rightEyeMeta);
+        computePupilSize(colorFace(rightEyeRegion), rightEyeMeta, algorithm);
 
         //! Store data to lists
         //
@@ -155,7 +152,10 @@ namespace pw {
     }
 
 
-    void Pupilware::computePupilSize(const Mat colorEyeFrame, PupilMeta &pupilMeta) {
+    void Pupilware::computePupilSize(const Mat colorEyeFrame,
+                                     PupilMeta &pupilMeta,
+                                     std::shared_ptr<PWAlgorithm> algorithm
+    ) {
 
         assert(algorithm != nullptr);
 

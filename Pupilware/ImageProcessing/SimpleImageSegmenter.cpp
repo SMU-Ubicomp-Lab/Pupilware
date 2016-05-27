@@ -2,9 +2,7 @@
 // Created by Chatchai Wangwiwattana on 5/27/16.
 //
 
-#include "BasicImageProcessor.hpp"
-
-#include <iostream>
+#include "SimpleImageSegmenter.hpp"
 
 #include "../etc/CWCVUtility.hpp"
 
@@ -13,18 +11,18 @@ using namespace cv;
 
 namespace pw{
 
-    BasicImageProcessor::BasicImageProcessor(const std::string &fileFaceCascadePath)
+    SimpleImageSegmenter::SimpleImageSegmenter(const std::string &fileFaceCascadePath)
     {
         loadFaceDetectionCascade(fileFaceCascadePath);
     }
 
-    BasicImageProcessor::BasicImageProcessor( const BasicImageProcessor &other ){ }
+    SimpleImageSegmenter::SimpleImageSegmenter( const SimpleImageSegmenter &other ){ }
 
-    BasicImageProcessor::~BasicImageProcessor(){
+    SimpleImageSegmenter::~SimpleImageSegmenter(){
 
     }
 
-    void BasicImageProcessor::loadFaceDetectionCascade(const std::string &filePath)
+    void SimpleImageSegmenter::loadFaceDetectionCascade(const std::string &filePath)
     {
         assert(!filePath.empty());
 
@@ -33,7 +31,7 @@ namespace pw{
         }
     }
 
-    bool BasicImageProcessor::findFace(const cv::Mat grayFrame, cv::Rect &outFaceRect) {
+    bool SimpleImageSegmenter::findFace(const cv::Mat grayFrame, cv::Rect &outFaceRect) {
 
         assert(grayFrame.channels() == 1);
 
@@ -61,7 +59,7 @@ namespace pw{
     }
 
 
-    void BasicImageProcessor::extractEyes(cv::Rect faceROI,
+    void SimpleImageSegmenter::extractEyes(cv::Rect faceROI,
                                           cv::Rect &outLeftEyeRegion,
                                           cv::Rect &outRightEyeRegion) {
 
@@ -87,7 +85,7 @@ namespace pw{
     }
 
 
-    cv::Point2f BasicImageProcessor::fineEyeCenter(const Mat grayEyeROI) {
+    cv::Point2f SimpleImageSegmenter::fineEyeCenter(const Mat grayEyeROI) {
 
         assert(grayEyeROI.channels() == 1);
 

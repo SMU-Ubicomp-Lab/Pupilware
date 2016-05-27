@@ -13,7 +13,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "Algorithm/PWAlgorithm.hpp"
-#include "ImageProcessing/IImageProcessor.hpp"
+#include "ImageProcessing/IImageSegmenter.hpp"
 
 namespace pw {
 
@@ -31,33 +31,17 @@ namespace pw {
         void loadVideo(const std::string &videoFilePath);
 
 
-
-        /*!
-         * Assigned pupil size finding module
-         * */
-        void setAlgorithm(std::shared_ptr<PWAlgorithm> algorithm);
-
-
-
-        /*!
-         * Assigned an image processing module
-         * */
-        void setImageProcessor(std::shared_ptr<IImageProcessor> imgProcessor);
-
-
-
         /*!
          * Execute Pupilware pipeline.
          * */
-        void execute();
+        void execute( std::shared_ptr<IImageSegmenter> imgProcessor,
+                      std::shared_ptr<PWAlgorithm> algorithm          );
 
 
 
     private:
 
         cv::VideoCapture                    capture;
-        std::shared_ptr<PWAlgorithm>        algorithm;
-        std::shared_ptr<IImageProcessor>    imgProcessor;
 
 
         //TODO: Make these to circular buffers.
@@ -71,7 +55,9 @@ namespace pw {
         /*!
          * Execute Pupilware pipeline only one given frame
          * */
-        void executeFrame(const cv::Mat colorFrame);
+        void executeFrame(const cv::Mat colorFrame,
+                          std::shared_ptr<IImageSegmenter> imgSeg,
+                          std::shared_ptr<PWAlgorithm> algorithm );
 
 
 
@@ -79,7 +65,8 @@ namespace pw {
          * Compute pupil size with PWAlgorithm object
          * */
         void computePupilSize( const cv::Mat    colorEyeFrame,
-                               PupilMeta        &pupilMeta     );
+                               PupilMeta        &pupilMeta,
+                               std::shared_ptr<PWAlgorithm> algorithm );
 
 
         /*!

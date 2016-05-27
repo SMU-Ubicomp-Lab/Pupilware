@@ -26,16 +26,16 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbust.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageProcessor.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageProcessor.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/PupilMeta.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

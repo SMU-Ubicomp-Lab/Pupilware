@@ -8,7 +8,7 @@
 #include "Algorithm/MDStarbust.hpp"
 #include "Algorithm/DummyAlgo.hpp"
 
-#include "ImageProcessing/BasicImageProcessor.hpp"
+#include "ImageProcessing/SimpleImageSegmenter.hpp"
 //--------------------------------------
 
 using namespace cv;
@@ -31,13 +31,10 @@ int main(int argc, const char **argv) {
 
     Pupilware *pupilware = new Pupilware();
 
-    pupilware->setImageProcessor( std::shared_ptr<BasicImageProcessor>(new BasicImageProcessor(faceCascadePath)));
+    pupilware->loadVideo( videoFilePath );
 
-    pupilware->loadVideo(videoFilePath);
-
-    pupilware->setAlgorithm( std::shared_ptr<MDStarbust>(new MDStarbust()));
-
-    pupilware->execute();
+    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
+                       std::shared_ptr<MDStarbust>(new MDStarbust()) );
 
     return 0;
 }

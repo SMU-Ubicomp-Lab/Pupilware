@@ -5,11 +5,11 @@
 #ifndef PUPILWARE_BASICIMAGEPROCESSOR_HPP
 #define PUPILWARE_BASICIMAGEPROCESSOR_HPP
 
-#include "IImageProcessor.hpp"
+#include "IImageSegmenter.hpp"
 
 namespace pw{
 
-    class BasicImageProcessor: public IImageProcessor {
+    class SimpleImageSegmenter: public IImageSegmenter {
 
 
     private:
@@ -17,9 +17,9 @@ namespace pw{
 
 
     public:
-        BasicImageProcessor( const std::string &fileFaceCascadePath );
-        BasicImageProcessor( const BasicImageProcessor &other );
-        ~BasicImageProcessor();
+        SimpleImageSegmenter( const std::string &fileFaceCascadePath );
+        SimpleImageSegmenter( const SimpleImageSegmenter &other );
+        ~SimpleImageSegmenter();
 
         bool            findFace(const cv::Mat grayFrame,
                                  cv::Rect &outFaceRect);

@@ -14,16 +14,19 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="">
+    <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="Clean up">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageProcessor.cpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageProcessor.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Pupilware.iml" afterPath="$PROJECT_DIR$/.idea/Pupilware.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/PupilMeta.cpp" afterPath="$PROJECT_DIR$/Pupilware/PupilMeta.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/PupilMeta.hpp" afterPath="$PROJECT_DIR$/Pupilware/PupilMeta.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.hpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/main.cpp" afterPath="$PROJECT_DIR$/Pupilware/main.cpp" />
     </list>
     <ignored path="Pupilware.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,97 +52,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DummyAlgo.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#131#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Pupilware.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#203#220#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IImageProcessor.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageProcessor.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IImageProcessor.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageProcessor.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicImageProcessor.hpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicSignalProcessor.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-463">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#56#91#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignalProcessingHelper.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-              <folding>
-                <element signature="e#56#93#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PupilMeta.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/PupilMeta.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PupilMeta.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/PupilMeta.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignalProcessingHelper.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="205">
+              <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -148,11 +87,9 @@
       <file leaf-file-name="Pupilware.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1048">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding>
-                <element signature="e#158#182#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1200">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -202,7 +139,6 @@
         <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.h" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessing.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessing.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/thirdparty/main.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/thirdparty/circularBuffer/circular.h" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.cpp" />
@@ -213,13 +149,15 @@
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Pupilware.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/PupilMeta.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/PupilMeta.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Pupilware.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
       </list>
     </option>
   </component>
@@ -649,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464379842898</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Clean up">
+      <created>1464382385315</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1464382385315</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -662,7 +607,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24505928" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -687,10 +632,10 @@
     <MESSAGE value="refactor Startbust algoirithm&#10;Fix some bugs" />
     <MESSAGE value="Clean up Starbust" />
     <MESSAGE value="Clean up repo" />
-    <MESSAGE value="Clean up" />
     <MESSAGE value="Extract Image Processing to form Pupilware&#10;Fix memory leak bug with shared_ptr" />
     <MESSAGE value="Refactor some classes&#10;Add Signal processing classes&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor some classes&#10;Add Signal processing classes&#10;" />
+    <MESSAGE value="Clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -703,13 +648,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/helpers.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -723,16 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2247">
           <caret line="516" column="19" selection-start-line="516" selection-start-column="10" selection-end-line="516" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/GraphUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-          <folding>
-            <element signature="e#524#578#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -751,6 +679,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -770,53 +699,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/README.txt" />
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="e#215#237#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/etc/Ransac.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="23" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -833,14 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5730">
           <caret line="389" column="42" selection-start-line="389" selection-start-column="42" selection-end-line="389" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -877,32 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/GraphUtils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="402" column="50" selection-start-line="402" selection-start-column="50" selection-end-line="402" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1918">
-          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
-          <folding>
-            <element signature="e#159#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -916,27 +769,27 @@
         <state relative-caret-position="77">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#144#170#0" expanded="true" />
+            <element signature="e#144#170#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.cpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-525">
           <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
           <folding>
-            <element signature="e#56#90#0" expanded="true" />
+            <element signature="e#56#91#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding>
-            <element signature="e#143#174#0" expanded="true" />
+            <element signature="e#143#174#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -946,26 +799,6 @@
         <state relative-caret-position="272">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#203#220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1048">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#158#182#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -998,30 +831,112 @@
         <state relative-caret-position="1365">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
-            <element signature="e#56#93#0" expanded="true" />
+            <element signature="e#56#93#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-463">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
-            <element signature="e#56#91#0" expanded="true" />
+            <element signature="e#56#92#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageProcessor.hpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        <state relative-caret-position="255">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageProcessor.cpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/GraphUtils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="402" column="50" selection-start-line="402" selection-start-column="50" selection-end-line="402" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/GraphUtils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/helpers.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+          <folding>
+            <element signature="e#159#184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
@@ -1029,11 +944,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/BasicImageProcessor.hpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="58" column="65" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#131#155#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

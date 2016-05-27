@@ -2,10 +2,9 @@
 // Created by Chatchai Wangwiwattana on 5/27/16.
 //
 
-#include "BasicSignalProcessor.hpp"
+#include "SimpleSignalProcessor.hpp"
 #include "SignalProcessingHelper.hpp"
 
-#include <opencv2/opencv.hpp>
 
 using namespace cv;
 

@@ -8,7 +8,7 @@
 #include <opencv2/opencv.hpp>
 
 namespace pw{
-    class IImageProcessor {
+    class IImageSegmenter {
 
     public:
 
