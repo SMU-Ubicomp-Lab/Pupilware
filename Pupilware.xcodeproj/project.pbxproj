@@ -7,15 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C1C49101CF6C02B00460312 /* DummyAlgo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C48FA1CF6C02B00460312 /* DummyAlgo.cpp */; };
-		5C1C49111CF6C02B00460312 /* MDStarbust.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C48FC1CF6C02B00460312 /* MDStarbust.cpp */; };
-		5C1C49121CF6C02B00460312 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C49001CF6C02B00460312 /* Circle.cpp */; };
-		5C1C49141CF6C02B00460312 /* GraphUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C49041CF6C02B00460312 /* GraphUtils.cpp */; };
-		5C1C49151CF6C02B00460312 /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C49061CF6C02B00460312 /* helpers.cpp */; };
-		5C1C49161CF6C02B00460312 /* Ransac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C49081CF6C02B00460312 /* Ransac.cpp */; };
 		5C1C49171CF6C02B00460312 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C490A1CF6C02B00460312 /* main.cpp */; };
-		5C1C49181CF6C02B00460312 /* PupilMeta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C490B1CF6C02B00460312 /* PupilMeta.cpp */; };
-		5C1C49191CF6C02B00460312 /* Pupilware.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C1C490D1CF6C02B00460312 /* Pupilware.cpp */; };
 		5C1C492A1CF6C0D200460312 /* libopencv_calib3d.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1C491A1CF6C0D100460312 /* libopencv_calib3d.2.4.13.dylib */; };
 		5C1C492B1CF6C0D200460312 /* libopencv_contrib.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1C491B1CF6C0D100460312 /* libopencv_contrib.2.4.13.dylib */; };
 		5C1C492C1CF6C0D200460312 /* libopencv_core.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1C491C1CF6C0D100460312 /* libopencv_core.2.4.13.dylib */; };
@@ -32,9 +24,22 @@
 		5C1C49371CF6C0D200460312 /* libopencv_stitching.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1C49271CF6C0D200460312 /* libopencv_stitching.2.4.13.dylib */; };
 		5C1C49381CF6C0D200460312 /* libopencv_video.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1C49281CF6C0D200460312 /* libopencv_video.2.4.13.dylib */; };
 		5C1C49391CF6C0D200460312 /* libopencv_videostab.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1C49291CF6C0D200460312 /* libopencv_videostab.2.4.13.dylib */; };
-		5CB338031CF782640099982C /* PWAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB338011CF782640099982C /* PWAlgorithm.cpp */; };
-		5CB338081CF782780099982C /* CWCVUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB338041CF782780099982C /* CWCVUtility.cpp */; };
-		5CB338091CF782780099982C /* CWUIHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB338061CF782780099982C /* CWUIHelper.cpp */; };
+		5CB1B3F51CF8F287009DB2D5 /* DummyAlgo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3D01CF8F287009DB2D5 /* DummyAlgo.cpp */; };
+		5CB1B3F61CF8F287009DB2D5 /* MDStarbust.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3D21CF8F287009DB2D5 /* MDStarbust.cpp */; };
+		5CB1B3F71CF8F287009DB2D5 /* PWAlgorithm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3D41CF8F287009DB2D5 /* PWAlgorithm.cpp */; };
+		5CB1B3F81CF8F287009DB2D5 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3D81CF8F287009DB2D5 /* Circle.cpp */; };
+		5CB1B3F91CF8F287009DB2D5 /* CWCVUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3DA1CF8F287009DB2D5 /* CWCVUtility.cpp */; };
+		5CB1B3FA1CF8F287009DB2D5 /* CWUIHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3DC1CF8F287009DB2D5 /* CWUIHelper.cpp */; };
+		5CB1B3FB1CF8F287009DB2D5 /* GraphUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3DE1CF8F287009DB2D5 /* GraphUtils.cpp */; };
+		5CB1B3FC1CF8F287009DB2D5 /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3E01CF8F287009DB2D5 /* helpers.cpp */; };
+		5CB1B3FD1CF8F287009DB2D5 /* Ransac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3E21CF8F287009DB2D5 /* Ransac.cpp */; };
+		5CB1B3FE1CF8F287009DB2D5 /* IImageSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3E51CF8F287009DB2D5 /* IImageSegmenter.cpp */; };
+		5CB1B3FF1CF8F287009DB2D5 /* SimpleImageSegmenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3E71CF8F287009DB2D5 /* SimpleImageSegmenter.cpp */; };
+		5CB1B4001CF8F287009DB2D5 /* PupilMeta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3E91CF8F287009DB2D5 /* PupilMeta.cpp */; };
+		5CB1B4011CF8F287009DB2D5 /* Pupilware.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3EB1CF8F287009DB2D5 /* Pupilware.cpp */; };
+		5CB1B4021CF8F287009DB2D5 /* ISignalProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3EE1CF8F287009DB2D5 /* ISignalProcessor.cpp */; };
+		5CB1B4031CF8F287009DB2D5 /* SignalProcessingHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3F01CF8F287009DB2D5 /* SignalProcessingHelper.cpp */; };
+		5CB1B4041CF8F287009DB2D5 /* SimpleSignalProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B3F21CF8F287009DB2D5 /* SimpleSignalProcessor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,24 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5C1C48FA1CF6C02B00460312 /* DummyAlgo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DummyAlgo.cpp; sourceTree = "<group>"; };
-		5C1C48FB1CF6C02B00460312 /* DummyAlgo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DummyAlgo.hpp; sourceTree = "<group>"; };
-		5C1C48FC1CF6C02B00460312 /* MDStarbust.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MDStarbust.cpp; sourceTree = "<group>"; };
-		5C1C48FD1CF6C02B00460312 /* MDStarbust.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MDStarbust.hpp; sourceTree = "<group>"; };
-		5C1C48FE1CF6C02B00460312 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = Pupilware/constants.h; sourceTree = SOURCE_ROOT; };
-		5C1C49001CF6C02B00460312 /* Circle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
-		5C1C49011CF6C02B00460312 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
-		5C1C49041CF6C02B00460312 /* GraphUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphUtils.cpp; sourceTree = "<group>"; };
-		5C1C49051CF6C02B00460312 /* GraphUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphUtils.h; sourceTree = "<group>"; };
-		5C1C49061CF6C02B00460312 /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
-		5C1C49071CF6C02B00460312 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
-		5C1C49081CF6C02B00460312 /* Ransac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ransac.cpp; sourceTree = "<group>"; };
-		5C1C49091CF6C02B00460312 /* Ransac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ransac.h; sourceTree = "<group>"; };
 		5C1C490A1CF6C02B00460312 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Pupilware/main.cpp; sourceTree = SOURCE_ROOT; };
-		5C1C490B1CF6C02B00460312 /* PupilMeta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PupilMeta.cpp; path = Pupilware/PupilMeta.cpp; sourceTree = SOURCE_ROOT; };
-		5C1C490C1CF6C02B00460312 /* PupilMeta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PupilMeta.hpp; path = Pupilware/PupilMeta.hpp; sourceTree = SOURCE_ROOT; };
-		5C1C490D1CF6C02B00460312 /* Pupilware.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pupilware.cpp; path = Pupilware/Pupilware.cpp; sourceTree = SOURCE_ROOT; };
-		5C1C490E1CF6C02B00460312 /* Pupilware.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Pupilware.hpp; path = Pupilware/Pupilware.hpp; sourceTree = SOURCE_ROOT; };
 		5C1C491A1CF6C0D100460312 /* libopencv_calib3d.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.2.4.13.dylib; path = ../../../../../usr/local/Cellar/opencv/HEAD/lib/libopencv_calib3d.2.4.13.dylib; sourceTree = "<group>"; };
 		5C1C491B1CF6C0D100460312 /* libopencv_contrib.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_contrib.2.4.13.dylib; path = ../../../../../usr/local/Cellar/opencv/HEAD/lib/libopencv_contrib.2.4.13.dylib; sourceTree = "<group>"; };
 		5C1C491C1CF6C0D100460312 /* libopencv_core.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.13.dylib; path = ../../../../../usr/local/Cellar/opencv/HEAD/lib/libopencv_core.2.4.13.dylib; sourceTree = "<group>"; };
@@ -85,12 +73,39 @@
 		5C1C49281CF6C0D200460312 /* libopencv_video.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_video.2.4.13.dylib; path = ../../../../../usr/local/Cellar/opencv/HEAD/lib/libopencv_video.2.4.13.dylib; sourceTree = "<group>"; };
 		5C1C49291CF6C0D200460312 /* libopencv_videostab.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.13.dylib; path = ../../../../../usr/local/Cellar/opencv/HEAD/lib/libopencv_videostab.2.4.13.dylib; sourceTree = "<group>"; };
 		5CA8AD091CF3D36E0071976E /* Pupilware */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Pupilware; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CB338011CF782640099982C /* PWAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PWAlgorithm.cpp; sourceTree = "<group>"; };
-		5CB338021CF782640099982C /* PWAlgorithm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PWAlgorithm.hpp; sourceTree = "<group>"; };
-		5CB338041CF782780099982C /* CWCVUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CWCVUtility.cpp; sourceTree = "<group>"; };
-		5CB338051CF782780099982C /* CWCVUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CWCVUtility.hpp; sourceTree = "<group>"; };
-		5CB338061CF782780099982C /* CWUIHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CWUIHelper.cpp; sourceTree = "<group>"; };
-		5CB338071CF782780099982C /* CWUIHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CWUIHelper.hpp; sourceTree = "<group>"; };
+		5CB1B3D01CF8F287009DB2D5 /* DummyAlgo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DummyAlgo.cpp; sourceTree = "<group>"; };
+		5CB1B3D11CF8F287009DB2D5 /* DummyAlgo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DummyAlgo.hpp; sourceTree = "<group>"; };
+		5CB1B3D21CF8F287009DB2D5 /* MDStarbust.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MDStarbust.cpp; sourceTree = "<group>"; };
+		5CB1B3D31CF8F287009DB2D5 /* MDStarbust.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MDStarbust.hpp; sourceTree = "<group>"; };
+		5CB1B3D41CF8F287009DB2D5 /* PWAlgorithm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PWAlgorithm.cpp; sourceTree = "<group>"; };
+		5CB1B3D51CF8F287009DB2D5 /* PWAlgorithm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PWAlgorithm.hpp; sourceTree = "<group>"; };
+		5CB1B3D61CF8F287009DB2D5 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = Pupilware/constants.h; sourceTree = SOURCE_ROOT; };
+		5CB1B3D81CF8F287009DB2D5 /* Circle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
+		5CB1B3D91CF8F287009DB2D5 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		5CB1B3DA1CF8F287009DB2D5 /* CWCVUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CWCVUtility.cpp; sourceTree = "<group>"; };
+		5CB1B3DB1CF8F287009DB2D5 /* CWCVUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CWCVUtility.hpp; sourceTree = "<group>"; };
+		5CB1B3DC1CF8F287009DB2D5 /* CWUIHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CWUIHelper.cpp; sourceTree = "<group>"; };
+		5CB1B3DD1CF8F287009DB2D5 /* CWUIHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CWUIHelper.hpp; sourceTree = "<group>"; };
+		5CB1B3DE1CF8F287009DB2D5 /* GraphUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphUtils.cpp; sourceTree = "<group>"; };
+		5CB1B3DF1CF8F287009DB2D5 /* GraphUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphUtils.h; sourceTree = "<group>"; };
+		5CB1B3E01CF8F287009DB2D5 /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
+		5CB1B3E11CF8F287009DB2D5 /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		5CB1B3E21CF8F287009DB2D5 /* Ransac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ransac.cpp; sourceTree = "<group>"; };
+		5CB1B3E31CF8F287009DB2D5 /* Ransac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ransac.h; sourceTree = "<group>"; };
+		5CB1B3E51CF8F287009DB2D5 /* IImageSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IImageSegmenter.cpp; sourceTree = "<group>"; };
+		5CB1B3E61CF8F287009DB2D5 /* IImageSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IImageSegmenter.hpp; sourceTree = "<group>"; };
+		5CB1B3E71CF8F287009DB2D5 /* SimpleImageSegmenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleImageSegmenter.cpp; sourceTree = "<group>"; };
+		5CB1B3E81CF8F287009DB2D5 /* SimpleImageSegmenter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleImageSegmenter.hpp; sourceTree = "<group>"; };
+		5CB1B3E91CF8F287009DB2D5 /* PupilMeta.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PupilMeta.cpp; path = Pupilware/PupilMeta.cpp; sourceTree = SOURCE_ROOT; };
+		5CB1B3EA1CF8F287009DB2D5 /* PupilMeta.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PupilMeta.hpp; path = Pupilware/PupilMeta.hpp; sourceTree = SOURCE_ROOT; };
+		5CB1B3EB1CF8F287009DB2D5 /* Pupilware.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pupilware.cpp; path = Pupilware/Pupilware.cpp; sourceTree = SOURCE_ROOT; };
+		5CB1B3EC1CF8F287009DB2D5 /* Pupilware.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Pupilware.hpp; path = Pupilware/Pupilware.hpp; sourceTree = SOURCE_ROOT; };
+		5CB1B3EE1CF8F287009DB2D5 /* ISignalProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ISignalProcessor.cpp; sourceTree = "<group>"; };
+		5CB1B3EF1CF8F287009DB2D5 /* ISignalProcessor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ISignalProcessor.hpp; sourceTree = "<group>"; };
+		5CB1B3F01CF8F287009DB2D5 /* SignalProcessingHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignalProcessingHelper.cpp; sourceTree = "<group>"; };
+		5CB1B3F11CF8F287009DB2D5 /* SignalProcessingHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SignalProcessingHelper.hpp; sourceTree = "<group>"; };
+		5CB1B3F21CF8F287009DB2D5 /* SimpleSignalProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleSignalProcessor.cpp; sourceTree = "<group>"; };
+		5CB1B3F31CF8F287009DB2D5 /* SimpleSignalProcessor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleSignalProcessor.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,40 +135,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C1C48F71CF6C02B00460312 /* Algorithm */ = {
-			isa = PBXGroup;
-			children = (
-				5CB338011CF782640099982C /* PWAlgorithm.cpp */,
-				5CB338021CF782640099982C /* PWAlgorithm.hpp */,
-				5C1C48FA1CF6C02B00460312 /* DummyAlgo.cpp */,
-				5C1C48FB1CF6C02B00460312 /* DummyAlgo.hpp */,
-				5C1C48FC1CF6C02B00460312 /* MDStarbust.cpp */,
-				5C1C48FD1CF6C02B00460312 /* MDStarbust.hpp */,
-			);
-			name = Algorithm;
-			path = Pupilware/Algorithm;
-			sourceTree = SOURCE_ROOT;
-		};
-		5C1C48FF1CF6C02B00460312 /* etc */ = {
-			isa = PBXGroup;
-			children = (
-				5CB338041CF782780099982C /* CWCVUtility.cpp */,
-				5CB338051CF782780099982C /* CWCVUtility.hpp */,
-				5CB338061CF782780099982C /* CWUIHelper.cpp */,
-				5CB338071CF782780099982C /* CWUIHelper.hpp */,
-				5C1C49001CF6C02B00460312 /* Circle.cpp */,
-				5C1C49011CF6C02B00460312 /* Circle.h */,
-				5C1C49041CF6C02B00460312 /* GraphUtils.cpp */,
-				5C1C49051CF6C02B00460312 /* GraphUtils.h */,
-				5C1C49061CF6C02B00460312 /* helpers.cpp */,
-				5C1C49071CF6C02B00460312 /* helpers.h */,
-				5C1C49081CF6C02B00460312 /* Ransac.cpp */,
-				5C1C49091CF6C02B00460312 /* Ransac.h */,
-			);
-			name = etc;
-			path = Pupilware/etc;
-			sourceTree = SOURCE_ROOT;
-		};
 		5CA8AD001CF3D36E0071976E = {
 			isa = PBXGroup;
 			children = (
@@ -174,14 +155,17 @@
 		5CA8AD0B1CF3D36E0071976E /* Pupilware */ = {
 			isa = PBXGroup;
 			children = (
-				5C1C48F71CF6C02B00460312 /* Algorithm */,
-				5C1C48FE1CF6C02B00460312 /* constants.h */,
-				5C1C48FF1CF6C02B00460312 /* etc */,
+				5CB1B3CF1CF8F287009DB2D5 /* Algorithm */,
+				5CB1B3D61CF8F287009DB2D5 /* constants.h */,
+				5CB1B3D71CF8F287009DB2D5 /* etc */,
+				5CB1B3E41CF8F287009DB2D5 /* ImageProcessing */,
+				5CB1B3E91CF8F287009DB2D5 /* PupilMeta.cpp */,
+				5CB1B3EA1CF8F287009DB2D5 /* PupilMeta.hpp */,
+				5CB1B3EB1CF8F287009DB2D5 /* Pupilware.cpp */,
+				5CB1B3EC1CF8F287009DB2D5 /* Pupilware.hpp */,
+				5CB1B3ED1CF8F287009DB2D5 /* SignalProcessing */,
+				5CB1B3F41CF8F287009DB2D5 /* thirdparty */,
 				5C1C490A1CF6C02B00460312 /* main.cpp */,
-				5C1C490B1CF6C02B00460312 /* PupilMeta.cpp */,
-				5C1C490C1CF6C02B00460312 /* PupilMeta.hpp */,
-				5C1C490D1CF6C02B00460312 /* Pupilware.cpp */,
-				5C1C490E1CF6C02B00460312 /* Pupilware.hpp */,
 			);
 			name = Pupilware;
 			path = HelloOCV;
@@ -209,6 +193,74 @@
 			);
 			name = opencv;
 			sourceTree = "<group>";
+		};
+		5CB1B3CF1CF8F287009DB2D5 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1B3D01CF8F287009DB2D5 /* DummyAlgo.cpp */,
+				5CB1B3D11CF8F287009DB2D5 /* DummyAlgo.hpp */,
+				5CB1B3D21CF8F287009DB2D5 /* MDStarbust.cpp */,
+				5CB1B3D31CF8F287009DB2D5 /* MDStarbust.hpp */,
+				5CB1B3D41CF8F287009DB2D5 /* PWAlgorithm.cpp */,
+				5CB1B3D51CF8F287009DB2D5 /* PWAlgorithm.hpp */,
+			);
+			name = Algorithm;
+			path = Pupilware/Algorithm;
+			sourceTree = SOURCE_ROOT;
+		};
+		5CB1B3D71CF8F287009DB2D5 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1B3D81CF8F287009DB2D5 /* Circle.cpp */,
+				5CB1B3D91CF8F287009DB2D5 /* Circle.h */,
+				5CB1B3DA1CF8F287009DB2D5 /* CWCVUtility.cpp */,
+				5CB1B3DB1CF8F287009DB2D5 /* CWCVUtility.hpp */,
+				5CB1B3DC1CF8F287009DB2D5 /* CWUIHelper.cpp */,
+				5CB1B3DD1CF8F287009DB2D5 /* CWUIHelper.hpp */,
+				5CB1B3DE1CF8F287009DB2D5 /* GraphUtils.cpp */,
+				5CB1B3DF1CF8F287009DB2D5 /* GraphUtils.h */,
+				5CB1B3E01CF8F287009DB2D5 /* helpers.cpp */,
+				5CB1B3E11CF8F287009DB2D5 /* helpers.h */,
+				5CB1B3E21CF8F287009DB2D5 /* Ransac.cpp */,
+				5CB1B3E31CF8F287009DB2D5 /* Ransac.h */,
+			);
+			name = etc;
+			path = Pupilware/etc;
+			sourceTree = SOURCE_ROOT;
+		};
+		5CB1B3E41CF8F287009DB2D5 /* ImageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1B3E51CF8F287009DB2D5 /* IImageSegmenter.cpp */,
+				5CB1B3E61CF8F287009DB2D5 /* IImageSegmenter.hpp */,
+				5CB1B3E71CF8F287009DB2D5 /* SimpleImageSegmenter.cpp */,
+				5CB1B3E81CF8F287009DB2D5 /* SimpleImageSegmenter.hpp */,
+			);
+			name = ImageProcessing;
+			path = Pupilware/ImageProcessing;
+			sourceTree = SOURCE_ROOT;
+		};
+		5CB1B3ED1CF8F287009DB2D5 /* SignalProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1B3EE1CF8F287009DB2D5 /* ISignalProcessor.cpp */,
+				5CB1B3EF1CF8F287009DB2D5 /* ISignalProcessor.hpp */,
+				5CB1B3F01CF8F287009DB2D5 /* SignalProcessingHelper.cpp */,
+				5CB1B3F11CF8F287009DB2D5 /* SignalProcessingHelper.hpp */,
+				5CB1B3F21CF8F287009DB2D5 /* SimpleSignalProcessor.cpp */,
+				5CB1B3F31CF8F287009DB2D5 /* SimpleSignalProcessor.hpp */,
+			);
+			name = SignalProcessing;
+			path = Pupilware/SignalProcessing;
+			sourceTree = SOURCE_ROOT;
+		};
+		5CB1B3F41CF8F287009DB2D5 /* thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = thirdparty;
+			path = Pupilware/thirdparty;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -266,18 +318,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C1C49101CF6C02B00460312 /* DummyAlgo.cpp in Sources */,
-				5C1C49121CF6C02B00460312 /* Circle.cpp in Sources */,
-				5CB338031CF782640099982C /* PWAlgorithm.cpp in Sources */,
-				5C1C49181CF6C02B00460312 /* PupilMeta.cpp in Sources */,
-				5C1C49141CF6C02B00460312 /* GraphUtils.cpp in Sources */,
-				5C1C49151CF6C02B00460312 /* helpers.cpp in Sources */,
-				5CB338081CF782780099982C /* CWCVUtility.cpp in Sources */,
-				5CB338091CF782780099982C /* CWUIHelper.cpp in Sources */,
-				5C1C49161CF6C02B00460312 /* Ransac.cpp in Sources */,
-				5C1C49111CF6C02B00460312 /* MDStarbust.cpp in Sources */,
-				5C1C49191CF6C02B00460312 /* Pupilware.cpp in Sources */,
+				5CB1B4001CF8F287009DB2D5 /* PupilMeta.cpp in Sources */,
+				5CB1B4011CF8F287009DB2D5 /* Pupilware.cpp in Sources */,
 				5C1C49171CF6C02B00460312 /* main.cpp in Sources */,
+				5CB1B3F91CF8F287009DB2D5 /* CWCVUtility.cpp in Sources */,
+				5CB1B3FB1CF8F287009DB2D5 /* GraphUtils.cpp in Sources */,
+				5CB1B3FD1CF8F287009DB2D5 /* Ransac.cpp in Sources */,
+				5CB1B4031CF8F287009DB2D5 /* SignalProcessingHelper.cpp in Sources */,
+				5CB1B4041CF8F287009DB2D5 /* SimpleSignalProcessor.cpp in Sources */,
+				5CB1B3FF1CF8F287009DB2D5 /* SimpleImageSegmenter.cpp in Sources */,
+				5CB1B3F81CF8F287009DB2D5 /* Circle.cpp in Sources */,
+				5CB1B3F51CF8F287009DB2D5 /* DummyAlgo.cpp in Sources */,
+				5CB1B3FA1CF8F287009DB2D5 /* CWUIHelper.cpp in Sources */,
+				5CB1B3F71CF8F287009DB2D5 /* PWAlgorithm.cpp in Sources */,
+				5CB1B4021CF8F287009DB2D5 /* ISignalProcessor.cpp in Sources */,
+				5CB1B3FE1CF8F287009DB2D5 /* IImageSegmenter.cpp in Sources */,
+				5CB1B3FC1CF8F287009DB2D5 /* helpers.cpp in Sources */,
+				5CB1B3F61CF8F287009DB2D5 /* MDStarbust.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
