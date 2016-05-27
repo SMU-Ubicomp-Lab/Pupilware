@@ -8,6 +8,7 @@
 #include "Algorithm/MDStarbust.hpp"
 #include "Algorithm/DummyAlgo.hpp"
 
+#include "ImageProcessing/BasicImageProcessor.hpp"
 //--------------------------------------
 
 using namespace cv;
@@ -30,12 +31,13 @@ int main(int argc, const char **argv) {
 
     Pupilware *pupilware = new Pupilware();
 
-    pupilware->loadFaceDetectionCascade(faceCascadePath);
+    pupilware->setImageProcessor( std::shared_ptr<BasicImageProcessor>(new BasicImageProcessor(faceCascadePath)));
+
     pupilware->loadVideo(videoFilePath);
 
     //pupilware->setAlgorithm(new DummyAlgo());
 
-    pupilware->setAlgorithm(new MDStarbust());
+    pupilware->setAlgorithm( std::shared_ptr<MDStarbust>(new MDStarbust()));
 
     pupilware->execute();
 

@@ -13,6 +13,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "Algorithm/PWAlgorithm.hpp"
+#include "ImageProcessing/IImageProcessor.hpp"
 
 namespace pw {
 
@@ -23,25 +24,22 @@ namespace pw {
 
         ~Pupilware();
 
-        void loadFaceDetectionCascade(const std::string &filePath);
         void loadVideo(const std::string &videoFilePath);
 
-        void setAlgorithm(PWAlgorithm *algorithm);
+        void setAlgorithm(std::shared_ptr<PWAlgorithm> algorithm);
+
+        void setImageProcessor(std::shared_ptr<IImageProcessor> imgProcessor);
 
         void execute();
 
     private:
         cv::VideoCapture capture;
-        cv::CascadeClassifier faceCascade;
 
-        PWAlgorithm *algorithm;
+        std::shared_ptr<PWAlgorithm> algorithm;
 
-        bool findFace(const cv::Mat grayFrame, cv::Rect &outFaceRect);
+        std::shared_ptr<IImageProcessor> imgProcessor;
 
-        void extractEyes(cv::Rect faceROI, cv::Rect &outLeftEyeRegion, cv::Rect &outRightEyeRegion);
-
-        cv::Point2f fineEyeCenter(const cv::Mat eyeROI);
-
+        void executeFrame(const cv::Mat colorFrame);
         void computePupilSize(const cv::Mat colorEyeFrame, PupilMeta &pupilMeta);
     };
 }
