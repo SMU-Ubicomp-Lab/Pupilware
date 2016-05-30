@@ -20,11 +20,13 @@ namespace pw {
         virtual ~DummyAlgo();
         
         virtual void init();
-        virtual PWResult process(cv::Mat colorEyeImage, PupilMeta& outPupilMeta);
+        virtual PWResult process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta);
         virtual void exit();
         
     private:
-        // Your private member variables here.
+        int th;
+
+        std::shared_ptr<CVWindow> thWin;
         
     };
 }

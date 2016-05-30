@@ -8,6 +8,8 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
 
+#include "CVWindow.hpp"
+
 namespace cw {
 
     void showGraph(const char *name,
@@ -18,6 +20,23 @@ namespace cw {
 
     int showImage(const char *name, const cv::Mat img, int delayInMilliSec = 1);
 
+    std::shared_ptr<pw::CVWindow> createWindow( const std::string& winName);
+
+
+    void namedWindow(const std::string& winName,
+                     int flag=cv::WINDOW_NORMAL);
+
+
+    void createTrackbar(const std::string& barName,
+                    const std::string& windowName,
+                    int& value, int max,
+                    cv::TrackbarCallback callback = nullptr,
+                    void* userData = nullptr );
+
+
+    void imshow(const std::string& winName, cv::InputArray mat);
+
+    int waitKey(int delay);
 
 }
 

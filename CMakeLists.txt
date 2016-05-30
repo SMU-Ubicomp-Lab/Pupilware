@@ -25,7 +25,7 @@ set(SOURCE_FILES
         Pupilware/PupilMeta.cpp
         Pupilware/PupilMeta.hpp
         Pupilware/Pupilware.cpp
-        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp)
+        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp Pupilware/etc/CVWindow.cpp Pupilware/etc/CVWindow.hpp)
 
 find_package( OpenCV REQUIRED )
 add_executable( Pupilware ${SOURCE_FILES})
