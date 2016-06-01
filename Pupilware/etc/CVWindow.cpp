@@ -9,7 +9,7 @@ namespace pw{
 
     CVWindow::CVWindow(const std::string& winName):
     winName(winName){
-        cv::namedWindow(winName, CV_WINDOW_NORMAL | CV_GUI_NORMAL);
+        cv::namedWindow(winName, CV_WINDOW_NORMAL);
     }
 
     CVWindow::CVWindow(const CVWindow &other) {
@@ -33,9 +33,14 @@ namespace pw{
 
     }
 
-    void CVWindow::update(cv::Mat mat ) {
+    int CVWindow::update(cv::Mat mat) {
 
         cv::imshow(winName, mat);
+        return cv::waitKey(100);
+    }
+
+    void CVWindow::setTrackbarValue( const std::string& name, int value ) const{
+        cv::setTrackbarPos(name, winName, value);
     }
 
 }

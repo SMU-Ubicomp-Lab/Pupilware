@@ -33,8 +33,11 @@ namespace pw {
     
     PWResult MDStarbust::process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta)
     {
-        float leftPupilRadius = max(findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye"), _oldLeftRadius);
-        float rightPupilRadius = max(findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye"), _oldRightRadius);
+//        float leftPupilRadius = max(findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye"), _oldLeftRadius);
+//        float rightPupilRadius = max(findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye"), _oldRightRadius);
+
+        float leftPupilRadius = findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye");
+        float rightPupilRadius = findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye");
 
         //! Store data for next frame used.
         _oldLeftRadius = leftPupilRadius;

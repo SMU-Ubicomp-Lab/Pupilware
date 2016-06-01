@@ -21,9 +21,12 @@ namespace pw{
                          int* value,
                          int max=255);
 
-        void update(cv::Mat mat);
+        int update(cv::Mat mat);
 
         void moveWindow(int x, int y);
+
+        void setTrackbarValue( const std::string& name, int value ) const;
+
     private:
         std::string winName;
 

@@ -10,6 +10,11 @@
 
 #include "SignalProcessing/SimpleSignalProcessor.hpp"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+#include <sstream>
+
 using namespace std;
 using namespace cv;
 
@@ -17,8 +22,15 @@ using namespace cv;
 namespace pw {
 
 
-    Pupilware::Pupilware() {
+    Pupilware::Pupilware():
+    currentFrame(0),
+    isPlaying(false),
+    mainWindow(new CVWindow("MainWindow"))
+    {
+
         cv::VideoCapture capture = cv::VideoCapture();
+
+
 
     }
 
@@ -62,37 +74,88 @@ namespace pw {
             return;
         }
 
+        ostringstream convert;
 
         if (capture.isOpened()) {
+
+            preCacheVideoFrames();
+
+            mainWindow->addTrackbar("frame", &currentFrame, videoFrames.size()-1);
+            eyeDistance.resize(videoFrames.size());
+            leftPupilRadius.resize(videoFrames.size());
+            rightPupilRadius.resize(videoFrames.size());
 
             algorithm->init();
 
             Mat colorFrame;
 
             while (true) {
-                capture >> colorFrame;
+                colorFrame = videoFrames[currentFrame];
+
+                double secondPFrame = 0.0;
 
                 if (!colorFrame.empty()) {
-
+                    double e1 = cv::getTickCount();
                     executeFrame( colorFrame, imgSeg, algorithm );
+                    double e2 = cv::getTickCount();
 
-                }
-                else {
-
-                    algorithm->exit();
-
-                    processPupilSignal();
-
-                    cout << " No captured frame -- Break";
+                    secondPFrame = (e2-e1)/cv::getTickFrequency();
+                } else{
+                    cerr << "[Error] the frame is empty.";
                     break;
                 }
 
+                Mat debugMat = colorFrame.clone();
+
+                convert.str("");
+                convert <<"SPF:"<< static_cast<float>(secondPFrame);
+
+                cv::putText(debugMat, convert.str() , cv::Point(50,100),FONT_HERSHEY_SIMPLEX, 2, cv::Scalar(200,90,0),5);
+                int key = mainWindow->update(debugMat);
+                if( key == 'p')
+                    isPlaying = !isPlaying;
+                else if( key == 'e')
+                    break;
+
+                cw::showGraph("left pupil size", leftPupilRadius, 1);
+                cw::showGraph("right pupil size", rightPupilRadius, 1);
+                cw::showGraph("eye distance", eyeDistance, 1);
+
+                if(isPlaying)
+                {
+                    currentFrame++;
+                    currentFrame = (currentFrame < videoFrames.size()) ? currentFrame:videoFrames.size()-1;
+
+                    mainWindow->setTrackbarValue("frame", currentFrame);
+                }
+
             }
+
+            algorithm->exit();
+
+            processPupilSignal();
 
         }
         else {
             cout << "[Warning] the video has not yet loaded." << endl;
         }
+    }
+
+    void Pupilware::preCacheVideoFrames() {
+        Mat colorFrame;
+
+        while (true) {
+            capture >> colorFrame;
+
+                if (!colorFrame.empty()) {
+                    videoFrames.push_back(colorFrame.clone());
+                }
+                else {
+                    cout << " Finished Load frame. There are " << videoFrames.size() << " frames" << endl;
+                    break;
+                }
+
+            }
     }
 
     void Pupilware::executeFrame(const Mat colorFrame,
@@ -144,9 +207,9 @@ namespace pw {
 
         //! Store data to lists
         //
-        leftPupilRadius.push_back( eyeMeta.getLeftPupilRadius() );
-        rightPupilRadius.push_back( eyeMeta.getRightPupilRadius() );
-        eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
+        leftPupilRadius[currentFrame] = ( eyeMeta.getLeftPupilRadius() );
+        rightPupilRadius[currentFrame] = ( eyeMeta.getRightPupilRadius() );
+        eyeDistance[currentFrame] = ( cw::calDistance(leftEyeCenter, rightEyeCenter) );
     }
 
 
@@ -173,9 +236,6 @@ namespace pw {
                     rightPupilRadius,
                     eyeDistance, result);
 
-        cw::showGraph("left pupil size", leftPupilRadius, 1);
-        cw::showGraph("right pupil size", rightPupilRadius, 1);
-        cw::showGraph("eye distance", eyeDistance, 1);
         cw::showGraph("after signal processing", result, 0);
 
     }

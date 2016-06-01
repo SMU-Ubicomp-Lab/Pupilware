@@ -15,7 +15,10 @@
 #include "Algorithm/PWAlgorithm.hpp"
 #include "ImageProcessing/IImageSegmenter.hpp"
 
+
 namespace pw {
+
+    class CVWindow;
 
     class Pupilware {
 
@@ -51,6 +54,12 @@ namespace pw {
         std::vector<float>                  rightPupilRadius;
 
 
+        std::vector<cv::Mat>                 videoFrames;
+
+        int currentFrame;
+        bool isPlaying;
+
+        std::shared_ptr<CVWindow> mainWindow;
 
         /*!
          * Execute Pupilware pipeline only one given frame
@@ -75,6 +84,8 @@ namespace pw {
          * Process pupil size data at the end
          * */
         void processPupilSignal();
+
+        void preCacheVideoFrames();
     };
 }
 

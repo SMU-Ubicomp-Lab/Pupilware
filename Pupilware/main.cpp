@@ -33,11 +33,11 @@ int main(int argc, const char **argv) {
 
     pupilware->loadVideo( videoFilePath );
 
-//    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
-//                       std::shared_ptr<MDStarbust>(new MDStarbust()) );
-
     pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
-                       std::shared_ptr<DummyAlgo>(new DummyAlgo()) );
+                       std::shared_ptr<MDStarbust>(new MDStarbust()) );
+
+//    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
+//                       std::shared_ptr<DummyAlgo>(new DummyAlgo()) );
 
     return 0;
 }
