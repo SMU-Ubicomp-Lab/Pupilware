@@ -14,6 +14,7 @@
 #include <math.h>
 
 #include <sstream>
+#include "etc/PWGraph.hpp"
 
 using namespace std;
 using namespace cv;
@@ -24,12 +25,12 @@ namespace pw {
 
     Pupilware::Pupilware():
     currentFrame(0),
-    isPlaying(false),
+    isPlaying(0),
     mainWindow(new CVWindow("MainWindow"))
     {
 
         cv::VideoCapture capture = cv::VideoCapture();
-
+        mainWindow->addTrackbar("play", &isPlaying, 1);
 
 
     }
@@ -74,6 +75,7 @@ namespace pw {
             return;
         }
 
+
         ostringstream convert;
 
         if (capture.isOpened()) {
@@ -117,11 +119,20 @@ namespace pw {
                 else if( key == 'e')
                     break;
 
-                cw::showGraph("left pupil size", leftPupilRadius, 1);
-                cw::showGraph("right pupil size", rightPupilRadius, 1);
+
+                // If you want to plot many graphs at the same plot, use PWGraph instead
+                //
+                std::shared_ptr<pw::PWGraph> leftGraph(new pw::PWGraph("Left-(red) Right-(green) pupil size"));
+                leftGraph->drawGraph("left", leftPupilRadius, cv::Scalar(255,0,0) );
+                leftGraph->drawGraph("right", rightPupilRadius, cv::Scalar(0,255,255) );
+                leftGraph->show();
+
+
+                // If you want to plot quick graph
+                //
                 cw::showGraph("eye distance", eyeDistance, 1);
 
-                if(isPlaying)
+                if(isPlaying == 1)
                 {
                     currentFrame++;
                     currentFrame = (currentFrame < videoFrames.size()) ? currentFrame:videoFrames.size()-1;

@@ -8,11 +8,13 @@
 #include "CVWindow.hpp"
 
 namespace cw {
+
+
     void showGraph(const char *name, const std::vector<float> &dataSrc, int delayInMilliSec, cv::Scalar color) {
         
         setCustomGraphColor(static_cast<int>(color[0]),
                             static_cast<int>(color[1]),
-                            static_cast<int>(color[3]));
+                            static_cast<int>(color[2]));
         
         showFloatGraph(name,
                        dataSrc.data(),

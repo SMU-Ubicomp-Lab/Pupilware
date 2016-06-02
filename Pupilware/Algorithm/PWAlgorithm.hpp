@@ -9,7 +9,7 @@
 #ifndef AlgorithmBase_hpp
 #define AlgorithmBase_hpp
 
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 #include "../PupilMeta.hpp"
 
 #include "../etc/CWUIHelper.hpp"

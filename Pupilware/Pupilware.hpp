@@ -57,7 +57,7 @@ namespace pw {
         std::vector<cv::Mat>                 videoFrames;
 
         int currentFrame;
-        bool isPlaying;
+        int isPlaying;
 
         std::shared_ptr<CVWindow> mainWindow;
 

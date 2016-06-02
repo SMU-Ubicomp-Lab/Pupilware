@@ -36,7 +36,7 @@ namespace pw{
     int CVWindow::update(cv::Mat mat) {
 
         cv::imshow(winName, mat);
-        return cv::waitKey(100);
+        return cv::waitKey(1);
     }
 
     void CVWindow::setTrackbarValue( const std::string& name, int value ) const{
