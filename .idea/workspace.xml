@@ -15,13 +15,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/exit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/avatar-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/avatar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/book.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/cancel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/dislike.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/download-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/download.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/envelope.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/folder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/garbage.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/glasses.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/hand.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/headphones.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/heart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/house.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/like.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/link.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/logout.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/magnifying-glass.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/monitor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/musical-note.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/next-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/next.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/padlock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/paper-plane.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/phone-call.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/photo-camera.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/pie-chart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/piggy-bank.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/placeholder.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/printer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/reload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/settings-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/settings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/share.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/shopping-bag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/shopping-cart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/shuffle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/speaker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/star.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/tag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/upload-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/upload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/icons/vector.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/images/logout.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/UI/MainFrame.fbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware.xcodeproj/project.xcworkspace/xcuserdata/redeian.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Pupilware.xcodeproj/project.xcworkspace/xcuserdata/redeian.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pupilware.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp" afterPath="$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp" afterPath="$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/main.cpp" afterPath="$PROJECT_DIR$/Pupilware/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" />
     </list>
     <ignored path="Pupilware.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +98,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pupilware.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CWUIHelper.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pupilware.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="245" column="72" selection-start-line="245" selection-start-column="72" selection-end-line="245" selection-end-column="72" />
+            <state relative-caret-position="3885">
+              <caret line="259" column="60" selection-start-line="259" selection-start-column="60" selection-end-line="259" selection-end-column="60" />
               <folding>
                 <element signature="e#158#182#0" expanded="true" />
                 <element signature="e#265#282#0" expanded="true" />
@@ -60,36 +121,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignalProcessingHelper.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp">
+      <file leaf-file-name="Pupilware.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1626">
-              <caret line="66" column="20" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="20" />
+            <state relative-caret-position="375">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="38" selection-end-column="55" />
               <folding>
-                <element signature="e#56#93#0" expanded="true" />
+                <element signature="e#203#220#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignalProcessingHelper.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-              <folding>
-                <element signature="e#148#165#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleSignalProcessor.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +136,7 @@
       <file leaf-file-name="PWGraph.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="465">
               <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
               <folding>
                 <element signature="e#55#77#0" expanded="true" />
@@ -106,34 +145,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleImageSegmenter.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PWGraph.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="315">
               <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pupilware.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <element signature="e#203#220#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -141,8 +158,40 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="40" column="80" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
+            <state relative-caret-position="75">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="15" selection-end-column="19" />
+              <folding>
+                <element signature="e#131#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PWAlgorithm.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MDStarbust.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MDStarbust.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3225">
+              <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,8 +200,8 @@
       <file leaf-file-name="SimpleSignalProcessor.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="41" selection-end-column="72" />
+            <state relative-caret-position="525">
+              <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -171,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data/haarcascade_frontalface_default.xml" />
         <option value="$PROJECT_DIR$/data/haarcascade_fullbody.xml" />
         <option value="$PROJECT_DIR$/data/haarcascade_lefteye_2splits.xml" />
         <option value="$PROJECT_DIR$/data/haarcascade_lowerbody.xml" />
@@ -221,6 +269,7 @@
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
       </list>
     </option>
@@ -232,8 +281,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="-944" />
+    <option name="x" value="11" />
+    <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="828" />
   </component>
@@ -326,25 +375,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ImageProcessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="etc" />
+              <option name="myItemId" value="Algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -684,30 +715,37 @@
       <option name="project" value="LOCAL" />
       <updated>1464973295454</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="- Add fast median filter (5x faster than my un-Optimized algorithm)&#10;&#10;- smooth left eye and plot graph in realtime&#10;&#10;- fixed color in consistency in DrawGraph (RBG -&gt; RGB)">
+      <created>1464980583301</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1464980583301</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-944" width="1400" height="828" extended-state="0" />
-    <editor active="true" />
+    <frame x="11" y="23" width="1400" height="828" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16606237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16606237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4388587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33831522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33831522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24456522" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24945612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3980978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4388587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -730,7 +768,8 @@
     <MESSAGE value="preCache frames&#10;add main window to control frame." />
     <MESSAGE value="Add PWGraph: wapper of GraphUtils.&#10;cache all video frames" />
     <MESSAGE value="Major refactor Pupilware class&#10;- hide implementation from header&#10;- simplify Exec method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major refactor Pupilware class&#10;- hide implementation from header&#10;- simplify Exec method" />
+    <MESSAGE value="- Add fast median filter (5x faster than my un-Optimized algorithm)&#10;&#10;- smooth left eye and plot graph in realtime&#10;&#10;- fixed color in consistency in DrawGraph (RBG -&gt; RGB)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Add fast median filter (5x faster than my un-Optimized algorithm)&#10;&#10;- smooth left eye and plot graph in realtime&#10;&#10;- fixed color in consistency in DrawGraph (RBG -&gt; RGB)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,28 +849,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="106" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/etc/CVWindow.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="e#119#136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="1330" column="0" selection-start-line="1330" selection-start-column="0" selection-end-line="1330" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,7 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,21 +884,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="e#215#244#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/opencv2/core/types_c.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="186" column="8" selection-start-line="186" selection-start-column="8" selection-end-line="186" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,9 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#159#183#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -901,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2340">
           <caret line="156" column="28" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,17 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding>
-            <element signature="e#56#81#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,31 +948,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareImpl.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareImpl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareImpl.cpp" />
+    <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareImpl.hpp" />
     <entry file="file://$PROJECT_DIR$/Pupilware/PupilMeta.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="699" selection-start-line="27" selection-start-column="699" selection-end-line="27" selection-end-column="699" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,9 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="1707" column="17" selection-start-line="1707" selection-start-column="17" selection-end-line="1707" selection-end-column="17" />
-          <folding>
-            <element signature="e#41781#41795#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,25 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-387">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="40" column="80" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#203#220#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1043,15 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="41" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,7 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,9 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-          <folding>
-            <element signature="e#148#165#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,15 +1013,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1626">
           <caret line="66" column="20" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="20" />
-          <folding>
-            <element signature="e#56#93#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="465">
           <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
           <folding>
             <element signature="e#55#77#0" expanded="true" />
@@ -1093,22 +1050,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="245" column="72" selection-start-line="245" selection-start-column="72" selection-end-line="245" selection-end-column="72" />
+        <state relative-caret-position="3885">
+          <caret line="259" column="60" selection-start-line="259" selection-start-column="60" selection-end-line="259" selection-end-column="60" />
           <folding>
             <element signature="e#158#182#0" expanded="true" />
             <element signature="e#265#282#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="38" selection-end-column="55" />
+          <folding>
+            <element signature="e#203#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="e#131#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3225">
+          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

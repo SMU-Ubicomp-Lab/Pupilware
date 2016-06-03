@@ -36,10 +36,10 @@ namespace pw{
         cv::add(leftEyeRadius, rightEyeRadius, pupilDiameter);
 
         std::vector<float> smoothPupilDiameter;
-        cw::medfilt(pupilDiameter, smoothPupilDiameter, MEDIAN_WINDOW_SIZE);
+        cw::fastMedfilt(pupilDiameter, smoothPupilDiameter, MEDIAN_WINDOW_SIZE);
 
         std::vector<float>smoothEyeDistance;
-        cw::medfilt(eyeDistance, smoothEyeDistance, MEDIAN_WINDOW_SIZE);
+        cw::fastMedfilt(eyeDistance, smoothEyeDistance, MEDIAN_WINDOW_SIZE);
 
         std::vector<float> pupilSize_EyeDistance_Ratio;
         for (size_t i=0; i<smoothPupilDiameter.size(); i++) {

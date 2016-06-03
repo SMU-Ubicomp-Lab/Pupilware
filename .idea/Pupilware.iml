@@ -13,13 +13,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/PWGraph.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWUIHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CVWindow.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/helpers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/GraphUtils.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWUIHelper.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CVWindow.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/helpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/PupilMeta.hpp" isTestSource="false" />

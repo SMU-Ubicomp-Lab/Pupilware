@@ -240,17 +240,24 @@ namespace pw {
             cw::fastMedfilt(leftPupilRadius, smoothLeft, 11);
 
 
-            shared_ptr<PWGraph> smooth(new PWGraph("Smooth(red) Org(blue) smooth pupil size"));
-            smooth->move(500,400);
+            shared_ptr<PWGraph> smoothEye(new PWGraph("Smooth(red) Org(blue) smooth pupil size"));
+            smoothEye->move(500,400);
+            smoothEye->drawGraph("original", leftPupilRadius, Scalar(0, 100, 200), 0, 13, 0, 250);
+            smoothEye->drawGraph("smooth", smoothLeft, Scalar(255, 0, 0), 0, 13, 0, 250);
+            smoothEye->show();
 
-            smooth->drawGraph("original", leftPupilRadius, Scalar(0, 100, 200), 0, 13, 0, 250);
-            smooth->drawGraph("smooth me", smoothLeft, Scalar(255, 0, 0), 0, 13, 0, 250);
 
-            smooth->show();
 
-            // If you want to plot quick graph
-            //
-            cw::showGraph("eye distance", eyeDistance, 1);
+            std::vector<float> smoothDistance;
+            cw::fastMedfilt(eyeDistance, smoothDistance, 11);
+
+            shared_ptr<PWGraph> eyeDistanceG(new PWGraph("Smooth(red) Org(blue) EyeCenter"));
+            eyeDistanceG->move(10,400);
+            eyeDistanceG->drawGraph("original", eyeDistance, Scalar(0, 100, 200), 0, 130, 0, 250);
+            eyeDistanceG->drawGraph("smooth", smoothDistance, Scalar(255, 0, 0), 0, 130, 0, 250);
+            eyeDistanceG->show();
+
+//            cw::showGraph("eye distance", eyeDistance, 1);
         }
 
 
