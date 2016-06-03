@@ -41,7 +41,9 @@ int main(int argc, const char **argv) {
     const string faceCascadePath = dataPath + "haarcascade_frontalface_alt.xml";
 
 
-    Pupilware *pupilware = new Pupilware();
+    // If you want to pre cache the video put true (longer load time, but more control)
+    // If not, put fault (good for a large video, and quick experiment)
+    Pupilware *pupilware = Pupilware::Create(false);
 
     pupilware->loadVideo( videoFilePath );
 
