@@ -64,6 +64,13 @@ namespace cw {
         filterSignal(input, output, windowSize, median);
     }
 
+    void fastMedfilt( std::vector<float>& input,
+                  std::vector<float>& output, int windowSize)
+    {
+        cw::FastMedianFilter medfiltF(windowSize);
+        output = medfiltF.filter(input);
+    }
+
     void movingAverage( std::vector<float>& input, std::vector<float>& output, int windowSize)
     {
         filterSignal(input, output, windowSize, average);
@@ -127,5 +134,76 @@ namespace cw {
 
         assert(output.size() > 0);
     }
+
+    ////////////////////////////////
+
+
+    unsigned keep_odd(unsigned n)
+    {
+        if(n % 2 == 0) return n + 1;
+
+        return n;
+    }
+
+
+    FastMedianFilter::FastMedianFilter(unsigned window_size)
+                :
+                _history(keep_odd(window_size), float()),
+                _pool(_history),
+                _median(window_size / 2 + 1)
+        {
+            assert(window_size >= 3);
+        }
+
+
+        std::vector<float> FastMedianFilter::filter(const std::vector<float> & in)
+        {
+            assert(in.size() > 0);
+
+            //---------------------------------------------------------------------
+            // init state
+
+            unsigned hist_ptr = 0;
+
+            std::fill(_history.begin(), _history.end(), in[0]);
+            std::fill(_pool.begin(), _pool.end(), in[0]);
+
+            // pool is keep sorted
+
+            //---------------------------------------------------------------------
+            // filter input
+
+            std::vector<float> out;
+            out.reserve(in.size());
+
+            for(auto x : in)
+            {
+                // step 1, remove oldest value from the pool.
+
+                auto last = _history[hist_ptr];
+
+                auto last_pos = std::lower_bound(_pool.begin(), _pool.end(), last);
+
+                _pool.erase(last_pos);
+
+                // step 2, insert new value into pool
+
+                auto insert_pos = std::lower_bound(_pool.begin(), _pool.end(), x);
+
+                _pool.insert(insert_pos, x);
+
+                // step 3, write input value into history.
+
+                _history[hist_ptr] = x;
+
+                hist_ptr = (hist_ptr + 1) % _history.size();
+
+                // median is always the middle of the pool
+
+                out.push_back(_pool[_median]);
+            }
+
+            return out;
+        }
 
 }

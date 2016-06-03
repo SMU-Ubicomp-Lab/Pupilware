@@ -19,7 +19,15 @@ namespace pw{
         PWGraph(const PWGraph& other);
         ~PWGraph();
 
-        void drawGraph(const char *name, const std::vector<float> &dataSrc, cv::Scalar color);
+        void drawGraph(const char *name,
+                       const std::vector<float> &dataSrc,
+                       cv::Scalar color,
+                       float minVal = 0.0,
+                       float maxVal = 0.0,
+                       int width = 0,
+                       int height = 0);
+
+        void move(int x, int y) const;
         void show() const;
     };
 

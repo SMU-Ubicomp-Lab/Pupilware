@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <cassert>
 
 namespace cw{
 
@@ -30,6 +31,27 @@ namespace cw{
                             int windowSize,
                             filterFunc filtFunc);
 
+
+    // This class is modified from Weegreenblobie benchmark test
+    // https://github.com/weegreenblobbie/median_filter_benchmark
+    class FastMedianFilter
+    {
+        std::vector<float> _history;
+        std::vector<float> _pool;
+        unsigned       _median;
+
+    public:
+
+        FastMedianFilter(unsigned window_size);
+
+        std::vector<float> filter(const std::vector<float> & in);
+
+    };
+
+
+    void fastMedfilt(       std::vector<float> &input,
+                            std::vector<float> &output,
+                            int windowSize);
 }
 
 

@@ -15,10 +15,11 @@
 
 #include <sstream>
 #include "etc/PWGraph.hpp"
+#include "SignalProcessing/SignalProcessingHelper.hpp"
+
 
 using namespace std;
 using namespace cv;
-
 
 namespace pw {
 
@@ -68,6 +69,7 @@ namespace pw {
 
             cv::VideoCapture capture = cv::VideoCapture();
             mainWindow->addTrackbar("play", &isPlaying, 1);
+            mainWindow->moveWindow(0,0);
 
 
         }
@@ -223,15 +225,28 @@ namespace pw {
         }
 
 
-        void updateGraphs() const {
+        void updateGraphs() {
 
             // If you want to plot many graphs at the same plot, use PWGraph instead
             //
-            shared_ptr<PWGraph> leftGraph(new PWGraph("Left-(red) Right-(green) pupil size"));
-            leftGraph->drawGraph("left", leftPupilRadius, Scalar(255, 0, 0) );
-            leftGraph->drawGraph("right", rightPupilRadius, Scalar(0, 255, 255) );
-            leftGraph->show();
+            shared_ptr<PWGraph> pupilSizeGraph(new PWGraph("Left-(red) Right-(green) pupil size"));
+            pupilSizeGraph->move(500,10);
+            pupilSizeGraph->drawGraph("left", leftPupilRadius, Scalar(255, 0, 0), 0, 13, 0, 250);
+            pupilSizeGraph->drawGraph("right", rightPupilRadius, Scalar(0, 255, 255), 0, 13, 0, 250);
+            pupilSizeGraph->show();
 
+
+            std::vector<float> smoothLeft;
+            cw::fastMedfilt(leftPupilRadius, smoothLeft, 11);
+
+
+            shared_ptr<PWGraph> smooth(new PWGraph("Smooth(red) Org(blue) smooth pupil size"));
+            smooth->move(500,400);
+
+            smooth->drawGraph("original", leftPupilRadius, Scalar(0, 100, 200), 0, 13, 0, 250);
+            smooth->drawGraph("smooth me", smoothLeft, Scalar(255, 0, 0), 0, 13, 0, 250);
+
+            smooth->show();
 
             // If you want to plot quick graph
             //
