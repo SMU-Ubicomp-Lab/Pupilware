@@ -24,7 +24,7 @@ namespace cw {
 
     int showImage(const char *name, const cv::Mat img, int delayInMilliSec) {
         
-        cv::namedWindow(name, CV_WINDOW_AUTOSIZE);
+        cv::namedWindow(name, CV_WINDOW_NORMAL | CV_WINDOW_KEEPRATIO);
         cv::imshow(name, img);
         return cv::waitKey(delayInMilliSec);
         

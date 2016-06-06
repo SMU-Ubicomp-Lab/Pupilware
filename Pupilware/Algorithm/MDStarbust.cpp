@@ -10,12 +10,15 @@
 #include "../etc/Ransac.h"
 
 using namespace cv;
+using namespace std;
 
 namespace pw {
-    
+
     MDStarbust::MDStarbust():
+    threshold(25),
+    rayNumber(15),
     degreeOffset(25),
-    primer(1.0f),
+    primer(1 * precision),
     _oldLeftRadius(0.0f),
     _oldRightRadius(0.0f){
 
@@ -29,6 +32,10 @@ namespace pw {
     void MDStarbust::init()
     {
         // Init code here
+        createTrackbar(&degreeOffset, "degree offset", 180);
+        createTrackbar(&rayNumber, "ray number", 200);
+        createTrackbar(&threshold, "threshold");
+        createTrackbar(&primer, "primer", precision*5);
     }
     
     PWResult MDStarbust::process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta)
@@ -62,7 +69,7 @@ namespace pw {
         increaseContrast(grayEye, eyeCenter);
 
         vector<Point2f>rays;
-        constructRays(rays);
+        createRays(rays);
 
         Mat debugColorEye = colorEyeFrame.clone();
 
@@ -164,7 +171,7 @@ namespace pw {
                     walking_intensity = nextPointIntensity;
                     walking_point = nextPoint;
 
-                    if((walking_intensity - *seed_intensity - getCost(i)) > 25)
+                    if((walking_intensity - *seed_intensity - getCost(i)) > threshold)
                     {
                         outEdgePoints.push_back(nextPoint);
                         break;
@@ -220,17 +227,25 @@ namespace pw {
     }
 
     float MDStarbust::getCost(int step) const {
-        return (primer * (MAX_WALKING_STEPS - step));
+        return ((primer/precision) * (MAX_WALKING_STEPS - step));
     }
 
 
-    void MDStarbust::constructRays(vector<Point2f> &rays) const {
-        const int RAY_NUMBER = 15;
-        const float step = M_PI/float(RAY_NUMBER);
+    void MDStarbust::createRays(vector<Point2f> &rays) const {
 
-        float offset_radians = (degreeOffset * M_PI / 180.0f);
+        // TODO: It does not have to create ray every frame.
 
-        for(float i=-offset_radians; i < M_PI+offset_radians; i+= step )
+        float radiansOffset = (degreeOffset * M_PI / 180.0f);
+
+        const float step = (2*M_PI - (radiansOffset*2))/float(rayNumber);
+
+        // The circle walk counter clock wise, because OpenCV is 'y' top->down.
+        // The beginning of rays are at the top of circle,
+        // and moves aways to the left and right with the number of offset
+        const float startLoc = -M_PI_2 + radiansOffset;
+        const float endLoc = M_PI + M_PI_2 - radiansOffset;
+
+        for(float i=startLoc; i < (endLoc); i+= step )
         {
             rays.push_back( Point2f( cos(i), sin(i)) );
         }

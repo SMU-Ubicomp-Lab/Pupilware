@@ -6,6 +6,7 @@
 // Include Pupilware Algorithm here -----
 #include "Pupilware.hpp"
 #include "Algorithm/MDStarbust.hpp"
+#include "Algorithm/MDStarbustNeo.hpp"
 #include "Algorithm/DummyAlgo.hpp"
 
 #include "ImageProcessing/SimpleImageSegmenter.hpp"
@@ -24,6 +25,8 @@ void processPupilSignal();
  * @function main
  */
 int main(int argc, const char **argv) {
+
+    std::cerr << cv::getBuildInformation();
 
     const string dataPath = "/Users/redeian/Documents/data/";
 
@@ -48,10 +51,7 @@ int main(int argc, const char **argv) {
     pupilware->loadVideo( videoFilePath );
 
     pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
-                       std::shared_ptr<MDStarbust>(new MDStarbust()) );
-
-//    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
-//                       std::shared_ptr<DummyAlgo>(new DummyAlgo()) );
+                       std::shared_ptr<MDStarbust>(new MDStarbustNeo()) );
 
     return 0;
 }

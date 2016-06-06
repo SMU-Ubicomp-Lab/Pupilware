@@ -7,10 +7,14 @@
 //
 
 #include "PWAlgorithm.hpp"
+#include "../etc/CVWindow.hpp"
 
 namespace pw {
 
-    PWAlgorithm::PWAlgorithm() { }
+    PWAlgorithm::PWAlgorithm():
+    window("Algorithm Debug Window"){
+
+    }
 
     PWAlgorithm::~PWAlgorithm() { }
 
@@ -21,6 +25,16 @@ namespace pw {
 
     void PWAlgorithm::exit() {
         
+    }
+
+
+    void PWAlgorithm::createTrackbar(int *variable, const std::string &label, int max) {
+
+        assert(!label.empty());
+        assert(max > 0);
+        assert(variable != nullptr);
+
+        window.addTrackbar(label, variable, max);
     }
 
 }

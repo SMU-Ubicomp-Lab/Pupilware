@@ -15,6 +15,7 @@
 #include "../etc/CWUIHelper.hpp"
 #include "../etc/CWCVUtility.hpp"
 
+
 namespace pw{
     
     enum PWResult{
@@ -35,7 +36,14 @@ namespace pw{
         virtual PWResult process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta) =0;
         
         virtual void exit();
-        
+
+
+    protected:
+        cv::Mat debugImg;
+        void createTrackbar(int *variable, const std::string &label, int max = 255);
+
+    private:
+        CVWindow window;
         
     };
 }
