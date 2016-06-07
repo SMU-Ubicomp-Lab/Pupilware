@@ -14,7 +14,9 @@
 #include <math.h>
 
 #include <sstream>
+
 #include "etc/PWGraph.hpp"
+#include "Algorithm/PWDataModel.hpp"
 #include "SignalProcessing/SignalProcessingHelper.hpp"
 
 
@@ -22,7 +24,6 @@ using namespace std;
 using namespace cv;
 
 namespace pw {
-
 
     class PupilwareImpl: public Pupilware {
     public:
@@ -32,8 +33,9 @@ namespace pw {
 
         //TODO: Make these to circular buffers. In case we have a very long video, or streaming
         std::vector<float>                  eyeDistance;
-        std::vector<float>                  leftPupilRadius;
-        std::vector<float>                  rightPupilRadius;
+
+        std::map<std::shared_ptr<PWAlgorithm>,
+                 std::shared_ptr<PWDataModel> > algorithms;
 
 
         // Store ref to a current active frame image.
@@ -103,17 +105,25 @@ namespace pw {
         }
 
 
+        void addPupilSizeAlgorithm( std::shared_ptr<PWAlgorithm> algorithm){
+            assert(algorithm != nullptr);
+            assert(algorithms.size() < 5); // only support maximum to 5 for now.
+
+            std::shared_ptr<PWDataModel> x(new PWDataModel());
+            algorithms[algorithm] = x;
+        }
+
+
         /*!
          * Execute Pupilware pipeline.
          * */
-        void execute( std::shared_ptr<IImageSegmenter> imgSeg,
-                      std::shared_ptr<PWAlgorithm> algorithm          ){
+        void execute( std::shared_ptr<IImageSegmenter> imgSeg ){
 
-            assert(algorithm != nullptr);
+            assert(algorithms.size() > 0);
             assert(imgSeg != nullptr);
 
-            if (algorithm == nullptr) {
-                cout << "[Warning] Algorithm is missing";
+            if (algorithms.size() <= 0) {
+                cout << "[Warning] Algorithm is missing. Please add algorithm first";
                 return;
             }
 
@@ -131,7 +141,7 @@ namespace pw {
 
                 initPupilSignalBuffer();
 
-                algorithm->init();
+                initAlgorithms();
 
                 while (true) {
 
@@ -143,11 +153,15 @@ namespace pw {
 
                     if (!colorFrame.empty()) {
 
-                        double e1 = cv::getTickCount();
-                        executeFrame( colorFrame, imgSeg, algorithm );
-                        double e2 = cv::getTickCount();
+                        for (auto it : algorithms) {
+                            auto algorithm = it.first;
 
-                        secondPFrame = (e2-e1)/cv::getTickFrequency();
+                            double e1 = cv::getTickCount();
+                            executeFrame(colorFrame, imgSeg, algorithm);
+                            double e2 = cv::getTickCount();
+
+                            secondPFrame = (e2 - e1) / cv::getTickFrequency();
+                        }
 
                     } else{
                         cerr << "[Error] the frame is empty.";
@@ -160,7 +174,8 @@ namespace pw {
 
                 }
 
-                algorithm->exit();
+                exitAlgorithms();
+
 
                 processPupilSignal();
 
@@ -169,6 +184,20 @@ namespace pw {
                 cout << "[Warning] the video has not yet loaded." << endl;
             }
 
+        }
+
+        void exitAlgorithms() const {
+            for (auto it : algorithms) {
+                    auto algorithm = it.first;
+                    algorithm->exit();
+                }
+        }
+
+        void initAlgorithms() const {
+            for (auto it : algorithms) {
+                    auto algorithm = it.first;
+                    algorithm->init();
+                }
         }
 
         Mat getFrame() const {
@@ -224,38 +253,50 @@ namespace pw {
 
         }
 
+        const Scalar colors[5] = {
+                Scalar(255, 0, 0),
+                Scalar(0, 255, 0),
+                Scalar(0, 0, 255),
+                Scalar(255, 0, 255),
+                Scalar(255, 255, 0)
+        };
 
         void updateGraphs() {
 
-            // If you want to plot many graphs at the same plot, use PWGraph instead
-            //
+
             shared_ptr<PWGraph> pupilSizeGraph(new PWGraph("Left-(red) Right-(green) pupil size"));
-            pupilSizeGraph->move(500,10);
-            pupilSizeGraph->drawGraph("left", leftPupilRadius, Scalar(255, 0, 0), 0, 13, 0, 250);
-            pupilSizeGraph->drawGraph("right", rightPupilRadius, Scalar(0, 255, 255), 0, 13, 0, 250);
+            pupilSizeGraph->move(500, 10);
+
+            int i =0;
+            for(auto it: algorithms) {
+                auto storage = it.second;
+                pupilSizeGraph->drawGraph("left", storage->getLeftPupilSizes(), colors[i], 0, 13, 0, 250);
+                i++;
+            }
+
             pupilSizeGraph->show();
 
-
-            std::vector<float> smoothLeft;
-            cw::fastMedfilt(leftPupilRadius, smoothLeft, 11);
-
-
-            shared_ptr<PWGraph> smoothEye(new PWGraph("Smooth(red) Org(blue) smooth pupil size"));
-            smoothEye->move(500,400);
-            smoothEye->drawGraph("original", leftPupilRadius, Scalar(0, 100, 200), 0, 13, 0, 250);
-            smoothEye->drawGraph("smooth", smoothLeft, Scalar(255, 0, 0), 0, 13, 0, 250);
-            smoothEye->show();
-
+//                std::vector<float> smoothLeft;
+//                cw::fastMedfilt(storage->getLeftPupilSizes(), smoothLeft, 11);
+//
+//
+//                shared_ptr<PWGraph> smoothEye(new PWGraph("Smooth(red) Org(blue) smooth pupil size"));
+//                smoothEye->move(500, 400);
+//                smoothEye->drawGraph("original", storage->getLeftPupilSizes(), Scalar(0, 100, 200), 0, 13, 0, 250);
+//                smoothEye->drawGraph("smooth", smoothLeft, Scalar(255, 0, 0), 0, 13, 0, 250);
+//                smoothEye->show();
 
 
-            std::vector<float> smoothDistance;
-            cw::fastMedfilt(eyeDistance, smoothDistance, 11);
 
-            shared_ptr<PWGraph> eyeDistanceG(new PWGraph("Smooth(red) Org(blue) EyeCenter"));
-            eyeDistanceG->move(10,400);
-            eyeDistanceG->drawGraph("original", eyeDistance, Scalar(0, 100, 200), 0, 130, 0, 250);
-            eyeDistanceG->drawGraph("smooth", smoothDistance, Scalar(255, 0, 0), 0, 130, 0, 250);
-            eyeDistanceG->show();
+
+//            std::vector<float> smoothDistance;
+//            cw::fastMedfilt(eyeDistance, smoothDistance, 11);
+//
+//            shared_ptr<PWGraph> eyeDistanceG(new PWGraph("Smooth(red) Org(blue) EyeCenter"));
+//            eyeDistanceG->move(10,400);
+//            eyeDistanceG->drawGraph("original", eyeDistance, Scalar(0, 100, 200), 0, 130, 0, 250);
+//            eyeDistanceG->drawGraph("smooth", smoothDistance, Scalar(255, 0, 0), 0, 130, 0, 250);
+//            eyeDistanceG->show();
 
 //            cw::showGraph("eye distance", eyeDistance, 1);
         }
@@ -266,16 +307,19 @@ namespace pw {
             if(isPreCacheVideo)
             {
                 eyeDistance.resize(videoFrames.size());
-                leftPupilRadius.resize(videoFrames.size());
-                rightPupilRadius.resize(videoFrames.size());
+
+                for( auto it: algorithms){
+                    auto storage = it.second;
+                    storage->resize(videoFrames.size());
+
+                }
+
             } else{
 
                 // We don't know what the number of frames are.
                 // So we init with 0, so that there is something
                 // for graph module to work with.
                 eyeDistance.resize(1);
-                leftPupilRadius.resize(1);
-                rightPupilRadius.resize(1);
             }
 
         }
@@ -295,6 +339,7 @@ namespace pw {
         void executeFrame(const cv::Mat colorFrame,
                           std::shared_ptr<IImageSegmenter> imgSeg,
                           std::shared_ptr<PWAlgorithm> algorithm ){
+
             assert(!colorFrame.empty());
 
             std::vector<Mat> frameChannels;
@@ -333,49 +378,35 @@ namespace pw {
             PupilMeta eyeMeta;
 
             eyeMeta.setEyeCenter(leftEyeCenter, rightEyeCenter);
-            computePupilSize(colorFace(leftEyeRegion),
-                             colorFace(rightEyeRegion),
-                             eyeMeta, algorithm);
+            eyeMeta.setEyeImages(colorFace(leftEyeRegion),
+                                 colorFace(rightEyeRegion));
+            eyeMeta.setFrameNumber(currentFrameNumber);
 
+            PWPupilSize result = computePupilSize( eyeMeta, algorithm );
 
             //! Store data to lists
             //
 
-            if(isPreCacheVideo){
-                leftPupilRadius[currentFrameNumber] = ( eyeMeta.getLeftPupilRadius() );
-                rightPupilRadius[currentFrameNumber] = ( eyeMeta.getRightPupilRadius() );
+            auto storage = algorithms[algorithm];
+            storage->setPupilSizeAt( currentFrameNumber, result );
+
+            if(isPreCacheVideo)
                 eyeDistance[currentFrameNumber] = ( cw::calDistance(leftEyeCenter, rightEyeCenter) );
-            }
-            else{
-                if(currentFrameNumber >= leftPupilRadius.size() )
-                {
-                    leftPupilRadius.push_back( eyeMeta.getLeftPupilRadius() );
-                    rightPupilRadius.push_back( eyeMeta.getRightPupilRadius() );
-                    eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
+            else
+                eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
 
-                } else{
-
-                    leftPupilRadius[currentFrameNumber] = ( eyeMeta.getLeftPupilRadius() );
-                    rightPupilRadius[currentFrameNumber] = ( eyeMeta.getRightPupilRadius() );
-                    eyeDistance[currentFrameNumber] = ( cw::calDistance(leftEyeCenter, rightEyeCenter) );
-                }
-
-            }
         }
-
 
 
         /*!
          * Compute pupil size with PWAlgorithm object
          * */
-        void computePupilSize( const cv::Mat colorLeftEyeFrame,
-                               const cv::Mat colorRightEyeFrame,
-                               PupilMeta &pupilMeta,
+        PWPupilSize computePupilSize( const PupilMeta& pupilMeta,
                                std::shared_ptr<PWAlgorithm> algorithm ){
 
             assert(algorithm != nullptr);
 
-            algorithm->process(colorLeftEyeFrame, colorRightEyeFrame, pupilMeta);
+            return algorithm->process(pupilMeta);
         }
 
 
@@ -385,15 +416,24 @@ namespace pw {
          * */
         void processPupilSignal(){
 
-            std::unique_ptr<BasicSignalProcessor> sp(new BasicSignalProcessor());
+            //TODO: Tempolary Disabled for now because we do not need it yet.
 
-            std::vector<float> result;
+            std::cerr << "[INFO] Processing signal is not fully implementated." << std::endl;
 
-            sp->process(leftPupilRadius,
-                        rightPupilRadius,
-                        eyeDistance, result);
+//            std::unique_ptr<BasicSignalProcessor> sp(new BasicSignalProcessor());
+//
+//            std::vector<float> result;
+//
+//            for( auto it: algorithms){
+//                auto storage = it.second;
+//                sp->process( storage->getLeftPupilSizes(),
+//                             storage->getRightPupilSizes(),
+//                             eyeDistance,
+//                             result);
+//
+//            }
 
-            cw::showGraph("after signal processing", result, 0);
+//            cw::showGraph("after signal processing", result, 0);
 
         }
 

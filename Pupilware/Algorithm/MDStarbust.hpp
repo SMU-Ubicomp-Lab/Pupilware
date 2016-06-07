@@ -14,55 +14,97 @@
 namespace pw {
 
     class MDStarbust : public PWAlgorithm {
-    
+
     public:
-        MDStarbust();
+        MDStarbust( const std::string& name );
         virtual ~MDStarbust();
-        
+
         virtual void init();
 
-        virtual PWResult process(const cv::Mat colorLeftEye,
-                                 const cv::Mat colorRightEye,
-                                 PupilMeta &pupilMeta);
+        virtual PWPupilSize process( const PupilMeta &pupilMeta );
 
         virtual void exit();
-        
+
     protected:
 
+        // Maximum member of pixel walk from the center of the pupil.
         const unsigned int MAX_WALKING_STEPS = 20;
+
+
+        // Maximum iteration of processing starbust algorithm
         const unsigned int STARBURST_ITERATION = 5;
 
+
+        // Minimum number of rays before doing RANSAC circle fit algorithm
         const unsigned int MIN_NUM_RAYS = 5;
+
+
+        // Minimum number of points before doing Ellipse fit algorithm
         const unsigned int MIM_NUM_INLIER_POINTS = 5;
 
+
+        // It used to convert a trackbar's INT to Float
         const float precision = 1000;
 
+
+        // The different seed intensity to the edge threshold.
+        // It's used to stop Starbust algorithm to walk forward.
         int threshold;
+
+
+        // Number of rays
         int rayNumber;
+
+
+        // Degree from the top of circle
+        // it is designed for avoid eyelash shadow
         int degreeOffset;
+
+
+        // Simple linear primer.
+        // It's used to improve a reflection problem in pupils.
         int primer;
 
+
+        // Storing the previous frame result, in case of the algorithm failed this frame
         float _oldLeftRadius;
         float _oldRightRadius;
 
 
+        // Just a window name for debuging
+        std::string name;
+        std::shared_ptr<CVWindow> window;
+
+
+        // Increase contrast to the pupil image
         void increaseContrast(const cv::Mat &grayEye, const cv::Point &eyeCenter) const;
 
+
+        // Create rays that walk from center of the eyes
         void createRays(std::vector<cv::Point2f> &rays) const;
 
+
+        // Find edge points
         void findEdgePoints(cv::Mat grayEye,
                             const cv::Point &startingPoint,
                             const std::vector<cv::Point2f> &rays,
                             std::vector<cv::Point2f> &outEdgePoints,
                             cv::Mat debugColorEye) const;
 
+
+
         bool isValidEllipse(const cv::RotatedRect &theEllipse) const;
 
+
+
+        // Cost function to predict if the pixel an edge or reflection
         virtual float getCost(int step) const;
+
+
 
         float findPupilSize(const cv::Mat &colorEyeFrame,
                             cv::Point eyeCenter,
-                            const char* name) const;
+                            cv::Mat &debugImg) const;
     };
 }
 

@@ -21,6 +21,10 @@ namespace pw{
                          int* value,
                          int max=255);
 
+        void addTrackbarDouble(const std::string &label,
+                                         void(*f)(double value),
+                                         double max);
+
         int update(cv::Mat mat);
 
         void moveWindow(int x, int y);

@@ -22,16 +22,20 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/helpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/PupilMeta.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWDataModel.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWTypes.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbust.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWAlgorithm.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PupilMeta.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWAlgorithm.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbust.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWDataModel.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PupilMeta.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" isTestSource="false" />
@@ -42,7 +46,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/PupilMeta.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

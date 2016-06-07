@@ -22,10 +22,10 @@ set(SOURCE_FILES
         Pupilware/etc/Ransac.h
         Pupilware/constants.h
         Pupilware/main.cpp
-        Pupilware/PupilMeta.cpp
-        Pupilware/PupilMeta.hpp
+        Pupilware/Algorithm/PupilMeta.cpp
+        Pupilware/Algorithm/PupilMeta.hpp
         Pupilware/Pupilware.cpp
-        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp Pupilware/etc/CVWindow.cpp Pupilware/etc/CVWindow.hpp Pupilware/etc/PWGraph.cpp Pupilware/etc/PWGraph.hpp Pupilware/Algorithm/MDStarbustNeo.cpp Pupilware/Algorithm/MDStarbustNeo.hpp)
+        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp Pupilware/etc/CVWindow.cpp Pupilware/etc/CVWindow.hpp Pupilware/etc/PWGraph.cpp Pupilware/etc/PWGraph.hpp Pupilware/Algorithm/MDStarbustNeo.cpp Pupilware/Algorithm/MDStarbustNeo.hpp Pupilware/Algorithm/PWDataModel.cpp Pupilware/Algorithm/PWDataModel.hpp Pupilware/Algorithm/PWTypes.hpp)
 
 
 set(OpenCV_DIR "/usr/local/Cellar/opencv3/3.1.0_3/")

@@ -14,51 +14,59 @@ using namespace std;
 
 namespace pw {
 
-    MDStarbust::MDStarbust():
+    MDStarbust::MDStarbust( const string& name ):
     threshold(25),
     rayNumber(15),
     degreeOffset(25),
     primer(1 * precision),
     _oldLeftRadius(0.0f),
-    _oldRightRadius(0.0f){
+    _oldRightRadius(0.0f),
+    name(name){
 
     }
-    
+
     MDStarbust::~MDStarbust()
     {
-        
+
     }
-    
+
     void MDStarbust::init()
     {
-        // Init code here
-        createTrackbar(&degreeOffset, "degree offset", 180);
-        createTrackbar(&rayNumber, "ray number", 200);
-        createTrackbar(&threshold, "threshold");
-        createTrackbar(&primer, "primer", precision*5);
+        window = std::make_shared<CVWindow>(name + " Debug");
+        window->addTrackbar("degree offset", &degreeOffset, 180);
+        window->addTrackbar("ray number",&rayNumber, 200);
+        window->addTrackbar("threshold", &threshold, 255 );
+        window->addTrackbar("primer", &primer, precision*100);
     }
-    
-    PWResult MDStarbust::process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta)
+
+    PWPupilSize MDStarbust::process(const PupilMeta &pupilMeta)
     {
 //        float leftPupilRadius = max(findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye"), _oldLeftRadius);
 //        float rightPupilRadius = max(findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye"), _oldRightRadius);
 
-        float leftPupilRadius = findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye");
-        float rightPupilRadius = findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye");
+        Mat debugLeftEye;
+        float leftPupilRadius = findPupilSize(pupilMeta.getLeftEyeImage(),
+                                              pupilMeta.getLeftEyeCenter(), debugLeftEye );
+
+        Mat debugRightEye;
+        float rightPupilRadius = findPupilSize(pupilMeta.getRightEyeImage(),
+                                               pupilMeta.getRightEyeCenter(),
+                                               debugRightEye);
 
         //! Store data for next frame used.
         _oldLeftRadius = leftPupilRadius;
         _oldRightRadius = rightPupilRadius;
 
-        pupilMeta.setLeftRadius(leftPupilRadius);
-        pupilMeta.setRightRadius(rightPupilRadius);
+        Mat debugImg;
+        hconcat(debugLeftEye, debugRightEye, debugImg);
+        window->update(debugImg);
 
-        return AL_SUCCESS;
+        return PWPupilSize(leftPupilRadius, rightPupilRadius);
     }
 
     float MDStarbust::findPupilSize(const Mat &colorEyeFrame,
                                     cv::Point eyeCenter,
-                                    const char * name) const {
+                                    Mat &debugImg) const {
 
         vector<Mat> rgbChannels(3);
         split(colorEyeFrame, rgbChannels);
@@ -121,7 +129,7 @@ namespace pw {
                             r.bestModel.GetRadius(),
                             Scalar(255,50,255) );
 
-                cw::showImage(name, debugColorEye, 1);
+                debugImg = debugColorEye;
 
                 return eyeRadius;
             }

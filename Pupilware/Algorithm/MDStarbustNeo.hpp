@@ -12,12 +12,17 @@ namespace pw{
 class MDStarbustNeo: public MDStarbust {
 
 public:
-    MDStarbustNeo();
+    MDStarbustNeo( const std::string& name );
     MDStarbustNeo( const MDStarbustNeo& other);
     virtual ~MDStarbustNeo();
 
+    virtual void init();
+
 protected:
     virtual float getCost(int step) const;
+
+private:
+    int sigma;
 
 };
 

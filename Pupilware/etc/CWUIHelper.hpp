@@ -12,13 +12,16 @@
 
 namespace cw {
 
-    void showGraph(const char *name,
+    void showGraph(const std::string& name,
                    const std::vector<float> &dataSrc,
                    int delayInMilliSec = 1,
                    cv::Scalar color = cv::Scalar(0, 0, 0));
 
 
-    int showImage(const char *name, const cv::Mat img, int delayInMilliSec = 1);
+    int showImage(const std::string& name,
+                  const cv::Mat img,
+                  int delayInMilliSec = 1);
+
 
     std::shared_ptr<pw::CVWindow> createWindow( const std::string& winName);
 

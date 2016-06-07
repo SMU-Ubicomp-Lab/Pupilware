@@ -41,11 +41,9 @@ namespace pw {
     }
 
 
-    PWResult DummyAlgo::process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta)
+    PWPupilSize DummyAlgo::process(const PupilMeta &pupilMeta)
     {
         // Processing code here
-        pupilMeta.setLeftRadius(10.0f);
-        pupilMeta.setRightRadius(20.0f);
 
         // push data to test drawing a graph.
         dummyGraphData.push_back(cw::randomRange(0, 1000) / 100.0f);
@@ -57,7 +55,7 @@ namespace pw {
         cw::showGraph("red graph", dummyGraphData, 100, cv::Scalar(255, 0, 0));
 
 
-        cw::showImage("frame4", colorLeftEye, 1);
+        cw::showImage("frame4", pupilMeta.getLeftEyeImage(), 1);
 
 
         cv::Mat thresholdImg;
@@ -70,12 +68,12 @@ namespace pw {
         // 13 return key
         while(cw::waitKey(33) != 13){
 
-            cv::threshold(colorLeftEye, thresholdImg, th, 255, CV_THRESH_BINARY);
+            cv::threshold(pupilMeta.getLeftEyeImage(), thresholdImg, th, 255, CV_THRESH_BINARY);
 
             thWin->update(thresholdImg);
         }
 
-        return PWResult::AL_SUCCESS;
+        return PWPupilSize(10.0f, 20.0f);
     }
 
 

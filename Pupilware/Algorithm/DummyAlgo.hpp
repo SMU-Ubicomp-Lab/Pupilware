@@ -20,7 +20,7 @@ namespace pw {
         virtual ~DummyAlgo();
         
         virtual void init();
-        virtual PWResult process(const cv::Mat colorLeftEye, const cv::Mat colorRightEye, PupilMeta &pupilMeta);
+        virtual PWPupilSize process( const PupilMeta &pupilMeta );
         virtual void exit();
         
     private:

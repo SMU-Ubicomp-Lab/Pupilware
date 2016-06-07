@@ -10,19 +10,23 @@
 namespace cw {
 
 
-    void showGraph(const char *name, const std::vector<float> &dataSrc, int delayInMilliSec, cv::Scalar color) {
-        
+    void showGraph(const std::string& name,
+                   const std::vector<float> &dataSrc,
+                   int delayInMilliSec,
+                   cv::Scalar color) {
+
+
         setCustomGraphColor(static_cast<int>(color[0]),
                             static_cast<int>(color[1]),
                             static_cast<int>(color[2]));
         
-        showFloatGraph(name,
+        showFloatGraph(name.c_str(),
                        dataSrc.data(),
                        static_cast<int>(dataSrc.size()),
                        delayInMilliSec);
     }
 
-    int showImage(const char *name, const cv::Mat img, int delayInMilliSec) {
+    int showImage(const std::string& name, const cv::Mat img, int delayInMilliSec) {
         
         cv::namedWindow(name, CV_WINDOW_NORMAL | CV_WINDOW_KEEPRATIO);
         cv::imshow(name, img);
@@ -44,11 +48,11 @@ namespace cw {
     }
 
 
-    void createTrackbar(const std::string& barName,
-                       const std::string& windowName,
-                       int& value, int max,
-                       cv::TrackbarCallback callback ,
-                       void* userData  ){
+    void createTrackbar( const std::string& barName,
+                         const std::string& windowName,
+                         int& value, int max,
+                         cv::TrackbarCallback callback ,
+                         void* userData  ){
 
         cv::createTrackbar( barName, windowName, &value, max, callback, userData);
     }
@@ -58,6 +62,7 @@ namespace cw {
 
         cv::imshow(winName, mat);
     }
+
 
     int waitKey(int delay){
         return cv::waitKey(delay);

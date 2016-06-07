@@ -50,8 +50,10 @@ int main(int argc, const char **argv) {
 
     pupilware->loadVideo( videoFilePath );
 
-    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath)),
-                       std::shared_ptr<MDStarbust>(new MDStarbustNeo()) );
+    pupilware->addPupilSizeAlgorithm(std::shared_ptr<MDStarbust>(new MDStarbust("MDStarburst")));
+    pupilware->addPupilSizeAlgorithm(std::shared_ptr<MDStarbust>(new MDStarbustNeo("MDStarbustNeo")));
+
+    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath) ));
 
     return 0;
 }
