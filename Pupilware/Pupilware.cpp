@@ -28,38 +28,35 @@ namespace pw {
     class PupilwareImpl: public Pupilware {
     public:
 
-        cv::VideoCapture                    capture;
+        cv::VideoCapture capture;
 
 
         //TODO: Make these to circular buffers. In case we have a very long video, or streaming
-        std::vector<float>                  eyeDistance;
+        std::vector<float> eyeDistance;
 
         std::map<std::shared_ptr<PWAlgorithm>,
                  std::shared_ptr<PWDataModel> > algorithms;
 
 
-        // Store ref to a current active frame image.
-        cv::Mat                             currentFrame;
+        cv::Mat currentFrame;                       // Store ref to a current active frame image.
 
 
-        // Store collection of all video frames.
-        // It's only used when PreCacheVideo mode = true.
-        std::vector<cv::Mat>                videoFrames;
+        std::vector<cv::Mat> videoFrames;           // Store collection of all video frames.
+                                                    // It's only used when PreCacheVideo mode = true.
+
+        int currentFrameNumber;                     // Keeping track of frame that is processing
+
+        int isPlaying;                              // If the video is automatic advance frame.
+
+        bool isPreCacheVideo;                       // Whether or not pre-cache video
 
 
-        int currentFrameNumber;
+        std::shared_ptr<CVWindow> mainWindow;       // Main window to control frames
 
 
-        // If the video is automatic advance frame.
-        int isPlaying;
-
-
-        // Whether or not pre-cache video
-        bool isPreCacheVideo;
-
-
-        // Main window to control frames
-        std::shared_ptr<CVWindow> mainWindow;
+//------------------------------------------------------------------------------------------------------------------
+//      Methods
+//------------------------------------------------------------------------------------------------------------------
 
 
         PupilwareImpl(bool isPreCacheVideo):
@@ -86,6 +83,7 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         /*!
          * load a video file.
@@ -105,6 +103,8 @@ namespace pw {
         }
 
 
+//------------------------------------------------------------------------------------------------------------------
+
         void addPupilSizeAlgorithm( std::shared_ptr<PWAlgorithm> algorithm){
             assert(algorithm != nullptr);
             assert(algorithms.size() < 5); // only support maximum to 5 for now.
@@ -113,7 +113,7 @@ namespace pw {
             algorithms[algorithm] = x;
         }
 
-
+//------------------------------------------------------------------------------------------------------------------
         /*!
          * Execute Pupilware pipeline.
          * */
@@ -164,7 +164,7 @@ namespace pw {
                         }
 
                     } else{
-                        cerr << "[Error] the frame is empty.";
+                        cerr << "[Error] the frame is empty." << std::endl;
                         break;
                     }
 
@@ -176,7 +176,6 @@ namespace pw {
 
                 exitAlgorithms();
 
-
                 processPupilSignal();
 
             }
@@ -186,12 +185,16 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
+
         void exitAlgorithms() const {
             for (auto it : algorithms) {
                     auto algorithm = it.first;
                     algorithm->exit();
                 }
+
         }
+//------------------------------------------------------------------------------------------------------------------
 
         void initAlgorithms() const {
             for (auto it : algorithms) {
@@ -200,12 +203,15 @@ namespace pw {
                 }
         }
 
+//------------------------------------------------------------------------------------------------------------------
+
         Mat getFrame() const {
 
             return currentFrame;
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         void updateUI(const Mat &colorFrame, double secondPFrame) const {
 
@@ -213,7 +219,7 @@ namespace pw {
 
             ostringstream convert;
             convert.str("");
-            convert <<"SPF:"<< static_cast<float>(secondPFrame);
+            convert <<"Frame Number:"<< static_cast<float>(currentFrameNumber);
 
             putText(debugMat, convert.str() , Point(50,100),FONT_HERSHEY_SIMPLEX, 2, Scalar(200,90,0),5);
             int key = mainWindow->update(debugMat);
@@ -223,6 +229,7 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         void advanceFrame() {
 
@@ -253,6 +260,8 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
+
         const Scalar colors[5] = {
                 Scalar(255, 0, 0),
                 Scalar(0, 255, 0),
@@ -270,7 +279,11 @@ namespace pw {
             int i =0;
             for(auto it: algorithms) {
                 auto storage = it.second;
-                pupilSizeGraph->drawGraph("left", storage->getLeftPupilSizes(), colors[i], 0, 13, 0, 250);
+
+//                std::vector<float> smoothLeft;
+//                cw::fastMedfilt(storage->getLeftPupilSizes(), smoothLeft, 31);
+
+                pupilSizeGraph->drawGraph("left", storage->getLeftPupilSizes(), colors[i], 0, 30, 0, 250);
                 i++;
             }
 
@@ -301,6 +314,7 @@ namespace pw {
 //            cw::showGraph("eye distance", eyeDistance, 1);
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         void initPupilSignalBuffer() {
 
@@ -324,6 +338,7 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         void initUI() {
 
@@ -332,6 +347,7 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         /*!
          * Execute Pupilware pipeline only one given frame
@@ -375,28 +391,34 @@ namespace pw {
             //
             Mat colorFace = colorFrame(faceRect);
 
-            PupilMeta eyeMeta;
+            //! Compute Eye distance in pixel
+            float eyeDist = cw::calDistance(leftEyeCenter, rightEyeCenter);
 
+            //! Prepare PupilMeta object
+            PupilMeta eyeMeta;
             eyeMeta.setEyeCenter(leftEyeCenter, rightEyeCenter);
             eyeMeta.setEyeImages(colorFace(leftEyeRegion),
                                  colorFace(rightEyeRegion));
             eyeMeta.setFrameNumber(currentFrameNumber);
+            eyeMeta.setEyeDistancePx(eyeDist);
 
             PWPupilSize result = computePupilSize( eyeMeta, algorithm );
 
+
             //! Store data to lists
             //
-
             auto storage = algorithms[algorithm];
             storage->setPupilSizeAt( currentFrameNumber, result );
 
             if(isPreCacheVideo)
                 eyeDistance[currentFrameNumber] = ( cw::calDistance(leftEyeCenter, rightEyeCenter) );
             else
-                eyeDistance.push_back( cw::calDistance(leftEyeCenter, rightEyeCenter) );
+                eyeDistance.push_back( eyeDist );
+
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         /*!
          * Compute pupil size with PWAlgorithm object
@@ -409,7 +431,7 @@ namespace pw {
             return algorithm->process(pupilMeta);
         }
 
-
+//------------------------------------------------------------------------------------------------------------------
 
         /*!
          * Process pupil size data at the end
@@ -437,6 +459,7 @@ namespace pw {
 
         }
 
+//------------------------------------------------------------------------------------------------------------------
 
         void preCacheVideoFrames(){
 
@@ -460,6 +483,7 @@ namespace pw {
         }
     };
 
+//------------------------------------------------------------------------------------------------------------------
 
     Pupilware* Pupilware::Create(bool isPreCacheVideo){
         return new PupilwareImpl(isPreCacheVideo);

@@ -9,7 +9,7 @@
 #ifndef DummyAlgo_hpp
 #define DummyAlgo_hpp
 
-#include "PWAlgorithm.hpp"
+#include "IPupilAlgorithm.hpp"
 
 namespace pw {
 
@@ -19,9 +19,9 @@ namespace pw {
         DummyAlgo();
         virtual ~DummyAlgo();
         
-        virtual void init();
-        virtual PWPupilSize process( const PupilMeta &pupilMeta );
-        virtual void exit();
+        virtual void init() override final;
+        virtual PWPupilSize process( const PupilMeta &pupilMeta ) override final;
+        virtual void exit() override final;
         
     private:
         int th;

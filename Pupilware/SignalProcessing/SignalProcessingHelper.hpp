@@ -14,7 +14,7 @@ namespace cw{
     typedef float (*filterFunc) ( std::vector<float>&v);
 
 
-    void medfilt(           std::vector<float> &input,
+    void medfilt(           const std::vector<float> &input,
                             std::vector<float> &output,
                             int windowSize);
 
@@ -49,7 +49,7 @@ namespace cw{
     };
 
 
-    void fastMedfilt(       std::vector<float> &input,
+    void fastMedfilt(       const std::vector<float> &input,
                             std::vector<float> &output,
                             int windowSize);
 }

@@ -16,10 +16,10 @@ public:
     MDStarbustNeo( const MDStarbustNeo& other);
     virtual ~MDStarbustNeo();
 
-    virtual void init();
+    virtual void init() override ;
 
 protected:
-    virtual float getCost(int step) const;
+    virtual float getCost(int step) const override ;
 
 private:
     int sigma;

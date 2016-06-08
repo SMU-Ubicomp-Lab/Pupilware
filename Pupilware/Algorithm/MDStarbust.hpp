@@ -9,7 +9,7 @@
 #ifndef mdStarbust_hpp
 #define mdStarbust_hpp
 
-#include "PWAlgorithm.hpp"
+#include "IPupilAlgorithm.hpp"
 
 namespace pw {
 
@@ -19,11 +19,11 @@ namespace pw {
         MDStarbust( const std::string& name );
         virtual ~MDStarbust();
 
-        virtual void init();
+        virtual void init() override ;
 
-        virtual PWPupilSize process( const PupilMeta &pupilMeta );
+        virtual PWPupilSize process( const PupilMeta &pupilMeta ) override ;
 
-        virtual void exit();
+        virtual void exit() override ;
 
     protected:
 

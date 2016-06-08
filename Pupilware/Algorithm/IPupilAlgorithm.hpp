@@ -23,15 +23,12 @@ namespace pw{
     class PWAlgorithm {
         
     public:
-        PWAlgorithm();
 
-        virtual ~PWAlgorithm();
-
-        virtual void init();
+        virtual void init() =0;
         
         virtual PWPupilSize process( const PupilMeta &pupilMeta ) =0;
         
-        virtual void exit();
+        virtual void exit() =0;
         
     };
 }

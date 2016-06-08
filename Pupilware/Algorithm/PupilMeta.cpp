@@ -80,4 +80,17 @@ namespace pw {
     const cv::Mat& PupilMeta::getRightEyeImage() const{
         return colorRightEye;
     }
+
+    const float         PupilMeta::getEyeDistancePx() const{
+
+        return eyeDistancePx;
+    }
+
+
+    void                PupilMeta::setEyeDistancePx( float eyeDist ){
+
+        eyeDistancePx = eyeDist;
+
+    }
+
 }

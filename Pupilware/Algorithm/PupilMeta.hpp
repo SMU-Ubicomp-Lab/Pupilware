@@ -25,6 +25,8 @@ namespace pw {
         cv::Point           leftEyeCenter;
         cv::Point           rightEyeCenter;
 
+        float               eyeDistancePx;
+
         unsigned int        frameNumber;
 
     public:
@@ -46,6 +48,9 @@ namespace pw {
 
         const cv::Mat&      getLeftEyeImage() const;
         const cv::Mat&      getRightEyeImage() const;
+
+        const float         getEyeDistancePx() const;
+        void                setEyeDistancePx( float eyeDist );
 
     };
 }

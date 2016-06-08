@@ -8,6 +8,7 @@
 #include "Algorithm/MDStarbust.hpp"
 #include "Algorithm/MDStarbustNeo.hpp"
 #include "Algorithm/DummyAlgo.hpp"
+#include "Algorithm/ALOfflineFile.hpp"
 
 #include "ImageProcessing/SimpleImageSegmenter.hpp"
 //--------------------------------------
@@ -43,6 +44,7 @@ int main(int argc, const char **argv) {
 //    const string videoFilePath = dataPath + "videos/ID265484/xpMULTIPLICATION_DifficultyMedium_Iter4.wmv"; // good from webcam
     const string faceCascadePath = dataPath + "haarcascade_frontalface_alt.xml";
 
+    const string gazeDataPath = dataPath + "/videos/ID265517/ID265517_ExpDigitalSpanTask_Digits7_Iter1_GazeData.txt";
 
     // If you want to pre cache the video put true (longer load time, but more control)
     // If not, put fault (good for a large video, and quick experiment)
@@ -50,8 +52,9 @@ int main(int argc, const char **argv) {
 
     pupilware->loadVideo( videoFilePath );
 
-    pupilware->addPupilSizeAlgorithm(std::shared_ptr<MDStarbust>(new MDStarbust("MDStarburst")));
-    pupilware->addPupilSizeAlgorithm(std::shared_ptr<MDStarbust>(new MDStarbustNeo("MDStarbustNeo")));
+    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new MDStarbust("MDStarburst")));
+//    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new MDStarbustNeo("MDStarbustNeo")));
+    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new ALOfflineFile(gazeDataPath, 852)));
 
     pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath) ));
 

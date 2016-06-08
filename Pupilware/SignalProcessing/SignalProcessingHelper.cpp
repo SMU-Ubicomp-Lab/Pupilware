@@ -64,8 +64,8 @@ namespace cw {
         filterSignal(input, output, windowSize, median);
     }
 
-    void fastMedfilt( std::vector<float>& input,
-                  std::vector<float>& output, int windowSize)
+    void fastMedfilt(   const std::vector<float>& input,
+                        std::vector<float>& output, int windowSize  )
     {
         cw::FastMedianFilter medfiltF(windowSize);
         output = medfiltF.filter(input);

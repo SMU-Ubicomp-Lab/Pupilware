@@ -4,8 +4,8 @@ project(Pupilware)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
-        Pupilware/Algorithm/PWAlgorithm.cpp
-        Pupilware/Algorithm/PWAlgorithm.hpp
+        Pupilware/Algorithm/IPupilAlgorithm.cpp
+        Pupilware/Algorithm/IPupilAlgorithm.hpp
         Pupilware/Algorithm/DummyAlgo.cpp
         Pupilware/Algorithm/DummyAlgo.hpp
         Pupilware/Algorithm/MDStarbust.cpp
@@ -25,7 +25,7 @@ set(SOURCE_FILES
         Pupilware/Algorithm/PupilMeta.cpp
         Pupilware/Algorithm/PupilMeta.hpp
         Pupilware/Pupilware.cpp
-        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp Pupilware/etc/CVWindow.cpp Pupilware/etc/CVWindow.hpp Pupilware/etc/PWGraph.cpp Pupilware/etc/PWGraph.hpp Pupilware/Algorithm/MDStarbustNeo.cpp Pupilware/Algorithm/MDStarbustNeo.hpp Pupilware/Algorithm/PWDataModel.cpp Pupilware/Algorithm/PWDataModel.hpp Pupilware/Algorithm/PWTypes.hpp)
+        Pupilware/Pupilware.hpp Pupilware/etc/CWUIHelper.cpp Pupilware/etc/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp Pupilware/etc/CVWindow.cpp Pupilware/etc/CVWindow.hpp Pupilware/etc/PWGraph.cpp Pupilware/etc/PWGraph.hpp Pupilware/Algorithm/MDStarbustNeo.cpp Pupilware/Algorithm/MDStarbustNeo.hpp Pupilware/Algorithm/PWDataModel.cpp Pupilware/Algorithm/PWDataModel.hpp Pupilware/Algorithm/PWTypes.hpp Pupilware/Algorithm/ALOfflineFile.cpp Pupilware/Algorithm/ALOfflineFile.hpp)
 
 
 set(OpenCV_DIR "/usr/local/Cellar/opencv3/3.1.0_3/")

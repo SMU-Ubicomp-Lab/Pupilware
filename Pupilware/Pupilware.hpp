@@ -12,7 +12,7 @@
 #include <string>
 #include <opencv2/opencv.hpp>
 
-#include "Algorithm/PWAlgorithm.hpp"
+#include "Algorithm/IPupilAlgorithm.hpp"
 #include "ImageProcessing/IImageSegmenter.hpp"
 
 

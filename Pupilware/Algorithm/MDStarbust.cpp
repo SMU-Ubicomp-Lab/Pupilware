@@ -44,14 +44,16 @@ namespace pw {
 //        float leftPupilRadius = max(findPupilSize(colorLeftEye, pupilMeta.getLeftEyeCenter(), "left eye"), _oldLeftRadius);
 //        float rightPupilRadius = max(findPupilSize(colorRightEye, pupilMeta.getRightEyeCenter(), "right eye"), _oldRightRadius);
 
-        Mat debugLeftEye;
-        float leftPupilRadius = findPupilSize(pupilMeta.getLeftEyeImage(),
-                                              pupilMeta.getLeftEyeCenter(), debugLeftEye );
+        Mat debugLeftEye = pupilMeta.getLeftEyeImage().clone();
+        float leftPupilRadius = findPupilSize(  pupilMeta.getLeftEyeImage()
+                                              , pupilMeta.getLeftEyeCenter()
+                                              , debugLeftEye );
 
-        Mat debugRightEye;
-        float rightPupilRadius = findPupilSize(pupilMeta.getRightEyeImage(),
-                                               pupilMeta.getRightEyeCenter(),
-                                               debugRightEye);
+
+        Mat debugRightEye = pupilMeta.getRightEyeImage().clone();
+        float rightPupilRadius = findPupilSize(  pupilMeta.getRightEyeImage()
+                                               , pupilMeta.getRightEyeCenter()
+                                               , debugRightEye );
 
         //! Store data for next frame used.
         _oldLeftRadius = leftPupilRadius;
@@ -61,7 +63,9 @@ namespace pw {
         hconcat(debugLeftEye, debugRightEye, debugImg);
         window->update(debugImg);
 
-        return PWPupilSize(leftPupilRadius, rightPupilRadius);
+        return PWPupilSize(  leftPupilRadius
+                           , rightPupilRadius );
+
     }
 
     float MDStarbust::findPupilSize(const Mat &colorEyeFrame,
@@ -79,10 +83,8 @@ namespace pw {
         vector<Point2f>rays;
         createRays(rays);
 
-        Mat debugColorEye = colorEyeFrame.clone();
-
         vector<Point2f>edgePoints;
-        findEdgePoints(grayEye, eyeCenter, rays, edgePoints, debugColorEye);
+        findEdgePoints(grayEye, eyeCenter, rays, edgePoints, debugImg);
 
         if(edgePoints.size() > MIN_NUM_RAYS)
         {
@@ -123,13 +125,12 @@ namespace pw {
                 //---------------------------------------------------------------------------------
                 //! Draw debug image
                 //---------------------------------------------------------------------------------
-                ellipse( debugColorEye, myEllipse, Scalar(0,50,255) );
-                circle( debugColorEye,
+                ellipse( debugImg, myEllipse, Scalar(0,50,255) );
+                circle( debugImg,
                             *r.bestModel.GetCenter(),
                             r.bestModel.GetRadius(),
                             Scalar(255,50,255) );
 
-                debugImg = debugColorEye;
 
                 return eyeRadius;
             }
