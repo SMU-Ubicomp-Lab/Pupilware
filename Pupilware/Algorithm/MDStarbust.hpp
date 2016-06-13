@@ -13,7 +13,7 @@
 
 namespace pw {
 
-    class MDStarbust : public PWAlgorithm {
+    class MDStarbust : public IPupilAlgorithm {
 
     public:
         MDStarbust( const std::string& name );
@@ -72,7 +72,6 @@ namespace pw {
 
 
         // Just a window name for debuging
-        std::string name;
         std::shared_ptr<CVWindow> window;
 
 

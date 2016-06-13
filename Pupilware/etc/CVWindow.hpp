@@ -29,6 +29,8 @@ namespace pw{
 
         void moveWindow(int x, int y);
 
+        void resize( int width, int height);
+
         void setTrackbarValue( const std::string& name, int value ) const;
 
     private:

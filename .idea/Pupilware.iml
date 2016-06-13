@@ -13,18 +13,19 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/PWGraph.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWUIHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CVWindow.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/GraphUtils.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWUIHelper.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CWCVUtility.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/Ransac.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/CVWindow.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/etc/helpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PupilMeta.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWTypes.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustG.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWDataModel.cpp" isTestSource="false" />
@@ -35,13 +36,14 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbust.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PupilMeta.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" isTestSource="false" />

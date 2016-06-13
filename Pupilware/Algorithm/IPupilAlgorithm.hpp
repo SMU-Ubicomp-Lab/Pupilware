@@ -20,16 +20,22 @@
 
 namespace pw{
 
-    class PWAlgorithm {
-        
+    class IPupilAlgorithm {
+
     public:
+        IPupilAlgorithm(const std::string& name):_name(name){};
+        virtual ~IPupilAlgorithm(){};
 
         virtual void init() =0;
-        
+
         virtual PWPupilSize process( const PupilMeta &pupilMeta ) =0;
         
         virtual void exit() =0;
-        
+
+        inline const std::string& getName() const{ return _name; };
+
+    private:
+        std::string _name;
     };
 }
 

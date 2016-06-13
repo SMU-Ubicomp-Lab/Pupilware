@@ -6,6 +6,7 @@
 // Include Pupilware Algorithm here -----
 #include "Pupilware.hpp"
 #include "Algorithm/MDStarbust.hpp"
+#include "Algorithm/MDStarbustG.hpp"
 #include "Algorithm/MDStarbustNeo.hpp"
 #include "Algorithm/DummyAlgo.hpp"
 #include "Algorithm/ALOfflineFile.hpp"
@@ -27,7 +28,7 @@ void processPupilSignal();
  */
 int main(int argc, const char **argv) {
 
-    std::cerr << cv::getBuildInformation();
+//    std::cerr << cv::getBuildInformation();
 
     const string dataPath = "/Users/redeian/Documents/data/";
 
@@ -36,9 +37,11 @@ int main(int argc, const char **argv) {
 //    const string videoFilePath = dataPath + "videos/ID265493/xpDigitalSpanTask_Digits5_Iter2.wmv"; // brown eyes from webcam
 //    const string videoFilePath = dataPath + "videos/ID265502/ExpDigitalSpanTask_Digits5_Iter4.wmv"; // reflection eyes from webcam
 
-    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits7Iter1.mp4"; // good from phone
-//    const string videoFilePath = dataPath + "videos/ID265512/Id265512_digit5_iter3.mp4"; // eye center mess up
-//    const string videoFilePath = dataPath + "videos/ID265513/Id265513_digit7_iter2.mp4"; // noisy low contrast
+//    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits7Iter1.mp4"; // good from phone
+    const string videoFilePath = dataPath + "videos/ID265513/Id265513_digit7_iter2.mp4"; // noisy low contrast
+//    const string videoFilePath = dataPath + "videos/ID265512/Id265512_digit5_iter3.mp4"; // dark eye, left center mess up
+//    const string videoFilePath = dataPath + "videos/ID265515/ID515Digits7Iter1.mp4"; // black eye
+
 //------------------------------------------------------------------------------
 
 //    const string videoFilePath = dataPath + "videos/ID265484/xpMULTIPLICATION_DifficultyMedium_Iter4.wmv"; // good from webcam
@@ -52,9 +55,10 @@ int main(int argc, const char **argv) {
 
     pupilware->loadVideo( videoFilePath );
 
-    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new MDStarbust("MDStarburst")));
-//    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new MDStarbustNeo("MDStarbustNeo")));
-    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new ALOfflineFile(gazeDataPath, 852)));
+
+    pupilware->addPupilSizeAlgorithm(std::shared_ptr<IPupilAlgorithm>(new MDStarbust("MDStarburst")));
+    pupilware->addPupilSizeAlgorithm(std::shared_ptr<IPupilAlgorithm>(new MDStarbustNeo("MDStarbustNeo")));
+//    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new ALOfflineFile(gazeDataPath, 852)));
 
     pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath) ));
 

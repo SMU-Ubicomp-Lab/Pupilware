@@ -40,6 +40,10 @@ namespace pw
         cvMoveWindow( name.c_str(), x, y );
     }
 
+    void PWGraph::resize( int width, int height ) const{
+        cvResizeWindow( name.c_str(), width, height );
+    }
+
     void PWGraph::show() const{
         cvNamedWindow( name.c_str() );
 

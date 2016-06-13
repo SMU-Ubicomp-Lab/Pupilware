@@ -13,10 +13,10 @@
 
 namespace pw {
 
-    class DummyAlgo : public PWAlgorithm {
+    class DummyAlgo : public IPupilAlgorithm {
     
     public:
-        DummyAlgo();
+        DummyAlgo( const std::string& name);
         virtual ~DummyAlgo();
         
         virtual void init() override final;

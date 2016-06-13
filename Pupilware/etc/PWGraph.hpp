@@ -28,6 +28,7 @@ namespace pw{
                        int height = 0);
 
         void move(int x, int y) const;
+        void resize( int width, int height ) const;
         void show() const;
     };
 

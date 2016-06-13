@@ -35,7 +35,7 @@ namespace pw {
         virtual void execute( std::shared_ptr<IImageSegmenter> imgProcessor )=0;
 
 
-        virtual void addPupilSizeAlgorithm( std::shared_ptr<PWAlgorithm> algorithm)=0;
+        virtual void addPupilSizeAlgorithm( std::shared_ptr<IPupilAlgorithm> algorithm)=0;
 
 
         static Pupilware* Create(bool isPreCacheVideo);

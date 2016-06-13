@@ -63,9 +63,9 @@ namespace pw{
                                           cv::Rect &outLeftEyeRegion,
                                           cv::Rect &outRightEyeRegion) {
 
-        const float kEyePercentTop = 25.0f;
+        const float kEyePercentTop = 30.0f;
         const float kEyePercentSide = 13.0f;
-        const float kEyePercentHeight = 30.0f;
+        const float kEyePercentHeight = 25.0f;
         const float kEyePercentWidth = 35.0f;
 
         //-- Find eye regions
@@ -92,13 +92,29 @@ namespace pw{
         if (grayEyeROI.channels() > 1)
             return Point2f();
 
-        Mat eq;
-        cv::equalizeHist(grayEyeROI, eq);
+
+        Mat blur;
+        cv::GaussianBlur(grayEyeROI, blur,Size(3,3), 3);
+
+        std::vector<float>cHist;
+        cHist = cw::calProgressiveSum(blur);
+
+        int imgSize = blur.rows*blur.cols;
+
+        int th = 0;
+        for (int j = 0; j < cHist.size(); ++j) {
+            double ch = cHist[j]/static_cast<double>(imgSize);
+            if(ch > 0.005 ){
+                th = j;
+                break;
+            }
+        }
+
 
         Mat binary;
-        cv::threshold(eq, binary, 10, 255, CV_THRESH_BINARY_INV);
+        cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
 
-        cw::erosion(binary, binary, 2, MORPH_ELLIPSE);
+//        cw::erosion(binary, binary, 2, MORPH_ELLIPSE);
 
         // Calculate center of mass
         Moments m = moments(binary, false);

@@ -28,6 +28,14 @@ namespace cw {
     inline float calDistance( cv::Point2f p1, cv::Point2f p2 ){
         return sqrt( float( (p1.x * p2.x) + (p1.y * p2.y) ) );
     }
+
+    void openOperation( const cv::Mat src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
+    void closeOperation( const cv::Mat src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
+
+    std::vector<unsigned int> calHistogram( const cv::Mat srcGrayImage );
+    std::vector<float> calProgressiveSum( const std::vector<unsigned int>& histogram );
+    std::vector<float> calProgressiveSum( const cv::Mat srcGrayImage );
+
 }
 
 

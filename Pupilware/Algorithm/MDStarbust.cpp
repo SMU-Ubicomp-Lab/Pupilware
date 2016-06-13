@@ -15,13 +15,13 @@ using namespace std;
 namespace pw {
 
     MDStarbust::MDStarbust( const string& name ):
+    IPupilAlgorithm(name),
     threshold(25),
     rayNumber(15),
     degreeOffset(25),
     primer(1 * precision),
     _oldLeftRadius(0.0f),
-    _oldRightRadius(0.0f),
-    name(name){
+    _oldRightRadius(0.0f){
 
     }
 
@@ -32,7 +32,7 @@ namespace pw {
 
     void MDStarbust::init()
     {
-        window = std::make_shared<CVWindow>(name + " Debug");
+        window = std::make_shared<CVWindow>(getName() + " Debug");
         window->addTrackbar("degree offset", &degreeOffset, 180);
         window->addTrackbar("ray number",&rayNumber, 200);
         window->addTrackbar("threshold", &threshold, 255 );

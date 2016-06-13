@@ -14,6 +14,7 @@
 #include <math.h>
 
 #include <sstream>
+#include <fstream>
 
 #include "etc/PWGraph.hpp"
 #include "Algorithm/PWDataModel.hpp"
@@ -34,7 +35,7 @@ namespace pw {
         //TODO: Make these to circular buffers. In case we have a very long video, or streaming
         std::vector<float> eyeDistance;
 
-        std::map<std::shared_ptr<PWAlgorithm>,
+        std::map<std::shared_ptr<IPupilAlgorithm>,
                  std::shared_ptr<PWDataModel> > algorithms;
 
 
@@ -52,6 +53,7 @@ namespace pw {
 
 
         std::shared_ptr<CVWindow> mainWindow;       // Main window to control frames
+        std::shared_ptr<PWGraph> pupilSizeGraph;         // Maind display graph
 
 
 //------------------------------------------------------------------------------------------------------------------
@@ -67,6 +69,7 @@ namespace pw {
         {
 
             cv::VideoCapture capture = cv::VideoCapture();
+
             mainWindow->addTrackbar("play", &isPlaying, 1);
             mainWindow->moveWindow(0,0);
 
@@ -105,7 +108,7 @@ namespace pw {
 
 //------------------------------------------------------------------------------------------------------------------
 
-        void addPupilSizeAlgorithm( std::shared_ptr<PWAlgorithm> algorithm){
+        void addPupilSizeAlgorithm( std::shared_ptr<IPupilAlgorithm> algorithm){
             assert(algorithm != nullptr);
             assert(algorithms.size() < 5); // only support maximum to 5 for now.
 
@@ -178,6 +181,8 @@ namespace pw {
 
                 processPupilSignal();
 
+                saveDataToFile();
+
             }
             else {
                 cout << "[Warning] the video has not yet loaded." << endl;
@@ -224,6 +229,11 @@ namespace pw {
             putText(debugMat, convert.str() , Point(50,100),FONT_HERSHEY_SIMPLEX, 2, Scalar(200,90,0),5);
             int key = mainWindow->update(debugMat);
 
+            if(key == 's'){
+                saveDataToFile();
+                std::cout << "[info] Data is saved." << std::endl;
+            }
+
             // Make the Trackbar value to reflex the actual current frame number.
             mainWindow->setTrackbarValue("frame", currentFrameNumber);
 
@@ -264,26 +274,26 @@ namespace pw {
 
         const Scalar colors[5] = {
                 Scalar(255, 0, 0),
-                Scalar(0, 255, 0),
                 Scalar(0, 0, 255),
+                Scalar(0, 255, 0),
                 Scalar(255, 0, 255),
                 Scalar(255, 255, 0)
         };
 
         void updateGraphs() {
 
-
-            shared_ptr<PWGraph> pupilSizeGraph(new PWGraph("Left-(red) Right-(green) pupil size"));
-            pupilSizeGraph->move(500, 10);
+            pupilSizeGraph = std::make_shared<PWGraph>("Original(red) Neo(blue) right pupil size");
 
             int i =0;
             for(auto it: algorithms) {
                 auto storage = it.second;
 
-//                std::vector<float> smoothLeft;
-//                cw::fastMedfilt(storage->getLeftPupilSizes(), smoothLeft, 31);
+                pupilSizeGraph->drawGraph("right", storage->getRightPupilSizes(), colors[i], 0, 30, 0, 250);
 
-                pupilSizeGraph->drawGraph("left", storage->getLeftPupilSizes(), colors[i], 0, 30, 0, 250);
+//                std::vector<float> smoothRight;
+//                cw::fastMedfilt(storage->getRightPupilSizes(), smoothRight, 31);
+//                pupilSizeGraph->drawGraph("right", smoothRight, colors[i], 0, 30, 0, 250);
+
                 i++;
             }
 
@@ -342,8 +352,9 @@ namespace pw {
 
         void initUI() {
 
-            if(isPreCacheVideo)
+            if(isPreCacheVideo){
                 mainWindow->addTrackbar("frame", &currentFrameNumber, videoFrames.size() - 1);
+            }
 
         }
 
@@ -354,7 +365,7 @@ namespace pw {
          * */
         void executeFrame(const cv::Mat colorFrame,
                           std::shared_ptr<IImageSegmenter> imgSeg,
-                          std::shared_ptr<PWAlgorithm> algorithm ){
+                          std::shared_ptr<IPupilAlgorithm> algorithm ){
 
             assert(!colorFrame.empty());
 
@@ -424,7 +435,7 @@ namespace pw {
          * Compute pupil size with PWAlgorithm object
          * */
         PWPupilSize computePupilSize( const PupilMeta& pupilMeta,
-                               std::shared_ptr<PWAlgorithm> algorithm ){
+                               std::shared_ptr<IPupilAlgorithm> algorithm ){
 
             assert(algorithm != nullptr);
 
@@ -457,6 +468,31 @@ namespace pw {
 
 //            cw::showGraph("after signal processing", result, 0);
 
+        }
+
+//------------------------------------------------------------------------------------------------------------------
+
+        void saveDataToFile() const{
+
+            const float spf = 1.0/30.0;
+
+            for(auto it: algorithms) {
+                auto algorithm = it.first;
+                auto storage = it.second;
+                ofstream f;
+                f.open("/Users/redeian/Documents/data/videos/ID265513/" + algorithm->getName()+".csv");
+                f << "time,eyedist,left,right" << std::endl;
+
+                for (int i = 0; i < storage->getRightPupilSizes().size(); ++i) {
+                    f << i * spf
+                    << "," << eyeDistance[i]
+                    << "," << storage->getLeftPupilSizes()[i]
+                    << "," << storage->getRightPupilSizes()[i]
+                    << std::endl;
+                }
+
+                f.close();
+            }
         }
 
 //------------------------------------------------------------------------------------------------------------------

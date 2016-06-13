@@ -12,9 +12,12 @@ using namespace std;
 
 namespace pw{
 
-    ALOfflineFile::ALOfflineFile(const std::string &fileName, unsigned int downSampleSize):
-    filename(fileName)
-    ,sampleSize(downSampleSize){
+    ALOfflineFile::ALOfflineFile( const std::string& name,
+                                  const std::string &fileName,
+                                  unsigned int downSampleSize):
+            IPupilAlgorithm(name)
+            ,filename(fileName)
+            ,sampleSize(downSampleSize){
 
     }
 

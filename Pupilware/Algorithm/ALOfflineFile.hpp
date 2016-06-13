@@ -9,12 +9,14 @@
 
 namespace pw{
 
-    class ALOfflineFile: public PWAlgorithm {
+    class ALOfflineFile: public IPupilAlgorithm {
     public:
 
-        ALOfflineFile(const std::string& fileName, unsigned int downSampleSize);
-        ~ALOfflineFile();
+        ALOfflineFile( const std::string& name,
+                       const std::string& fileName,
+                       unsigned int downSampleSize);
 
+        ~ALOfflineFile();
 
         virtual void init() override ;
 

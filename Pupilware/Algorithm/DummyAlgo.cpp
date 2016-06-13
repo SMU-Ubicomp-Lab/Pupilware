@@ -14,7 +14,7 @@ namespace pw {
 
     std::vector<float> dummyGraphData;
 
-    DummyAlgo::DummyAlgo(){
+    DummyAlgo::DummyAlgo(const std::string& name):IPupilAlgorithm(name){
         
     }
     

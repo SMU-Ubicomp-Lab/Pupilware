@@ -60,6 +60,12 @@ namespace pw{
 
     }
 
+    void CVWindow::resize( int width, int height){
+
+        cv::resizeWindow(winName, width, height);
+
+    }
+
     int CVWindow::update(cv::Mat mat) {
 
         cv::imshow(winName, mat);
