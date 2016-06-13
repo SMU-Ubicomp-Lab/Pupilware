@@ -96,4 +96,10 @@ namespace cw {
 
     }
 
+    void getImageByMatFloat( const Mat src, Mat& dist ){
+        double min;
+        double max;
+        cv::minMaxIdx(src, &min, &max);
+        cv::convertScaleAbs(src, dist, 255 / max);
+    }
 }

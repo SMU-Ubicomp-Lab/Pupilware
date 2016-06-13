@@ -14,32 +14,11 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="+ Add ALOfflineFile, it is used to load an exited offline csv file. The file format has to be &quot;time, eye_distance, left_pupil_size, right_pupil_size&quot;.&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Pupilware.iml" afterPath="$PROJECT_DIR$/.idea/Pupilware.iml" />
+    <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.hpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/CVWindow.cpp" afterPath="$PROJECT_DIR$/Pupilware/etc/CVWindow.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/CVWindow.hpp" afterPath="$PROJECT_DIR$/Pupilware/etc/CVWindow.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp" afterPath="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp" afterPath="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp" afterPath="$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp" afterPath="$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/main.cpp" afterPath="$PROJECT_DIR$/Pupilware/main.cpp" />
     </list>
     <ignored path="Pupilware.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,6 +57,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MDStarbustG.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Pupilware.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,55 +77,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MDStarbust.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
+      <file leaf-file-name="MDStarbustG.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-              <folding>
-                <element signature="e#159#184#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="34" column="80" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
-              <folding>
-                <element signature="e#131#155#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IImageSegmenter.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DummyAlgo.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp">
+      <file leaf-file-name="CWCVUtility.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="310">
+              <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MDStarbustNeo.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CWCVUtility.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CWUIHelper.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-320">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MDStarbustNeo.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="243" column="21" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
+            <state relative-caret-position="220">
+              <caret line="312" column="0" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
               <folding>
                 <element signature="e#159#187#0" expanded="true" />
               </folding>
@@ -144,31 +129,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleImageSegmenter.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SimpleImageSegmenter.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="167">
+              <caret line="211" column="40" selection-start-line="211" selection-start-column="40" selection-end-line="211" selection-end-column="40" />
+              <folding>
+                <element signature="e#56#91#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ALOfflineFile.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp">
+      <file leaf-file-name="mat.inl.hpp" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/mat.inl.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ALOfflineFile.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state relative-caret-position="138">
+              <caret line="389" column="0" selection-start-line="389" selection-start-column="0" selection-end-line="389" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -228,9 +205,6 @@
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
@@ -243,6 +217,9 @@
         <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
       </list>
     </option>
   </component>
@@ -770,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1465419992550</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="scaled image and using Cumulative Histogram technique.">
+      <created>1465836289997</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1465836289997</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -841,11 +825,12 @@
     <MESSAGE value="Major Refactor, and change API to support multiple algorithms running at the same time." />
     <MESSAGE value="Major Refactor, and change API to support multiple algorithms running at the same time.&#10;- All data past a long with all algorithm will be inside PWMeta.&#10;- All algorithms require to return PWResult.&#10;- Remove window management from PWAlgorithm&#10;- Move PupilMeta to Algorithm folder&#10;- Remove many C interface and replace with C++ ones&#10;- and a lot more. Please check if your code is broken after this change.&#10;" />
     <MESSAGE value="+ Add ALOfflineFile, it is used to load an exited offline csv file. The file format has to be &quot;time, eye_distance, left_pupil_size, right_pupil_size&quot;.&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Add ALOfflineFile, it is used to load an exited offline csv file. The file format has to be &quot;time, eye_distance, left_pupil_size, right_pupil_size&quot;.&#10;" />
+    <MESSAGE value="scaled image and using Cumulative Histogram technique." />
+    <option name="LAST_COMMIT_MESSAGE" value="scaled image and using Cumulative Histogram technique." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="47" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -859,20 +844,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/GraphUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/GraphUtils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="156" column="28" selection-start-line="156" selection-start-column="18" selection-end-line="156" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/etc/helpers.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1057,58 +1028,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/mat.inl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="697" column="0" selection-start-line="697" selection-start-column="0" selection-end-line="697" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1158,7 +1081,7 @@
         <state relative-caret-position="124">
           <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
           <folding>
-            <element signature="e#159#184#0" expanded="true" />
+            <element signature="e#159#184#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1183,14 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1224,12 +1139,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/mat.inl.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="389" column="0" selection-start-line="389" selection-start-column="0" selection-end-line="389" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/types.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="596" column="24" selection-start-line="596" selection-start-column="24" selection-end-line="596" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="98" column="48" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="243" column="21" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
+        <state relative-caret-position="220">
+          <caret line="312" column="0" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
           <folding>
             <element signature="e#159#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="39" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="211" column="40" selection-start-line="211" selection-start-column="40" selection-end-line="211" selection-end-column="40" />
+          <folding>
+            <element signature="e#56#91#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -36,6 +36,8 @@ namespace cw {
     std::vector<float> calProgressiveSum( const std::vector<unsigned int>& histogram );
     std::vector<float> calProgressiveSum( const cv::Mat srcGrayImage );
 
+    void getImageByMatFloat( const cv::Mat src, cv::Mat& dist );
+
 }
 
 
