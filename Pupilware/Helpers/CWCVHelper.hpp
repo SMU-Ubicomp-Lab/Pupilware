@@ -10,7 +10,7 @@
 
 #include <opencv2/opencv.hpp>
 
-#include "GraphUtils.h"
+#include "simpleGraph/GraphUtils.h"
 
 namespace cw {
     
@@ -29,14 +29,32 @@ namespace cw {
         return sqrt( float( (p1.x * p2.x) + (p1.y * p2.y) ) );
     }
 
+    /*!
+     * Morphological Operations
+     * ----------------------------------------------------------------- */
     void openOperation( const cv::Mat src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
     void closeOperation( const cv::Mat src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
 
+
+    /*!
+    * Histogram
+    * ----------------------------------------------------------------- */
     std::vector<unsigned int> calHistogram( const cv::Mat srcGrayImage );
     std::vector<float> calProgressiveSum( const std::vector<unsigned int>& histogram );
     std::vector<float> calProgressiveSum( const cv::Mat srcGrayImage );
 
-    void getImageByMatFloat( const cv::Mat src, cv::Mat& dist );
+
+    /*!
+    * Conversion
+    * ----------------------------------------------------------------- */
+    void cvtFloatMatToUChar(const cv::Mat src, cv::Mat &dist);
+
+
+
+    /*!
+    * ETCs
+    * ----------------------------------------------------------------- */
+    cv::Point calCenterOfMass( const cv::Mat binaryMat );
 
 }
 

@@ -51,16 +51,16 @@ int main(int argc, const char **argv) {
 
     // If you want to pre cache the video put true (longer load time, but more control)
     // If not, put fault (good for a large video, and quick experiment)
-    Pupilware *pupilware = Pupilware::Create(false);
+    std::shared_ptr<Pupilware> pupilware = Pupilware::Create(false);
 
     pupilware->loadVideo( videoFilePath );
 
 
-    pupilware->addPupilSizeAlgorithm(std::shared_ptr<IPupilAlgorithm>(new MDStarbust("MDStarburst")));
-    pupilware->addPupilSizeAlgorithm(std::shared_ptr<IPupilAlgorithm>(new MDStarbustNeo("MDStarbustNeo")));
-//    pupilware->addPupilSizeAlgorithm(std::shared_ptr<PWAlgorithm>(new ALOfflineFile(gazeDataPath, 852)));
+    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbust>("MDStarburst"));
+    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustNeo>("MDStarbustNeo"));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<ALOfflineFile>(gazeDataPath, 852));
 
-    pupilware->execute(std::shared_ptr<SimpleImageSegmenter>(new SimpleImageSegmenter(faceCascadePath) ));
+    pupilware->execute(std::make_shared<SimpleImageSegmenter>(faceCascadePath) );
 
     return 0;
 }

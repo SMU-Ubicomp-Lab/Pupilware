@@ -4,8 +4,9 @@
 
 #include "SimpleImageSegmenter.hpp"
 
-#include "../etc/CWCVUtility.hpp"
-#include "../etc/CWUIHelper.hpp"
+#include "../Helpers/CWCVHelper.hpp"
+#include "../Helpers/CWUIHelper.hpp"
+#include "../Helpers/math/Snakuscules.hpp"
 
 using namespace std;
 using namespace cv;
@@ -87,70 +88,6 @@ namespace pw{
 
 
 
-    void calRegionEnergy(const cv::Mat srcGray, unsigned int& outSumIntensity,
-                           unsigned int& outPixelCount, cv::Point center, int radius){
-
-        cv::Point start( center.x - radius, center.y - radius );
-        cv::Point end( center.x + radius, center.y + radius );
-
-        start.x = max(start.x, 0);
-        start.y = max(start.y, 0);
-        end.x = min(end.x, srcGray.cols);
-        end.y = min(end.y, srcGray.rows);
-
-        const int radiusSq = radius*radius;
-
-        unsigned int sumIntensity = 0;
-        unsigned int pixelNumber = 0;
-
-        for (int y = start.y; y < end.y; ++y) {
-            for (int x = start.x; x < end.x; ++x) {
-
-                if(  ( (y - center.y) * (y - center.y) )
-                    +( (x - center.x) * (x - center.x) ) <= radiusSq  ){
-                    const uchar* intensity = srcGray.ptr<uchar>(y,x);
-                    sumIntensity += *intensity;
-                    pixelNumber ++;
-                }
-            }
-        }
-
-        outSumIntensity= sumIntensity;
-        outPixelCount = (pixelNumber);
-
-    }
-
-    double calSnake(const cv::Mat srcGray, cv::Point center, int radius){
-
-        assert(srcGray.channels() == 1 );
-
-        const double alpha = 2.0;
-        const int outerRadius = radius;
-        const int innerRadius = radius * (1.0/sqrt(alpha));
-
-        unsigned int outerIntensity = 0;
-        unsigned int outerPixel = 0;
-
-        unsigned int innerIntensity = 0;
-        unsigned int innerPixel = 0;
-
-        calRegionEnergy(srcGray, outerIntensity, outerPixel, center, outerRadius);
-        calRegionEnergy(srcGray, innerIntensity, innerPixel, center, innerRadius);
-
-        float outerEnergy = (outerIntensity - innerIntensity) / static_cast<double>( outerPixel - innerPixel );
-        float innerEnergy = innerIntensity / static_cast<double>(innerPixel);
-        float diff = outerEnergy - innerEnergy;
-
-//        std::cout << outerEnergy << " " << innerEnergy <<  " " << diff << std::endl;
-
-        return diff;
-
-
-    }
-
-
-    int radius = 10;
-
     cv::Point2f SimpleImageSegmenter::fineEyeCenter(const Mat grayEyeROI) {
 
         assert(grayEyeROI.channels() == 1);
@@ -180,44 +117,16 @@ namespace pw{
         Mat binary;
         cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
 
+        cv::Point p = cw::calCenterOfMass(binary);
 
-        // Calculate center of mass
-        Moments m = moments(binary, false);
-        cv::Point p(m.m10/m.m00, m.m01/m.m00);
+        cv::Point cPoint(blur.cols*0.5, blur.rows*0.5);
 
-        // ---- Test space ----------------------
-        // Calculate energy 6 directions.
-        // Move toward to the direction that has the lowest engergy.
-        {
-//            Mat testMat = Mat::zeros(300,300, CV_8UC1);
-//            cv::circle(testMat, Point(150,150),10,cv::Scalar(255), -1, cv::FILLED );
+        auto sn = Snakuscules::Create();
+        sn->fit( blur, cPoint, 20, 2.0, 20 );
 
-            Mat testMat = blur.clone();
+        cPoint = sn->getFitCenter();
 
-            cv::imshow("cir", testMat);
-            cv::waitKey(1);
-
-            Mat eMat(testMat.size(), CV_32FC1);
-
-            for (int y = 0; y < eMat.rows; ++y) {
-                for (int x = 0; x <eMat.cols; ++x) {
-                    double e = calSnake(testMat, Point(x,y), radius);
-                    *eMat.ptr<float>(y,x) = e;
-                }
-            }
-
-            Mat eMatD;
-            cw::getImageByMatFloat(eMat, eMatD);
-            cw::createTrackbar("radius", "emat", radius, 100);
-            cw::showImage("emat",eMatD,0);
-
-
-        }
-
-
-        // ---- Test space ----------------------
-
-        return p;
+        return cPoint;
     }
 
 

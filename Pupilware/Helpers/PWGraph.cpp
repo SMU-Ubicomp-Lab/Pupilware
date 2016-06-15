@@ -3,7 +3,7 @@
 //
 
 #include "PWGraph.hpp"
-#include "GraphUtils.h"
+#include "simpleGraph/GraphUtils.h"
 namespace pw
 {
     PWGraph::PWGraph(const char *name):

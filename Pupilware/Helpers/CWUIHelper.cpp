@@ -4,7 +4,7 @@
 
 #include "CWUIHelper.hpp"
 
-#include "GraphUtils.h"
+#include "simpleGraph/GraphUtils.h"
 #include "CVWindow.hpp"
 
 namespace cw {

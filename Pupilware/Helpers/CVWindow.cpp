@@ -4,6 +4,7 @@
 
 #include "CVWindow.hpp"
 
+#include "../preHeader.hpp"
 
 namespace pw{
 
@@ -14,16 +15,27 @@ namespace pw{
         double precision;
         void(*user_callback)(double);
 
-        void setup(const std::string& field_name, const std::string& window_name, void(*function)(double), double max_value, double default_value = 0, unsigned precision = 100){
+        void setup(const std::string& field_name
+                , const std::string& window_name
+                , void(*function)(double)
+                , double max_value
+                , double default_value = 0
+                , unsigned precision = 100){
+
+
             int_value = default_value * precision;
             cv::createTrackbar(field_name, window_name, &int_value, max_value * precision, DoubleTrack::callback, this);
             user_callback = function;
             this->precision = precision;
+
         }
 
+
         static void callback(int, void* object){
+
             DoubleTrack* pObject = static_cast<DoubleTrack*>(object);
             pObject->user_callback(pObject->int_value / pObject->precision);
+
         }
 
     };
@@ -51,6 +63,7 @@ namespace pw{
 
     void CVWindow::addTrackbarDouble(const std::string &label, void(*f)(double), double max) {
 
+        throw_assert(false, "This function has not been implemented. ");
         DoubleTrack().setup(label, this->winName, f, max);
     }
 
@@ -61,6 +74,7 @@ namespace pw{
     }
 
     void CVWindow::resize( int width, int height){
+
 
         cv::resizeWindow(winName, width, height);
 

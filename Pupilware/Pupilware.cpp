@@ -8,7 +8,12 @@
 
 #include "Pupilware.hpp"
 
+#include "preHeader.hpp"
+
 #include "SignalProcessing/SimpleSignalProcessor.hpp"
+#include "Helpers/PWGraph.hpp"
+#include "Algorithm/PWDataModel.hpp"
+#include "SignalProcessing/SignalProcessingHelper.hpp"
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -16,9 +21,6 @@
 #include <sstream>
 #include <fstream>
 
-#include "etc/PWGraph.hpp"
-#include "Algorithm/PWDataModel.hpp"
-#include "SignalProcessing/SignalProcessingHelper.hpp"
 
 
 using namespace std;
@@ -92,7 +94,8 @@ namespace pw {
          * load a video file.
          * */
         void loadVideo(const std::string &videoFilePath){
-            assert(!videoFilePath.empty());
+
+            REQUIRES(!videoFilePath.empty(), "The video path must not be empty.");
 
             if (videoFilePath.empty()) {
                 cout << "[Error] The video name is empty. Please check your path name." << endl;
@@ -109,11 +112,13 @@ namespace pw {
 //------------------------------------------------------------------------------------------------------------------
 
         void addPupilSizeAlgorithm( std::shared_ptr<IPupilAlgorithm> algorithm){
-            assert(algorithm != nullptr);
-            assert(algorithms.size() < 5); // only support maximum to 5 for now.
+
+            REQUIRES(algorithm != nullptr, "Algorithm must not be null.");
+            REQUIRES(algorithms.size() < 5, "Only 5 algorithms allows."); // only support maximum to 5 for now.
 
             std::shared_ptr<PWDataModel> x(new PWDataModel());
             algorithms[algorithm] = x;
+
         }
 
 //------------------------------------------------------------------------------------------------------------------
@@ -122,8 +127,8 @@ namespace pw {
          * */
         void execute( std::shared_ptr<IImageSegmenter> imgSeg ){
 
-            assert(algorithms.size() > 0);
-            assert(imgSeg != nullptr);
+            REQUIRES(algorithms.size() > 0, "There is no algorithm in the system, please add some.");
+            REQUIRES(imgSeg != nullptr, "Image Segmenter must not be null.");
 
             if (algorithms.size() <= 0) {
                 cout << "[Warning] Algorithm is missing. Please add algorithm first";
@@ -367,14 +372,14 @@ namespace pw {
                           std::shared_ptr<IImageSegmenter> imgSeg,
                           std::shared_ptr<IPupilAlgorithm> algorithm ){
 
-            assert(!colorFrame.empty());
+            REQUIRES(algorithm != nullptr, "Finding Pupil size algorithm must not be null.");
+            REQUIRES(imgSeg != nullptr, "Image Segmenter must not be null.");
+            REQUIRES(!colorFrame.empty(), "The source must not be empty.");
 
             std::vector<Mat> frameChannels;
             split(colorFrame, frameChannels);
 
-            //! Use only the red channel.
-            //
-            Mat frameGray = frameChannels[2];
+            Mat frameGray = frameChannels[2];   // Use only the red channel.
 
             cv::Rect faceRect;
 
@@ -385,21 +390,19 @@ namespace pw {
 
 
             //! Extract eyes from the frame
-            //
             cv::Rect leftEyeRegion;
             cv::Rect rightEyeRegion;
             imgSeg->extractEyes(faceRect, leftEyeRegion, rightEyeRegion);
 
 
             //! Find eye center
-            //
             Mat grayFace = frameGray(faceRect);
             Point2f leftEyeCenter = imgSeg->fineEyeCenter(grayFace(leftEyeRegion));
+//            Point2f leftEyeCenter(0,0);
             Point2f rightEyeCenter = imgSeg->fineEyeCenter(grayFace(rightEyeRegion));
 
 
             //! Compute pupil size
-            //
             Mat colorFace = colorFrame(faceRect);
 
             //! Compute Eye distance in pixel
@@ -435,9 +438,9 @@ namespace pw {
          * Compute pupil size with PWAlgorithm object
          * */
         PWPupilSize computePupilSize( const PupilMeta& pupilMeta,
-                               std::shared_ptr<IPupilAlgorithm> algorithm ){
+                                      std::shared_ptr<IPupilAlgorithm> algorithm ){
 
-            assert(algorithm != nullptr);
+            REQUIRES(algorithm != nullptr, "Pupil Size Algorithm must not be null.");
 
             return algorithm->process(pupilMeta);
         }
@@ -479,8 +482,8 @@ namespace pw {
             for(auto it: algorithms) {
                 auto algorithm = it.first;
                 auto storage = it.second;
-                ofstream f;
-                f.open("/Users/redeian/Documents/data/videos/ID265513/" + algorithm->getName()+".csv");
+                ofstream f{"/Users/redeian/Documents/data/videos/ID265513/" + algorithm->getName()+".csv"};
+
                 f << "time,eyedist,left,right" << std::endl;
 
                 for (int i = 0; i < storage->getRightPupilSizes().size(); ++i) {
@@ -491,7 +494,6 @@ namespace pw {
                     << std::endl;
                 }
 
-                f.close();
             }
         }
 
@@ -521,7 +523,7 @@ namespace pw {
 
 //------------------------------------------------------------------------------------------------------------------
 
-    Pupilware* Pupilware::Create(bool isPreCacheVideo){
-        return new PupilwareImpl(isPreCacheVideo);
+    std::shared_ptr<Pupilware> Pupilware::Create(bool isPreCacheVideo){
+        return std::make_shared<PupilwareImpl>(isPreCacheVideo);
     }
 }

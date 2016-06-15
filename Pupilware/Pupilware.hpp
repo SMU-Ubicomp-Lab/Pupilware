@@ -38,7 +38,7 @@ namespace pw {
         virtual void addPupilSizeAlgorithm( std::shared_ptr<IPupilAlgorithm> algorithm)=0;
 
 
-        static Pupilware* Create(bool isPreCacheVideo);
+        static std::shared_ptr<Pupilware> Create(bool isPreCacheVideo);
     };
 }
 

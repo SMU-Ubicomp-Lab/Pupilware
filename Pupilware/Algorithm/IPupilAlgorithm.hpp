@@ -12,8 +12,8 @@
 #include <opencv2/opencv.hpp>
 #include "PupilMeta.hpp"
 
-#include "../etc/CWUIHelper.hpp"
-#include "../etc/CWCVUtility.hpp"
+#include "../Helpers/CWUIHelper.hpp"
+#include "../Helpers/CWCVHelper.hpp"
 
 #include "PWTypes.hpp"
 

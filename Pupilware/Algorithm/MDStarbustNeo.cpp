@@ -7,7 +7,7 @@
 //
 
 #include "MDStarbustNeo.hpp"
-#include "../etc/Ransac.h"
+#include "../Helpers/math/Ransac.h"
 
 using namespace cv;
 using namespace std;
@@ -53,11 +53,11 @@ namespace pw {
         Mat leftEyeS;
         cv::resize(pupilMeta.getLeftEyeImage(), leftEyeS, s);
         Mat debugLeftEye = leftEyeS.clone();
-//        float leftPupilRadius = findPupilSize(  leftEyeS
-//                , pupilMeta.getLeftEyeCenter()
-//                , debugLeftEye );
+        float leftPupilRadius = findPupilSize(  leftEyeS
+                , pupilMeta.getLeftEyeCenter()
+                , debugLeftEye );
 
-        float leftPupilRadius = 0.0f;
+//        float leftPupilRadius = 0.0f;
 
 
         Mat rightEyeS;
@@ -179,9 +179,9 @@ namespace pw {
         Mat blur;
         cv::GaussianBlur(grayEye, blur,Size(bk*2+1,bk*2+1), bi);
 
-        cw::createTrackbar("k", "blur", bk, 30);
-        cw::createTrackbar("int", "blur", bi, 255);
-        cw::showImage("blur",blur);
+//        cw::createTrackbar("k", "blur", bk, 30);
+//        cw::createTrackbar("int", "blur", bi, 255);
+//        cw::showImage("blur",blur);
 
 
         std::vector<float>cHist;
@@ -204,9 +204,9 @@ namespace pw {
 
         cw::closeOperation(binary, binary, os);
 
-        cw::createTrackbar("size", "bi", os, 100);
+//        cw::createTrackbar("size", "bi", os, 100);
 
-        cw::showImage("bi",binary);
+//        cw::showImage("bi",binary);
 
         // Calculate center of mass
         Moments m = moments(binary, false);
