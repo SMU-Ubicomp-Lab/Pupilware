@@ -15,7 +15,7 @@ using namespace cv;
 namespace cw {
     
     /**  @function Erosion  */
-    void erosion( const Mat src, Mat& dst, int erosionSize, int erosionType ) {
+    void erosion( const Mat& src, Mat& dst, int erosionSize, int erosionType ) {
 
         REQUIRES( !src.empty(), "The source must not be empty." );
         REQUIRES( erosionSize > 0, "Size must be more than zero. Now size is " << erosionSize );
@@ -38,7 +38,7 @@ namespace cw {
     }
 
 
-    void openOperation( const Mat src, Mat& dst, int size, int type ) {
+    void openOperation( const Mat& src, Mat& dst, int size, int type ) {
 
         REQUIRES( !src.empty(), "The source must not be empty." );
         REQUIRES( size > 0, "Size must be more than zero. Now size is " << size );
@@ -61,7 +61,7 @@ namespace cw {
     }
 
 
-    void closeOperation( const Mat src, Mat& dst, int size, int type ) {
+    void closeOperation( const Mat& src, Mat& dst, int size, int type ) {
 
         REQUIRES( !src.empty(), "The source must not be empty." );
         REQUIRES( size > 0, "Size must be more than zero. Now size is " << size );
@@ -77,7 +77,7 @@ namespace cw {
     }
 
 
-    std::vector<unsigned int> calHistogram( const Mat srcGray ) {
+    std::vector<unsigned int> calHistogram( const Mat& srcGray ) {
 
         REQUIRES( !srcGray.empty(), "The source must not be empty." );
         REQUIRES( srcGray.channels() == 1, "The source Mat must be one channel." );
@@ -96,33 +96,96 @@ namespace cw {
     }
 
 //!
-//  Snake Circle
+//  Dynamic Threshold
 // -----------------------------------------------------------------------------------------------------------------
 
     std::vector<float> calProgressiveSum( const std::vector<unsigned int>& histogram ) {
 
         REQUIRES( !histogram.empty(), "The histogram must not be empty." );
 
-        std::vector<float> CH(256);
+        std::vector<float> chist(256);
         // Cumulative histogram
-        CH[0]=histogram[0];
+        chist[0]=histogram[0];
 
         for (int i=1; i<256;++i) {
-            CH[i]=(CH[i-1]+histogram[i]);
+            chist[i]=(chist[i-1]+histogram[i]);
         }
 
-        return CH;
+        return chist;
     }
 
 
-    std::vector<float> calProgressiveSum( const Mat srcGray ){
+    std::vector<float> calProgressiveSum( const Mat& srcGray ){
 
         REQUIRES( !srcGray.empty(), "The source must not be empty." );
         REQUIRES( srcGray.channels() == 1, "The source Mat must be one channel." );
 
         auto hist = calHistogram(srcGray);
 
-        return calProgressiveSum( hist);
+        auto result = calProgressiveSum( hist);
+
+        PROMISES(!result.empty(), "Return result is empty.");
+
+        return result;
+    }
+
+
+    int calDynamicThreshold( const cv::Mat& srcGray, float value  ){
+
+        REQUIRES( !srcGray.empty(), "The source must not be empty." );
+        REQUIRES( srcGray.channels() == 1, "The source Mat must be one channel." );
+        REQUIRES( value >=0.0f && value <= 1.0f, "The value must be betwee 0.0-1.0f." )
+
+        std::vector<float>cHist;
+        cHist = cw::calProgressiveSum(srcGray);
+
+        int imgSize = srcGray.rows*srcGray.cols;
+
+        int th = 0;
+        for (int j = 0; j < cHist.size(); ++j) {
+        double ch = cHist[j]/static_cast<double>(imgSize);
+            if(ch > value ){
+                th = j;
+                break;
+            }
+        }
+
+        PROMISES(th >= 0 && th <= 255, "Threshold output is invalided. it is not in range 0-255.");
+
+        return th;
+    }
+
+
+//!
+//  Dynamic Threshold
+// -----------------------------------------------------------------------------------------------------------------
+
+
+    /*!
+     * Resize function will return scale and output mat.
+     */
+    double resize( const cv::Mat& src, cv::Mat& dst, int targetWidth )
+    {
+        REQUIRES(!src.empty(), "Src must not be empty.");
+        REQUIRES(src.cols != 0, "Src cols must not be zero.");
+        REQUIRES(targetWidth > 0, "Target Width must more than zero.");
+
+        int width = src.cols;
+        int height = src.rows;
+
+        double scale = targetWidth / static_cast<float>(width);
+
+        cv::Rect roi;
+        roi.width = targetWidth;
+        roi.height = height * scale;
+
+        cv::resize( src, dst, roi.size() );
+
+        PROMISES(!dst.empty(), "Destination Mat is empty.");
+        PROMISES(dst.cols == targetWidth, "Output width is incorrect.");
+
+        return scale;
+
     }
 
 
@@ -130,7 +193,7 @@ namespace cw {
 //  Conversion
 // -----------------------------------------------------------------------------------------------------------------
 
-    void cvtFloatMatToUChar(const Mat src, Mat &dist){
+    void cvtFloatMatToUChar(const Mat& src, Mat &dst){
 
         REQUIRES( !src.empty(), "The source must not be empty." );
         REQUIRES( src.channels() == 1, "The source Mat must be one channel." );
@@ -138,13 +201,13 @@ namespace cw {
         double min;
         double max;
         cv::minMaxIdx(src, &min, &max);
-        cv::convertScaleAbs(src, dist, 255 / max);
+        cv::convertScaleAbs(src, dst, 255 / max);
 
-        PROMISES( !dist.empty(), "The output is empty. Please check." );
+        PROMISES( !dst.empty(), "The output is empty. Please check." );
     }
 
 
-    cv::Point calCenterOfMass( const cv::Mat binaryMat ){
+    cv::Point calCenterOfMass( const cv::Mat& binaryMat ){
 
         REQUIRES(!binaryMat.empty(), "The Source mat must not be empty.");
         REQUIRES(binaryMat.channels() == 1, "The source mat must be on channel.");

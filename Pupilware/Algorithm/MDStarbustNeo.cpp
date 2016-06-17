@@ -75,8 +75,8 @@ namespace pw {
         hconcat(debugLeftEye, debugRightEye, debugImg);
         window->update(debugImg);
 
-        return PWPupilSize(  leftPupilRadius
-                , rightPupilRadius*0.5 );
+        return PWPupilSize(  rightPupilRadius
+                , leftPupilRadius );
 
     }
 
@@ -127,8 +127,8 @@ namespace pw {
                 {
                     //TODO: Use RANSAC Circle radius? How about Ellipse wight?
 //                    eyeRadius = r.bestModel.GetRadius();
-//                    eyeRadius = (myEllipse.size.width + myEllipse.size.height) * 0.5f;
-                    eyeRadius = (myEllipse.size.width * 0.5f);
+                    eyeRadius = (myEllipse.size.width + myEllipse.size.height) * 0.25f;
+//                    eyeRadius = (myEllipse.size.width * 0.5f);
                 }
                 else
                 {
@@ -142,10 +142,10 @@ namespace pw {
                 ellipse( debugImg, myEllipse, Scalar(0,50,255) );
 
 
-                circle( debugImg,
-                            *r.bestModel.GetCenter(),
-                            r.bestModel.GetRadius(),
-                            Scalar(50,50,255) );
+//                circle( debugImg,
+//                            *r.bestModel.GetCenter(),
+//                            r.bestModel.GetRadius(),
+//                            Scalar(50,50,255) );
 
 
                 return eyeRadius;
@@ -163,10 +163,6 @@ namespace pw {
     }
 
 
-    int bk = 2;
-    int bi = 50;
-    int os = 25;
-
     void MDStarbustNeo::findEdgePoints(Mat grayEye,
                                     const Point &startingPoint,
                                     const vector<Point2f> &rays,
@@ -175,50 +171,25 @@ namespace pw {
 
         Mat debugGray = Mat::zeros(grayEye.rows, grayEye.cols, CV_8UC1);
 
+        int bk = 2;
+        int os = 25;
 
         Mat blur;
-        cv::GaussianBlur(grayEye, blur,Size(bk*2+1,bk*2+1), bi);
+        cv::GaussianBlur(grayEye, blur,Size(bk*2+1,bk*2+1), 3);
 
-//        cw::createTrackbar("k", "blur", bk, 30);
-//        cw::createTrackbar("int", "blur", bi, 255);
-//        cw::showImage("blur",blur);
-
-
-        std::vector<float>cHist;
-        cHist = cw::calProgressiveSum(blur);
-
-        int imgSize = blur.rows*blur.cols;
-
-        int th = 0;
-        for (int j = 0; j < cHist.size(); ++j) {
-            float x = (threshold/1000.0f);
-            double ch = cHist[j]/static_cast<double>(imgSize);
-            if(ch > 0.005 ){
-                th = j;
-                break;
-            }
-        }
+        int th = cw::calDynamicThreshold(blur, 0.005);
 
         Mat binary;
         cv::threshold(grayEye, binary, th, 255, CV_THRESH_BINARY_INV);
 
         cw::closeOperation(binary, binary, os);
-
-//        cw::createTrackbar("size", "bi", os, 100);
-
-//        cw::showImage("bi",binary);
-
-        // Calculate center of mass
-        Moments m = moments(binary, false);
-        cv::Point p(m.m10/m.m00, m.m01/m.m00);
-
-        Point seedPoint = p;
+        Point seedPoint = cw::calCenterOfMass(binary);
 
 
         for( int iter = 0; iter < STARBURST_ITERATION; iter++ )
         {
             std::vector<cv::Point> edgePointThisRound;
-            uchar *seed_intensity = binary.ptr<uchar>(p.y, p.x);
+            uchar *seed_intensity = binary.ptr<uchar>(seedPoint.y, seedPoint.x);
 
             for(auto r = rays.begin(); r != rays.end(); r++)
             {

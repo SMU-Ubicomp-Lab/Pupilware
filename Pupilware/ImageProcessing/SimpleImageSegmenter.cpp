@@ -4,6 +4,8 @@
 
 #include "SimpleImageSegmenter.hpp"
 
+#include "../preHeader.hpp"
+
 #include "../Helpers/CWCVHelper.hpp"
 #include "../Helpers/CWUIHelper.hpp"
 #include "../Helpers/math/Snakuscules.hpp"
@@ -90,7 +92,9 @@ namespace pw{
 
     cv::Point2f SimpleImageSegmenter::fineEyeCenter(const Mat grayEyeROI) {
 
-        assert(grayEyeROI.channels() == 1);
+        REQUIRES(!grayEyeROI.empty(), "The src mat must not be empty.");
+        REQUIRES(grayEyeROI.channels() == 1, "the src mat must be 1 channel.");
+
 
         if (grayEyeROI.channels() > 1)
             return Point2f();
@@ -99,20 +103,7 @@ namespace pw{
         Mat blur;
         cv::GaussianBlur(grayEyeROI, blur,Size(3,3), 3);
 
-        std::vector<float>cHist;
-        cHist = cw::calProgressiveSum(blur);
-
-        int imgSize = blur.rows*blur.cols;
-
-        int th = 0;
-        for (int j = 0; j < cHist.size(); ++j) {
-            double ch = cHist[j]/static_cast<double>(imgSize);
-            if(ch > 0.005 ){
-                th = j;
-                break;
-            }
-        }
-
+        int th = cw::calDynamicThreshold( blur, 0.005 );
 
         Mat binary;
         cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
@@ -126,7 +117,8 @@ namespace pw{
 
         cPoint = sn->getFitCenter();
 
-        return cPoint;
+//        return cPoint;
+        return p;
     }
 
 

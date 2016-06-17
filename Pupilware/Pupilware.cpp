@@ -172,7 +172,7 @@ namespace pw {
                         }
 
                     } else{
-                        cerr << "[Error] the frame is empty." << std::endl;
+                        cerr << "[Info] the frame is empty. The system is terminated." << std::endl;
                         break;
                     }
 
@@ -304,29 +304,6 @@ namespace pw {
 
             pupilSizeGraph->show();
 
-//                std::vector<float> smoothLeft;
-//                cw::fastMedfilt(storage->getLeftPupilSizes(), smoothLeft, 11);
-//
-//
-//                shared_ptr<PWGraph> smoothEye(new PWGraph("Smooth(red) Org(blue) smooth pupil size"));
-//                smoothEye->move(500, 400);
-//                smoothEye->drawGraph("original", storage->getLeftPupilSizes(), Scalar(0, 100, 200), 0, 13, 0, 250);
-//                smoothEye->drawGraph("smooth", smoothLeft, Scalar(255, 0, 0), 0, 13, 0, 250);
-//                smoothEye->show();
-
-
-
-
-//            std::vector<float> smoothDistance;
-//            cw::fastMedfilt(eyeDistance, smoothDistance, 11);
-//
-//            shared_ptr<PWGraph> eyeDistanceG(new PWGraph("Smooth(red) Org(blue) EyeCenter"));
-//            eyeDistanceG->move(10,400);
-//            eyeDistanceG->drawGraph("original", eyeDistance, Scalar(0, 100, 200), 0, 130, 0, 250);
-//            eyeDistanceG->drawGraph("smooth", smoothDistance, Scalar(255, 0, 0), 0, 130, 0, 250);
-//            eyeDistanceG->show();
-
-//            cw::showGraph("eye distance", eyeDistance, 1);
         }
 
 //------------------------------------------------------------------------------------------------------------------

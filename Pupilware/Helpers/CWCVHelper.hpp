@@ -14,7 +14,7 @@
 
 namespace cw {
     
-    void erosion( const cv::Mat src, cv::Mat& dst, int erosionSize=2, int erosionType=cv::MORPH_ELLIPSE );
+    void erosion( const cv::Mat& src, cv::Mat& dst, int erosionSize=2, int erosionType=cv::MORPH_ELLIPSE );
 
 
     /*!
@@ -32,29 +32,30 @@ namespace cw {
     /*!
      * Morphological Operations
      * ----------------------------------------------------------------- */
-    void openOperation( const cv::Mat src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
-    void closeOperation( const cv::Mat src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
+    void openOperation( const cv::Mat& src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
+    void closeOperation( const cv::Mat& src, cv::Mat& dst, int size=2, int type=cv::MORPH_ELLIPSE );
 
 
     /*!
     * Histogram
     * ----------------------------------------------------------------- */
-    std::vector<unsigned int> calHistogram( const cv::Mat srcGrayImage );
+    std::vector<unsigned int> calHistogram( const cv::Mat& srcGrayImage );
     std::vector<float> calProgressiveSum( const std::vector<unsigned int>& histogram );
-    std::vector<float> calProgressiveSum( const cv::Mat srcGrayImage );
+    std::vector<float> calProgressiveSum( const cv::Mat& srcGrayImage );
+    int calDynamicThreshold( const cv::Mat& srcGray, float value  );
 
 
     /*!
     * Conversion
     * ----------------------------------------------------------------- */
-    void cvtFloatMatToUChar(const cv::Mat src, cv::Mat &dist);
+    void cvtFloatMatToUChar(const cv::Mat& src, cv::Mat &dist);
 
-
+    double resize( const cv::Mat& src, cv::Mat& dst, int targetWidth );
 
     /*!
     * ETCs
     * ----------------------------------------------------------------- */
-    cv::Point calCenterOfMass( const cv::Mat binaryMat );
+    cv::Point calCenterOfMass( const cv::Mat& binaryMat );
 
 }
 
