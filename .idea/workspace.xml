@@ -15,99 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="clean up&#10;add resize function">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.hpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Helpers/helpers.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Helpers/helpers.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/MainFrame.fbp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/exit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/avatar-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/avatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/book.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/cancel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/copy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/dislike.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/download-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/download.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/edit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/envelope.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/folder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/garbage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/glasses.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/headphones.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/heart.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/house.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/like.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/logout.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/magnifying-glass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/monitor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/musical-note.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/next-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/next.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/padlock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/paper-plane.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/phone-call.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/photo-camera.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/pie-chart.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/piggy-bank.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/placeholder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/printer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/reload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/settings-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/settings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/share.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/shopping-bag.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/shopping-cart.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/shuffle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/speaker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/tag.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/upload-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/upload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/vector.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/logout.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware.xcodeproj/project.xcworkspace/xcuserdata/redeian.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Pupilware.xcodeproj/project.xcworkspace/xcuserdata/redeian.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Pupilware.iml" afterPath="$PROJECT_DIR$/.idea/Pupilware.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/main.cpp" afterPath="$PROJECT_DIR$/Pupilware/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/preHeader.hpp" afterPath="$PROJECT_DIR$/Pupilware/preHeader.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/TestPupilwareCore" afterPath="$PROJECT_DIR$/Pupilware/TestPupilwareCore" />
     </list>
     <ignored path="Pupilware.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -399,100 +307,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SignalProcessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImageProcessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="math" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pupilware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -723,7 +537,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464238355502</updated>
-      <workItem from="1469032792871" duration="9828000" />
+      <workItem from="1469032792871" duration="10148000" />
     </task>
     <task id="LOCAL-00001" summary="Change file structure again.&#10;Refactor&#10;Add Helpers">
       <created>1464281587150</created>
@@ -953,7 +767,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9828000" />
+    <option name="totallyTimeSpent" value="10148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -966,9 +780,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="33" y="23" width="1367" height="828" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17013372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17013372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26086956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1384,14 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-117">
@@ -1416,6 +1222,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
