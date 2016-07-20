@@ -39,7 +39,7 @@ namespace pw
 
 
 	bool Ransac::ransac_circle_fitting(std::vector<cv::Point2f>P, int N,
-		int ngood_pts,               //num of good input(estimation);
+		int ngood_pts,               //num of good input(estimation); use for determind number of iteration
 		double p_fail,                //prior prb. algorithm exit without having a good fits;
 
 		double distance_th,       //fitting distance threshold;
@@ -75,7 +75,7 @@ namespace pw
 				continue; // reject degenerate case;
 			}
 
-			int inliers=0;
+			
 			for(int k=0; k<N; ++k) 
 			{
 				float dist = distance_sq(&P[k], temp_circle.GetCenter());
@@ -103,7 +103,7 @@ namespace pw
 			{
 				out_inliner.clear();
 				out_inliner.assign(Q.begin(), Q.end());
-				max_inliner = Q.size();
+				max_inliner = static_cast<int>(Q.size());
 				bestModel = temp_circle;
 			}
 

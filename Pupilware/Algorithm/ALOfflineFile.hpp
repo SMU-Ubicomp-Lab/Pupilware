@@ -15,16 +15,21 @@ namespace pw{
         ALOfflineFile( const std::string& name,
                        const std::string& fileName,
                        unsigned int downSampleSize);
-
-        ~ALOfflineFile();
+        
+        ALOfflineFile( const ALOfflineFile& other)=default;
+        ALOfflineFile( ALOfflineFile&& other)=default;
+        ALOfflineFile& operator=( const ALOfflineFile& other)=default;
+        ALOfflineFile& operator=( ALOfflineFile&& other)= default;
+        
+        virtual ~ALOfflineFile();
 
         virtual void init() override ;
 
-        virtual PWPupilSize process(const PupilMeta &pupilMeta) override;
+        virtual PWPupilSize process( const cv::Mat& src, const PWFaceMeta &meta ) override;
 
         virtual void exit() override;
 
-
+        
     private:
         std::string filename;
         unsigned int sampleSize;

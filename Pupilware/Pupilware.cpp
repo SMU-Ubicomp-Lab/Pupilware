@@ -10,7 +10,7 @@
 
 #include "preHeader.hpp"
 
-#include "SignalProcessing/SimpleSignalProcessor.hpp"
+#include "SignalProcessing/BasicSignalProcessor.hpp"
 #include "Helpers/PWGraph.hpp"
 #include "Algorithm/PWDataModel.hpp"
 #include "SignalProcessing/SignalProcessingHelper.hpp"
@@ -65,7 +65,7 @@ namespace pw {
 
         PupilwareImpl(bool isPreCacheVideo):
                 currentFrameNumber(0),
-                isPlaying(0),
+                isPlaying(1),
                 mainWindow(new CVWindow("MainWindow")),
                 isPreCacheVideo(isPreCacheVideo)
         {
@@ -74,7 +74,6 @@ namespace pw {
 
             mainWindow->addTrackbar("play", &isPlaying, 1);
             mainWindow->moveWindow(0,0);
-
 
         }
 
@@ -164,11 +163,14 @@ namespace pw {
                         for (auto it : algorithms) {
                             auto algorithm = it.first;
 
-                            double e1 = cv::getTickCount();
-                            executeFrame(colorFrame, imgSeg, algorithm);
-                            double e2 = cv::getTickCount();
+                            auto result = executeFrame(colorFrame, imgSeg, algorithm);
 
-                            secondPFrame = (e2 - e1) / cv::getTickFrequency();
+                            //! Store data to lists
+                            //
+                            auto storage = algorithms[algorithm];
+                            storage->setPupilSizeAt( currentFrameNumber, result );
+
+                            // todo add eye distance to the storage
                         }
 
                     } else{
@@ -287,13 +289,16 @@ namespace pw {
 
         void updateGraphs() {
 
+            const float kMinValue = 0.0f;
+            const float kMaxValue = 0.2f;
             pupilSizeGraph = std::make_shared<PWGraph>("Original(red) Neo(blue) right pupil size");
 
             int i =0;
             for(auto it: algorithms) {
                 auto storage = it.second;
 
-                pupilSizeGraph->drawGraph("right", storage->getRightPupilSizes(), colors[i], 0, 30, 0, 250);
+                pupilSizeGraph->drawGraph("right", storage->getRightPupilSizes(), colors[i], kMinValue, kMaxValue, 0, 250);
+                pupilSizeGraph->drawGraph("left", storage->getLeftPupilSizes(), colors[i], kMinValue, kMaxValue, 0, 250);
 
 //                std::vector<float> smoothRight;
 //                cw::fastMedfilt(storage->getRightPupilSizes(), smoothRight, 31);
@@ -326,6 +331,7 @@ namespace pw {
                 // So we init with 0, so that there is something
                 // for graph module to work with.
                 eyeDistance.resize(1);
+
             }
 
         }
@@ -345,7 +351,7 @@ namespace pw {
         /*!
          * Execute Pupilware pipeline only one given frame
          * */
-        void executeFrame(const cv::Mat colorFrame,
+        PWPupilSize executeFrame(const cv::Mat colorFrame,
                           std::shared_ptr<IImageSegmenter> imgSeg,
                           std::shared_ptr<IPupilAlgorithm> algorithm ){
 
@@ -362,7 +368,7 @@ namespace pw {
 
             if (!imgSeg->findFace(frameGray, faceRect)) {
                 cout << "[Waning] There is no face found this frame." << endl;
-                return;
+                return PWPupilSize();
             }
 
 
@@ -375,9 +381,17 @@ namespace pw {
             //! Find eye center
             Mat grayFace = frameGray(faceRect);
             Point2f leftEyeCenter = imgSeg->fineEyeCenter(grayFace(leftEyeRegion));
-//            Point2f leftEyeCenter(0,0);
             Point2f rightEyeCenter = imgSeg->fineEyeCenter(grayFace(rightEyeRegion));
 
+            //! Convert it to face coordinate
+            leftEyeRegion.x += faceRect.x;
+            leftEyeRegion.y += faceRect.y;
+            rightEyeRegion.x += faceRect.x;
+            rightEyeRegion.y += faceRect.y;
+            leftEyeCenter.x += leftEyeRegion.x;
+            leftEyeCenter.y += leftEyeRegion.y;
+            rightEyeCenter.x += rightEyeRegion.x;
+            rightEyeCenter.y += rightEyeRegion.y;
 
             //! Compute pupil size
             Mat colorFace = colorFrame(faceRect);
@@ -386,26 +400,19 @@ namespace pw {
             float eyeDist = cw::calDistance(leftEyeCenter, rightEyeCenter);
 
             //! Prepare PupilMeta object
-            PupilMeta eyeMeta;
-            eyeMeta.setEyeCenter(leftEyeCenter, rightEyeCenter);
-            eyeMeta.setEyeImages(colorFace(leftEyeRegion),
-                                 colorFace(rightEyeRegion));
+            PWFaceMeta eyeMeta;
+            eyeMeta.setLeftEyeCenter(leftEyeCenter);
+            eyeMeta.setRightEyeCenter(rightEyeCenter);
+            eyeMeta.setLeftEyeClosed(false);
+            eyeMeta.setRightEyeClosed(false);
             eyeMeta.setFrameNumber(currentFrameNumber);
             eyeMeta.setEyeDistancePx(eyeDist);
+            eyeMeta.setFaceRect(faceRect);
+            eyeMeta.setLeftEyeRect(leftEyeRegion);
+            eyeMeta.setRightEyeRect(rightEyeRegion);
+            PWPupilSize result = computePupilSize( colorFrame, eyeMeta, algorithm );
 
-            PWPupilSize result = computePupilSize( eyeMeta, algorithm );
-
-
-            //! Store data to lists
-            //
-            auto storage = algorithms[algorithm];
-            storage->setPupilSizeAt( currentFrameNumber, result );
-
-            if(isPreCacheVideo)
-                eyeDistance[currentFrameNumber] = ( cw::calDistance(leftEyeCenter, rightEyeCenter) );
-            else
-                eyeDistance.push_back( eyeDist );
-
+            return result;
 
         }
 
@@ -414,12 +421,12 @@ namespace pw {
         /*!
          * Compute pupil size with PWAlgorithm object
          * */
-        PWPupilSize computePupilSize( const PupilMeta& pupilMeta,
+        PWPupilSize computePupilSize( const Mat& src, const PWFaceMeta& meta,
                                       std::shared_ptr<IPupilAlgorithm> algorithm ){
 
             REQUIRES(algorithm != nullptr, "Pupil Size Algorithm must not be null.");
 
-            return algorithm->process(pupilMeta);
+            return algorithm->process(src, meta);
         }
 
 //------------------------------------------------------------------------------------------------------------------

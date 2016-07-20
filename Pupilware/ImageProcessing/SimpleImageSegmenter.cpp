@@ -20,8 +20,6 @@ namespace pw{
         loadFaceDetectionCascade(fileFaceCascadePath);
     }
 
-    SimpleImageSegmenter::SimpleImageSegmenter( const SimpleImageSegmenter &other ){ }
-
     SimpleImageSegmenter::~SimpleImageSegmenter(){
 
     }
@@ -77,11 +75,16 @@ namespace pw{
         int eye_region_height = static_cast<int>(faceROI.width * (kEyePercentHeight / 100.0f));
         int eye_region_top = static_cast<int>(faceROI.height * (kEyePercentTop / 100.0f));
 
-        cv::Rect leftEyeRegion(static_cast<int>(faceROI.width * (kEyePercentSide / 100.0f)),
-                               eye_region_top, eye_region_width, eye_region_height);
+        cv::Rect leftEyeRegion(static_cast<int>(faceROI.width * (kEyePercentSide / 100.0f)) ,
+                               eye_region_top,
+                               eye_region_width,
+                               eye_region_height);
+
         cv::Rect rightEyeRegion(
                 static_cast<int>(faceROI.width - eye_region_width - faceROI.width * (kEyePercentSide / 100.0f)),
-                eye_region_top, eye_region_width, eye_region_height);
+                eye_region_top,
+                eye_region_width,
+                eye_region_height);
 
 
         outLeftEyeRegion = leftEyeRegion;
@@ -99,26 +102,32 @@ namespace pw{
         if (grayEyeROI.channels() > 1)
             return Point2f();
 
-
         Mat blur;
         cv::GaussianBlur(grayEyeROI, blur,Size(3,3), 3);
 
-        int th = cw::calDynamicThreshold( blur, 0.005 );
+        
+/*-------- Center of Mass technique -------------*/
+//        int th = cw::calDynamicThreshold( blur, 0.006 );
+//
+//        Mat binary;
+//        cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
+//
+//        cv::Point p = cw::calCenterOfMass(binary);
+//        return p;
+/*----------------------------------------------*/
 
-        Mat binary;
-        cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
+/*---------- Snakuscules technique -------------*/
+        cv::Point cPoint = Point(grayEyeROI.cols/2, grayEyeROI.rows/2);
 
-        cv::Point p = cw::calCenterOfMass(binary);
+        Snakuscules sn;
+        sn.fit( blur, cPoint, 20, 2.0, 20 );
 
-        cv::Point cPoint(blur.cols*0.5, blur.rows*0.5);
+        cPoint = sn.getFitCenter();
 
-        auto sn = Snakuscules::Create();
-        sn->fit( blur, cPoint, 20, 2.0, 20 );
+        return cPoint;
+/*----------------------------------------------*/
+        
 
-        cPoint = sn->getFitCenter();
-
-//        return cPoint;
-        return p;
     }
 
 

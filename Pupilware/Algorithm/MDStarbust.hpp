@@ -17,16 +17,26 @@ namespace pw {
 
     public:
         MDStarbust( const std::string& name );
+        MDStarbust( const MDStarbust& other)=default;
+        MDStarbust( MDStarbust&& other)=default;
+        MDStarbust& operator=( const MDStarbust& other)=default;
+        MDStarbust& operator=( MDStarbust&& other)=default;
         virtual ~MDStarbust();
 
         virtual void init() override ;
 
-        virtual PWPupilSize process( const PupilMeta &pupilMeta ) override ;
+        virtual PWPupilSize process( const cv::Mat& src, const PWFaceMeta &meta ) override;
 
         virtual void exit() override ;
-
+        
+        const cv::Mat& getDebugImage() const;
+        
     protected:
-
+        
+        // Debug Image
+        cv::Mat debugImage;
+        
+        
         // Maximum member of pixel walk from the center of the pupil.
         const unsigned int MAX_WALKING_STEPS = 20;
 
@@ -104,6 +114,9 @@ namespace pw {
         float findPupilSize(const cv::Mat &colorEyeFrame,
                             cv::Point eyeCenter,
                             cv::Mat &debugImg) const;
+        
+        
+        
     };
 }
 

@@ -66,16 +66,18 @@ namespace pw{
         cv::resize(eyeDistanceList, eyeDistanceList, cv::Size(sampleSize, 1));
         cv::resize(timeList, timeList, cv::Size(sampleSize, 1));
 
-        // store it
+
     }
 
 
-    PWPupilSize ALOfflineFile::process(const PupilMeta &pupilMeta) {
 
-        const int frameNumber = pupilMeta.getFrameNumber();
+    PWPupilSize ALOfflineFile::process( const cv::Mat& src, const PWFaceMeta &meta )
+    {
 
-        return pw::PWPupilSize(    leftPupilSizeList[frameNumber]
-                                 , rightPupilSizeList[frameNumber]);
+        const int frameNumber = meta.getFrameNumber();
+
+        return pw::PWPupilSize(    leftPupilSizeList[frameNumber] / eyeDistanceList[frameNumber]
+                                 , rightPupilSizeList[frameNumber] / eyeDistanceList[frameNumber]);
 
     }
 

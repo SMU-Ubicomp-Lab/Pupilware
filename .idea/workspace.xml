@@ -14,13 +14,100 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="">
+    <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="clean up&#10;add resize function">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.hpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Helpers/helpers.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/Helpers/helpers.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/MainFrame.fbp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/exit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/avatar-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/avatar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/book.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/chat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/copy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/dislike.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/download-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/download.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/envelope.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/folder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/garbage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/glasses.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/hand.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/headphones.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/heart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/house.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/like.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/link.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/logout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/magnifying-glass.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/monitor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/musical-note.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/next-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/padlock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/paper-plane.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/phone-call.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/photo-camera.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/pie-chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/piggy-bank.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/placeholder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/printer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/reload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/settings-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/settings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/share.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/shopping-bag.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/shopping-cart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/shuffle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/speaker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/tag.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/upload-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/icons/vector.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pupilware/UI/images/logout.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware.xcodeproj/project.xcworkspace/xcuserdata/redeian.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Pupilware.xcodeproj/project.xcworkspace/xcuserdata/redeian.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Pupilware.iml" afterPath="$PROJECT_DIR$/.idea/Pupilware.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.cpp" afterPath="$PROJECT_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" afterPath="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" afterPath="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/main.cpp" afterPath="$PROJECT_DIR$/Pupilware/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/preHeader.hpp" afterPath="$PROJECT_DIR$/Pupilware/preHeader.hpp" />
     </list>
     <ignored path="Pupilware.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,9 +118,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="MaximumCircleFit.hpp" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="171">
+                    <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -46,23 +152,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pupilware.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pupilware.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="379" column="0" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CWCVHelper.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="172" column="29" selection-start-line="172" selection-start-column="29" selection-end-line="172" selection-end-column="29" />
+            <state relative-caret-position="-2965">
+              <caret line="292" column="39" selection-start-line="292" selection-start-column="39" selection-end-line="292" selection-end-column="39" />
               <folding>
-                <element signature="e#144#169#0" expanded="true" />
+                <element signature="e#413#430#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +167,52 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="51" column="78" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
+            <state relative-caret-position="-117">
+              <caret line="40" column="103" selection-start-line="40" selection-start-column="103" selection-end-line="40" selection-end-column="103" />
+              <folding>
+                <element signature="e#131#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DummyAlgo.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DummyAlgo.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MaximumCircleFit.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1172">
+              <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+              <folding>
+                <element signature="e#165#196#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ISignalProcessor.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,8 +221,38 @@
       <file leaf-file-name="CWCVHelper.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+            <state relative-caret-position="679">
+              <caret line="53" column="27" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IPupilAlgorithm.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MDStarbustNeo.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MDStarbustNeo.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -106,24 +276,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Pupilware/etc/GraphUtils.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/contrib/plot.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/contrib/plot.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/PupilwareImpl.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/PupilwareImpl.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/PupilMeta.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/PupilMeta.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/etc/CWUIHelper.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/etc/CWUIHelper.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWAlgorithm.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/etc/PWGraph.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/etc/PWGraph.cpp" />
@@ -133,30 +291,42 @@
         <option value="$PROJECT_DIR$/Pupilware/MDStarbust.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Pupilware.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/etc/CWCVUtility.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Core/preHeader.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/preHeader.hpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Helpers/CVWindow.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Helpers/CVWindow.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWFaceMeta.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWFaceMeta.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/PupilwareController.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/PupilwareController.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Helpers/PWGraph.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/MaximumCircleFit.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/MDStarbustNeo.hpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp" />
+        <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp" />
       </list>
     </option>
   </component>
@@ -167,7 +337,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
+    <option name="x" value="33" />
     <option name="y" value="23" />
     <option name="width" value="1367" />
     <option name="height" value="828" />
@@ -226,6 +396,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SignalProcessing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,23 +516,23 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="940" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CMake" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Pupilware" />
-      <recent name="$PROJECT_DIR$/Pupilware/Algorithm" />
-      <recent name="$PROJECT_DIR$/Pupilware/contrib" />
-      <recent name="$PROJECT_DIR$/Pupilware/" />
-      <recent name="$PROJECT_DIR$/Pupilware/etc" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Pupilware/Algorithm" />
       <recent name="$PROJECT_DIR$/Pupilware" />
       <recent name="$PROJECT_DIR$/Pupilware/Core" />
       <recent name="$PROJECT_DIR$/Pupilware/Helpers/mathHelpers" />
       <recent name="$PROJECT_DIR$/Pupilware/Helpers/simpleGraph" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Pupilware/" />
       <recent name="$PROJECT_DIR$/Pupilware/Algorithm" />
+      <recent name="$PROJECT_DIR$/Pupilware" />
+      <recent name="$PROJECT_DIR$/Pupilware/contrib" />
+      <recent name="$PROJECT_DIR$/Pupilware/etc" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Pupilware">
@@ -354,6 +542,9 @@
     </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pupilware" TARGET_NAME="Pupilware" CONFIG_NAME="Debug">
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -509,17 +700,17 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Pupilware" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pupilware" TARGET_NAME="Pupilware" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pupilware" RUN_TARGET_NAME="Pupilware">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pupilware" TARGET_NAME="Pupilware" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pupilware" RUN_TARGET_NAME="Pupilware">
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="Pupilware" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pupilware" TARGET_NAME="Pupilware" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pupilware" RUN_TARGET_NAME="Pupilware">
+      <envs />
+      <method />
+    </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Pupilware" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Pupilware" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -532,6 +723,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464238355502</updated>
+      <workItem from="1469032792871" duration="9828000" />
     </task>
     <task id="LOCAL-00001" summary="Change file structure again.&#10;Refactor&#10;Add Helpers">
       <created>1464281587150</created>
@@ -750,8 +942,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466018541691</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="clean up&#10;add resize function">
+      <created>1466178062475</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1466178062475</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="9828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -763,27 +965,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="23" width="1367" height="828" extended-state="0" />
+    <frame x="33" y="23" width="1367" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17013372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26086956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3478261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24184783" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24945612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3980978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26902175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="111" y="123" width="1200" height="628" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -824,153 +1026,16 @@
     <MESSAGE value="scaled image and using Cumulative Histogram technique." />
     <MESSAGE value="create a energy image of the eye." />
     <MESSAGE value="Commit before cleaning up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit before cleaning up" />
+    <MESSAGE value="clean up&#10;add resize function" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up&#10;add resize function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="62" />
+      <option name="time" value="94" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="blur.rows" language="ObjectiveC" />
-        <watch expression="blur.cols" language="ObjectiveC" />
-        <watch expression="grayEye.rows" language="ObjectiveC" />
-        <watch expression="grayEye.cols" language="ObjectiveC" />
-        <watch expression="grayEye.rows*grayEye.cols" language="ObjectiveC" />
-        <watch expression="(int)*pix" language="ObjectiveC" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/math.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="703" column="14" selection-start-line="703" selection-start-column="8" selection-end-line="703" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/highgui.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="371" column="18" selection-start-line="371" selection-start-column="18" selection-end-line="371" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/constants.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PupilMeta.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="2190" column="65" selection-start-line="2190" selection-start-column="65" selection-end-line="2190" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="438" column="0" selection-start-line="438" selection-start-column="0" selection-end-line="438" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/PWGraph.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CVWindow.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/imgproc.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="2333" column="28" selection-start-line="2333" selection-start-column="18" selection-end-line="2333" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -978,52 +1043,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/mat.inl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="389" column="0" selection-start-line="389" selection-start-column="0" selection-end-line="389" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/types.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="596" column="24" selection-start-line="596" selection-start-column="24" selection-end-line="596" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1041,13 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1059,7 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,24 +1085,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/helpers.cpp" />
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        <state relative-caret-position="269">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="44" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/helpers.cpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/math/Ransac.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/preHeader.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="172" column="29" selection-start-line="172" selection-start-column="29" selection-end-line="172" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" />
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/PWCSVExporter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/PWVideoWriter.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CVWindow.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="88" column="80" selection-start-line="88" selection-start-column="80" selection-end-line="88" selection-end-column="80" />
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1098,123 +1172,261 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/PWGraph.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/preHeader.hpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWFaceMeta.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="43" column="54" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="67" column="69" selection-start-line="67" selection-start-column="69" selection-end-line="67" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbust.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustG.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1708">
-          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="129" column="85" selection-start-line="129" selection-start-column="85" selection-end-line="129" selection-end-column="85" />
+        <state relative-caret-position="210">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
           <folding>
-            <element signature="e#159#187#0" expanded="true" />
+            <element signature="e#56#93#0" expanded="false" />
+            <marker date="1468603226000" expanded="true" signature="253:564" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="621:889" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="939:1254" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="1303:1528" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="1641:1705" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="1838:1937" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="2038:2103" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="2203:2269" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="2431:3584" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="3705:4192" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="4275:4338" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="4564:4613" ph="{...}" />
+            <marker date="1468603226000" expanded="true" signature="4707:6020" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareController.hpp" />
+    <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareController.cpp" />
+    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/mat.inl.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="697" column="0" selection-start-line="697" selection-start-column="0" selection-end-line="697" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWFaceMeta.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="1260">
+          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
           <folding>
             <element signature="e#56#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.cpp">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="172" column="29" selection-start-line="172" selection-start-column="29" selection-end-line="172" selection-end-column="29" />
+        <state relative-caret-position="-192">
+          <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWDataModel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/opencv3/3.1.0_3/include/opencv2/core/types.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="569" column="0" selection-start-line="569" selection-start-column="0" selection-end-line="569" selection-end-column="0" />
           <folding>
-            <element signature="e#144#169#0" expanded="true" />
+            <element signature="e#18497#18511#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/PWGraph.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding>
+            <marker date="1469035917000" expanded="true" signature="127:1450" ph="{...}" />
+            <marker date="1469035917000" expanded="true" signature="305:368" ph="{...}" />
+            <marker date="1469035917000" expanded="true" signature="1057:1109" ph="{...}" />
+            <marker date="1469035917000" expanded="true" signature="1166:1228" ph="{...}" />
+            <marker date="1469035917000" expanded="true" signature="1260:1448" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/math/Snakuscules.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/PWTypes.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <folding>
+            <marker date="1469037997000" expanded="true" signature="128:412" ph="{...}" />
+            <marker date="1469037997000" expanded="true" signature="153:408" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="79" column="99" selection-start-line="79" selection-start-column="99" selection-end-line="79" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Helpers/CWCVHelper.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+        <state relative-caret-position="679">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="51" column="78" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
-          <folding />
+        <state relative-caret-position="-117">
+          <caret line="40" column="103" selection-start-line="40" selection-start-column="103" selection-end-line="40" selection-end-column="103" />
+          <folding>
+            <element signature="e#131#155#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="379" column="0" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
+        <state relative-caret-position="-2965">
+          <caret line="292" column="39" selection-start-line="292" selection-start-column="39" selection-end-line="292" selection-end-column="39" />
+          <folding>
+            <element signature="e#413#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1172">
+          <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+          <folding>
+            <element signature="e#165#196#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

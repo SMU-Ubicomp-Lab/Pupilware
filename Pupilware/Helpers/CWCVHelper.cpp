@@ -179,7 +179,7 @@ namespace cw {
         roi.width = targetWidth;
         roi.height = height * scale;
 
-        cv::resize( src, dst, roi.size() );
+        cv::resize( src, dst, roi.size(), 0,0, INTER_LANCZOS4 );
 
         PROMISES(!dst.empty(), "Destination Mat is empty.");
         PROMISES(dst.cols == targetWidth, "Output width is incorrect.");

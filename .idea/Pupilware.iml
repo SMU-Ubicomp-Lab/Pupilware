@@ -13,23 +13,24 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/math/Ransac.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/math/Snakuscules.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CWCVHelper.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/helpers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CWUIHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CVWindow.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/simpleGraph/GraphUtils.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CWUIHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CWCVHelper.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/helpers.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/PWGraph.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/PWGraph.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CWUIHelper.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/CVWindow.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PupilMeta.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWTypes.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustG.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWTypes.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWFaceMeta.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWDataModel.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/IPupilAlgorithm.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/ALOfflineFile.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbust.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" isTestSource="false" />
@@ -37,8 +38,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/ALOfflineFile.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbust.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/MDStarbustG.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PupilMeta.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/PWFaceMeta.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Algorithm/DummyAlgo.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp" isTestSource="false" />
@@ -48,11 +48,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/preHeader.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SimpleSignalProcessor.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
@@ -75,7 +75,6 @@
           <root url="file:///System/Library/Frameworks/InstantMessage.framework/Headers" />
           <root url="file:///System/Library/Frameworks/MapKit.framework/Headers" />
           <root url="file:///System/Library/Frameworks/DirectoryService.framework/Headers" />
-          <root url="file:///System/Library/Frameworks/ScriptingBridge.framework/Headers" />
           <root url="file:///System/Library/Frameworks/InstallerPlugins.framework/Headers" />
           <root url="file:///System/Library/Frameworks/ForceFeedback.framework/Headers" />
           <root url="file:///System/Library/Frameworks/CoreMediaIO.framework/Headers" />
@@ -151,6 +150,7 @@
           <root url="file:///System/Library/Frameworks/OpenDirectory.framework/Frameworks/CFOpenDirectory.framework/Headers" />
           <root url="file:///System/Library/Frameworks/IOBluetooth.framework/Headers" />
           <root url="file:///System/Library/Frameworks/IOBluetooth.framework/Frameworks/CoreBluetooth.framework/Headers" />
+          <root url="file:///System/Library/Frameworks/ScriptingBridge.framework/Headers" />
           <root url="file:///System/Library/Frameworks/CoreAudio.framework/Headers" />
           <root url="file:///System/Library/Frameworks/DiskArbitration.framework/Headers" />
           <root url="file:///System/Library/Frameworks/CoreBluetooth.framework/Headers" />
@@ -233,6 +233,7 @@
           <root url="file:///usr/local/Cellar/opencv3/3.1.0_3/include" />
           <root url="file:///Library/Frameworks/Mono.framework/Headers" />
           <root url="file:///Library/Frameworks/iTunesLibrary.framework/Headers" />
+          <root url="file:///Library/Frameworks/WacomMultiTouch.framework/Headers" />
           <root url="file:///Library/Frameworks/R.framework/Headers" />
           <root url="file:///Library/Frameworks/R.framework/PrivateHeaders" />
           <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" />
@@ -256,7 +257,6 @@
           <root url="file:///System/Library/Frameworks/InstantMessage.framework/Headers" />
           <root url="file:///System/Library/Frameworks/MapKit.framework/Headers" />
           <root url="file:///System/Library/Frameworks/DirectoryService.framework/Headers" />
-          <root url="file:///System/Library/Frameworks/ScriptingBridge.framework/Headers" />
           <root url="file:///System/Library/Frameworks/InstallerPlugins.framework/Headers" />
           <root url="file:///System/Library/Frameworks/ForceFeedback.framework/Headers" />
           <root url="file:///System/Library/Frameworks/CoreMediaIO.framework/Headers" />
@@ -332,6 +332,7 @@
           <root url="file:///System/Library/Frameworks/OpenDirectory.framework/Frameworks/CFOpenDirectory.framework/Headers" />
           <root url="file:///System/Library/Frameworks/IOBluetooth.framework/Headers" />
           <root url="file:///System/Library/Frameworks/IOBluetooth.framework/Frameworks/CoreBluetooth.framework/Headers" />
+          <root url="file:///System/Library/Frameworks/ScriptingBridge.framework/Headers" />
           <root url="file:///System/Library/Frameworks/CoreAudio.framework/Headers" />
           <root url="file:///System/Library/Frameworks/DiskArbitration.framework/Headers" />
           <root url="file:///System/Library/Frameworks/CoreBluetooth.framework/Headers" />
@@ -414,6 +415,7 @@
           <root url="file:///usr/local/Cellar/opencv3/3.1.0_3/include" />
           <root url="file:///Library/Frameworks/Mono.framework/Headers" />
           <root url="file:///Library/Frameworks/iTunesLibrary.framework/Headers" />
+          <root url="file:///Library/Frameworks/WacomMultiTouch.framework/Headers" />
           <root url="file:///Library/Frameworks/R.framework/Headers" />
           <root url="file:///Library/Frameworks/R.framework/PrivateHeaders" />
           <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" />

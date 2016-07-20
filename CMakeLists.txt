@@ -16,16 +16,44 @@ set(SOURCE_FILES
         Pupilware/Helpers/CWCVHelper.hpp
         Pupilware/Helpers/simpleGraph/GraphUtils.cpp
         Pupilware/Helpers/simpleGraph/GraphUtils.h
-        Pupilware/Helpers/helpers.cpp
-        Pupilware/Helpers/helpers.h
         Pupilware/Helpers/math/Ransac.cpp
         Pupilware/Helpers/math/Ransac.h
         Pupilware/constants.h
         Pupilware/main.cpp
-        Pupilware/Algorithm/PupilMeta.cpp
-        Pupilware/Algorithm/PupilMeta.hpp
+        Pupilware/Algorithm/PWFaceMeta.cpp
+        Pupilware/Algorithm/PWFaceMeta.hpp
         Pupilware/Pupilware.cpp
-        Pupilware/Pupilware.hpp Pupilware/Helpers/CWUIHelper.cpp Pupilware/Helpers/CWUIHelper.hpp Pupilware/ImageProcessing/IImageSegmenter.cpp Pupilware/ImageProcessing/IImageSegmenter.hpp Pupilware/ImageProcessing/SimpleImageSegmenter.cpp Pupilware/ImageProcessing/SimpleImageSegmenter.hpp Pupilware/SignalProcessing/ISignalProcessor.cpp Pupilware/SignalProcessing/ISignalProcessor.hpp Pupilware/SignalProcessing/SimpleSignalProcessor.cpp Pupilware/SignalProcessing/SimpleSignalProcessor.hpp Pupilware/SignalProcessing/SignalProcessingHelper.hpp Pupilware/SignalProcessing/SignalProcessingHelper.cpp Pupilware/Helpers/CVWindow.cpp Pupilware/Helpers/CVWindow.hpp Pupilware/Helpers/PWGraph.cpp Pupilware/Helpers/PWGraph.hpp Pupilware/Algorithm/MDStarbustG.cpp Pupilware/Algorithm/MDStarbustG.hpp Pupilware/Algorithm/PWDataModel.cpp Pupilware/Algorithm/PWDataModel.hpp Pupilware/Algorithm/PWTypes.hpp Pupilware/Algorithm/ALOfflineFile.cpp Pupilware/Algorithm/ALOfflineFile.hpp Pupilware/Algorithm/MDStarbustNeo.cpp Pupilware/Algorithm/MDStarbustNeo.hpp Pupilware/preHeader.hpp Pupilware/Helpers/math/Snakuscules.cpp Pupilware/Helpers/math/Snakuscules.hpp)
+        Pupilware/Pupilware.hpp
+        Pupilware/Helpers/CWUIHelper.cpp
+        Pupilware/Helpers/CWUIHelper.hpp
+        Pupilware/ImageProcessing/IImageSegmenter.cpp
+        Pupilware/ImageProcessing/IImageSegmenter.hpp
+        Pupilware/ImageProcessing/SimpleImageSegmenter.cpp
+        Pupilware/ImageProcessing/SimpleImageSegmenter.hpp
+        Pupilware/SignalProcessing/ISignalProcessor.cpp
+        Pupilware/SignalProcessing/ISignalProcessor.hpp
+        Pupilware/SignalProcessing/BasicSignalProcessor.cpp
+        Pupilware/SignalProcessing/BasicSignalProcessor.hpp
+        Pupilware/SignalProcessing/SignalProcessingHelper.hpp
+        Pupilware/SignalProcessing/SignalProcessingHelper.cpp
+        Pupilware/Helpers/CVWindow.cpp
+        Pupilware/Helpers/CVWindow.hpp
+        Pupilware/Helpers/PWGraph.cpp
+        Pupilware/Helpers/PWGraph.hpp
+        Pupilware/Algorithm/MDStarbustG.cpp
+        Pupilware/Algorithm/MDStarbustG.hpp
+        Pupilware/Algorithm/PWDataModel.cpp
+        Pupilware/Algorithm/PWDataModel.hpp
+        Pupilware/Algorithm/PWTypes.hpp
+        Pupilware/Algorithm/ALOfflineFile.cpp
+        Pupilware/Algorithm/ALOfflineFile.hpp
+        Pupilware/Algorithm/MDStarbustNeo.cpp
+        Pupilware/Algorithm/MDStarbustNeo.hpp
+        Pupilware/Algorithm/MaximumCircleFit.cpp
+        Pupilware/Algorithm/MaximumCircleFit.hpp
+        Pupilware/preHeader.hpp
+        Pupilware/Helpers/math/Snakuscules.cpp
+        Pupilware/Helpers/math/Snakuscules.hpp)
 
 
 set(OpenCV_DIR "/usr/local/Cellar/opencv3/3.1.0_3/")

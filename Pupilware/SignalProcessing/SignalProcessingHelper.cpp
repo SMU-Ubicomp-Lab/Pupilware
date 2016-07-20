@@ -3,13 +3,27 @@
 //
 
 #include "SignalProcessingHelper.hpp"
+#include "../preHeader.hpp"
 
 #include <cassert>
 #include <numeric>
+#include <math.h>
 
 namespace cw {
 
-
+    
+    double calStd( const std::vector<float>& v)
+    {
+        double sum = std::accumulate(v.begin(), v.end(), 0.0);
+        double mean = sum / static_cast<double>(v.size());
+        
+        double sq_sum = std::inner_product(v.begin(), v.end(), v.begin(), 0.0);
+        double stdev = sqrt(sq_sum / v.size() - mean * mean);
+        
+        return stdev;
+    }
+    
+    
     float median( std::vector<float> &v )
     {
         if (v.size() <= 0)
@@ -59,7 +73,7 @@ namespace cw {
     }
 
     void medfilt( std::vector<float>& input,
-                 std::vector<float>& output, int windowSize)
+                  std::vector<float>& output, int windowSize)
     {
         filterSignal(input, output, windowSize, median);
     }
@@ -134,7 +148,29 @@ namespace cw {
 
         assert(output.size() > 0);
     }
+    
+    
+    //////////////////////////////
 
+    
+    float calQuantilef( const std::vector<float>& data, int percent ){
+        
+        REQUIRES(data.size() >0, "Data array must not be zero");
+        REQUIRES(percent >= 0 && percent <= 100, "Percent must be between 0-100");
+        
+        std::vector<float> quantile;
+        quantile.assign(data.begin(), data.end());
+        
+        auto const Q1 = quantile.size() * (percent/100.0f);
+        
+        
+        std::nth_element(quantile.begin(), quantile.begin() + Q1, quantile.end());
+        
+        
+        return quantile[Q1];
+        
+    }
+    
     ////////////////////////////////
 
 
