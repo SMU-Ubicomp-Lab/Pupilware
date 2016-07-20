@@ -229,6 +229,9 @@ namespace pw {
 
             Mat debugMat = colorFrame.clone();
 
+            cv::rectangle(debugMat, cv::Point(0,450), cv::Point(debugMat.cols, debugMat.rows-400), cv::Scalar(255,255,255),-1 );
+            cv::rectangle(debugMat, cv::Point(0,0), cv::Point(debugMat.cols, 300), cv::Scalar(255,255,255),-1 );
+
             ostringstream convert;
             convert.str("");
             convert <<"Frame Number:"<< static_cast<float>(currentFrameNumber);

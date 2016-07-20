@@ -16,6 +16,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d318c499-c73b-4fc5-ba4c-6fbecfcff00c" name="Default" comment="clean up&#10;add resize function">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/TestPupilwareCore" afterPath="$PROJECT_DIR$/Pupilware/TestPupilwareCore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" afterPath="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" afterPath="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pupilware/main.cpp" afterPath="$PROJECT_DIR$/Pupilware/main.cpp" />
     </list>
     <ignored path="Pupilware.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +40,8 @@
             <file leaf-file-name="MaximumCircleFit.hpp" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="171">
-                    <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+                  <state relative-caret-position="186">
+                    <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
                     <folding />
                   </state>
                 </provider>
@@ -63,8 +66,8 @@
       <file leaf-file-name="Pupilware.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2965">
-              <caret line="292" column="39" selection-start-line="292" selection-start-column="39" selection-end-line="292" selection-end-column="39" />
+            <state relative-caret-position="96">
+              <caret line="231" column="50" selection-start-line="231" selection-start-column="50" selection-end-line="231" selection-end-column="50" />
               <folding>
                 <element signature="e#413#430#0" expanded="true" />
               </folding>
@@ -72,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="40" column="103" selection-start-line="40" selection-start-column="103" selection-end-line="40" selection-end-column="103" />
+            <state relative-caret-position="153">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="e#131#155#0" expanded="true" />
               </folding>
@@ -104,11 +107,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaximumCircleFit.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pupilware.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MaximumCircleFit.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1172">
-              <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+            <state relative-caret-position="-1258">
+              <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
               <folding>
                 <element signature="e#165#196#0" expanded="true" />
               </folding>
@@ -136,21 +149,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IPupilAlgorithm.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/IPupilAlgorithm.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MDStarbustNeo.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="347">
+              <caret line="241" column="36" selection-start-line="241" selection-start-column="36" selection-end-line="241" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -229,12 +232,12 @@
         <option value="$PROJECT_DIR$/Pupilware/MaximumCircleFit.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/MDStarbustNeo.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp" />
-        <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
         <option value="$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/main.cpp" />
+        <option value="$PROJECT_DIR$/Pupilware/Pupilware.cpp" />
       </list>
     </option>
   </component>
@@ -304,6 +307,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pupilware" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Algorithm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -537,7 +558,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464238355502</updated>
-      <workItem from="1469032792871" duration="10148000" />
+      <workItem from="1469032792871" duration="11693000" />
     </task>
     <task id="LOCAL-00001" summary="Change file structure again.&#10;Refactor&#10;Add Helpers">
       <created>1464281587150</created>
@@ -767,7 +788,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10148000" />
+    <option name="totallyTimeSpent" value="11693000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -780,9 +801,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="33" y="23" width="1367" height="828" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17013372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17013372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26086956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1019,14 +1040,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareController.hpp" />
     <entry file="file://$PROJECT_DIR$/Pupilware/PupilwareController.cpp" />
-    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/ImageProcessing/IImageSegmenter.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1150,14 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -1198,26 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="40" column="103" selection-start-line="40" selection-start-column="103" selection-end-line="40" selection-end-column="103" />
-          <folding>
-            <element signature="e#131#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2965">
-          <caret line="292" column="39" selection-start-line="292" selection-start-column="39" selection-end-line="292" selection-end-column="39" />
-          <folding>
-            <element signature="e#413#430#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/DummyAlgo.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1226,20 +1211,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="-1258">
+          <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+          <folding>
+            <element signature="e#165#196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MDStarbustNeo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="241" column="36" selection-start-line="241" selection-start-column="36" selection-end-line="241" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.cpp">
+    <entry file="file://$PROJECT_DIR$/Pupilware/Algorithm/MaximumCircleFit.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1172">
-          <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+        <state relative-caret-position="186">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="231" column="50" selection-start-line="231" selection-start-column="50" selection-end-line="231" selection-end-column="50" />
           <folding>
-            <element signature="e#165#196#0" expanded="true" />
+            <element signature="e#413#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/Pupilware.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pupilware/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#131#155#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -80,8 +80,8 @@ namespace pw {
                 , debugRightEye );
 
 
-        float pupilSize = estimatePupilSize( leftPupilRadius/meta.getEyeDistancePx(),
-                                             rightPupilRadius/meta.getEyeDistancePx() );
+//        float pupilSize = estimatePupilSize( leftPupilRadius/meta.getEyeDistancePx(),
+//                                             rightPupilRadius/meta.getEyeDistancePx() );
 
         // draw debug image
         Mat debugImg;
@@ -93,8 +93,11 @@ namespace pw {
         
         this->debugImage = debugImg;
 
+//        return PWPupilSize(  leftPupilRadius/meta.getEyeDistancePx()
+//                           , pupilSize );
+
         return PWPupilSize(  leftPupilRadius/meta.getEyeDistancePx()
-                           , pupilSize );
+                           , rightPupilRadius/meta.getEyeDistancePx() );
 
     }
 
@@ -236,7 +239,7 @@ namespace pw {
                     cir = r.bestModel.GetRadius();
                     area = (myEllipse.size.width * myEllipse.size.height) * 0.02f;
 
-                    eyeRadius = voting;
+                    eyeRadius = area;
 
    
 
@@ -346,8 +349,6 @@ namespace pw {
 
         }
 
-
-        cw::showImage("thth", walkMat, 1);
 
         Point seedPoint = startingPoint;
 
