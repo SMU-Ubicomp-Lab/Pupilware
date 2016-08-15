@@ -66,7 +66,7 @@ namespace pw{
                                           cv::Rect &outRightEyeRegion) {
 
         const float kEyePercentTop = 30.0f;
-        const float kEyePercentSide = 13.0f;
+        const float kEyePercentSide = 16.0f;
         const float kEyePercentHeight = 25.0f;
         const float kEyePercentWidth = 35.0f;
 
@@ -107,24 +107,24 @@ namespace pw{
 
         
 /*-------- Center of Mass technique -------------*/
-//        int th = cw::calDynamicThreshold( blur, 0.006 );
-//
-//        Mat binary;
-//        cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
-//
-//        cv::Point p = cw::calCenterOfMass(binary);
-//        return p;
+        int th = cw::calDynamicThreshold( blur, 0.006 );
+
+        Mat binary;
+        cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
+
+        cv::Point p = cw::calCenterOfMass(binary);
+        return p;
 /*----------------------------------------------*/
 
 /*---------- Snakuscules technique -------------*/
-        cv::Point cPoint = Point(grayEyeROI.cols/2, grayEyeROI.rows/2);
-
-        Snakuscules sn;
-        sn.fit( blur, cPoint, 20, 2.0, 20 );
-
-        cPoint = sn.getFitCenter();
-
-        return cPoint;
+//        cv::Point cPoint = Point(grayEyeROI.cols/2, grayEyeROI.rows/2);
+//
+//        Snakuscules sn;
+//        sn.fit( blur, cPoint, 20, 2.0, 40 );
+//
+//        cPoint = sn.getFitCenter();
+//
+//        return cPoint;
 /*----------------------------------------------*/
         
 

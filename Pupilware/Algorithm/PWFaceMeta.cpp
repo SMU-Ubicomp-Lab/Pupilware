@@ -113,5 +113,19 @@ namespace pw {
     void PWFaceMeta::setRightEyeClosed( bool closed ){
         rightEyeClosed = closed;
     }
+
+    //--- Static Functions ------------------------
+
+    cv::Point PWFaceMeta::getLocalLeftEyeCenter() const {
+        return cv::Point( leftEyeCenter.x - leftEyeRect.x ,
+                          leftEyeCenter.y - leftEyeRect.y );
+
+    }
+
+    cv::Point PWFaceMeta::getLocalRightEyeCenter() const {
+        return cv::Point( rightEyeCenter.x - rightEyeRect.x ,
+                          rightEyeCenter.y - rightEyeRect.y );
+
+    }
     
 }

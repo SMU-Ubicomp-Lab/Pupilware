@@ -71,12 +71,8 @@ namespace pw {
         // It's used to improve a reflection problem in pupils.
         float prior;
         float sigma;
-
-        double ticks;
-
-        cv::KalmanFilter KF;
-        cv::Mat measurement = cv::Mat::zeros(1, 1, CV_32F);
-
+        
+        std::vector<cv::Point2f>rays;
 
         // Just a window name for debuging
         std::shared_ptr<CVWindow> window;
@@ -102,16 +98,9 @@ namespace pw {
 
 
 
-        // Cost function to predict if the pixel an edge or reflection
-        virtual float getCost(int step, int eyeWidth, int thresholdValue) const;
-
-
-
         float findPupilSize(const cv::Mat &colorEyeFrame,
                             cv::Point eyeCenter,
                             cv::Mat &debugImg) const;
-
-        float estimatePupilSize( float left, float right);
     };
 }
 

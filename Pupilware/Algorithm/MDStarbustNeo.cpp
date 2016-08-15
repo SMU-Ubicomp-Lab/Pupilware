@@ -19,12 +19,11 @@ namespace pw {
 
     MDStarbustNeo::MDStarbustNeo( const string& name ):
             IPupilAlgorithm(name),
-            threshold(0.01),
-            rayNumber(15),
-            degreeOffset(25),
-            prior(1.0f),
-            sigma(1.0f),
-            ticks(0.0){
+            threshold(0.014),
+            rayNumber(17),
+            degreeOffset(0),
+            prior(0.5f),
+            sigma(0.2f){
 
     }
 
@@ -32,8 +31,8 @@ namespace pw {
     {
 
     }
+    
 
-    double ticks = 0.0f;
     void MDStarbustNeo::init()
     {
         window = std::make_shared<CVWindow>(getName() + " Debug");
@@ -43,16 +42,9 @@ namespace pw {
         window->addTrackbar("ray number",&rayNumber, 200);
 //        window->addTrackbar("threshold", &threshold, 255 );
 //        window->addTrackbar("primer", &prior, precision*100);
-
-
-        // intialization of KF...
-        KF.init(2, 1, 0);
-        KF.transitionMatrix = (Mat_<float>(2, 2) << 1, 1, 0, 1);
-
-        setIdentity(KF.measurementMatrix);
-        setIdentity(KF.processNoiseCov, Scalar::all(1e-5));
-        setIdentity(KF.measurementNoiseCov, Scalar::all(0.02));
-        setIdentity(KF.errorCovPost, Scalar::all(1));
+        
+        
+        createRays(rays);
     
     }
 
@@ -80,10 +72,6 @@ namespace pw {
                 , debugRightEye );
 
 
-//        float pupilSize = estimatePupilSize( leftPupilRadius/meta.getEyeDistancePx(),
-//                                             rightPupilRadius/meta.getEyeDistancePx() );
-
-        // draw debug image
         Mat debugImg;
         hconcat(debugLeftEye,
                 debugRightEye,
@@ -93,48 +81,9 @@ namespace pw {
         
         this->debugImage = debugImg;
 
-//        return PWPupilSize(  leftPupilRadius/meta.getEyeDistancePx()
-//                           , pupilSize );
+        return PWPupilSize(  leftPupilRadius / meta.getEyeDistancePx()
+                            ,rightPupilRadius / meta.getEyeDistancePx() );
 
-        return PWPupilSize(  leftPupilRadius/meta.getEyeDistancePx()
-                           , rightPupilRadius/meta.getEyeDistancePx() );
-
-    }
-
-    float MDStarbustNeo::estimatePupilSize( float leftRadius, float rightRadius){
-
-        double precTick = ticks;
-        ticks = (double) cv::getTickCount();
-        double dT = (ticks - precTick) / cv::getTickFrequency(); //seconds
-        KF.transitionMatrix.at<float>(1) = dT;
-
-        Mat prediction = KF.predict();
-
-        double predictPupilSize = 0.0;
-        predictPupilSize = prediction.at<float>(0);
-
-        float errorLeft = fabs(predictPupilSize - leftRadius);
-        float errorRight = fabs(predictPupilSize - rightRadius);
-        float alpha = errorLeft/( errorLeft + errorRight );
-
-
-        float mesPupilRadius = ((1.0-alpha) * leftRadius) + (alpha * rightRadius);
-
-        Mat measurement = Mat::zeros(1, 1, CV_32F);
-
-        const float maxPupuilSize = 0.08;
-        const float minPupilSize = 0.03;
-        if ( (mesPupilRadius <= maxPupuilSize && mesPupilRadius >= minPupilSize) ) {
-            measurement.at<float>(0) = mesPupilRadius;
-            predictPupilSize = KF.correct(measurement).at<float>(0);
-
-        }
-        else{
-            predictPupilSize = prediction.at<float>(0);
-            std::cout << "predict " << predictPupilSize << std::endl;
-        }
-
-        return predictPupilSize;
     }
 
 //    vector<float> elps;
@@ -172,7 +121,7 @@ namespace pw {
                 cPoint,             // initial seed point
                 grayEye.cols*0.2,   // radius
                 2.0,                // alpha
-                50                  // max iteration
+                20                  // max iteration
                 );
         cPoint = sn.getFitCenter();
         eyeCenter = cPoint;
@@ -183,33 +132,30 @@ namespace pw {
                 Scalar(200,200,0) );
 /*-------------------------------------*/
 
-        vector<Point2f>rays;
-        createRays(rays);
-
         vector<Point2f>edgePoints;
         findEdgePoints(grayEye, eyeCenter, rays, edgePoints, debugImg);
 
 
         if(edgePoints.size() > MIN_NUM_RAYS)
         {
-            const float MAX_ERROR_FROM_EDGE_OF_THE_CIRCLE = 2;
-            vector<Point2f> inliers;
+//            const float MAX_ERROR_FROM_EDGE_OF_THE_CIRCLE = 2;
+//            vector<Point2f> inliers;
 
             //TODO: Parameterized RANSAC class. Can be done after clean up RANSAC class.
             Ransac r;
-            r.ransac_circle_fitting(edgePoints,
-                                    static_cast<int>(edgePoints.size()),
-                                    edgePoints.size()*0.9f, // not use it
-                                    0.2f ,// not use it
-                                    MAX_ERROR_FROM_EDGE_OF_THE_CIRCLE,
-                                    edgePoints.size()*0.8f,
-                                    inliers);
+//            r.ransac_circle_fitting(edgePoints,
+//                                    static_cast<int>(edgePoints.size()),
+//                                    edgePoints.size()*0.9f, // not use it
+//                                    0.2f ,// not use it
+//                                    MAX_ERROR_FROM_EDGE_OF_THE_CIRCLE,
+//                                    edgePoints.size()*0.8f,
+//                                    inliers);
 
 
             //---------------------------------------------------------------------------------
             //! Just assigned the best model to PupilMeta object.
             //---------------------------------------------------------------------------------
-            if (inliers.size() > MIM_NUM_INLIER_POINTS)
+            if (edgePoints.size() > MIM_NUM_INLIER_POINTS)
             {
                 RotatedRect myEllipse = fitEllipse( edgePoints );
 
@@ -217,7 +163,7 @@ namespace pw {
 
                 float elp = 0.0f;
                 float cir = 0.0f;
-                float area = 0.0f;
+//                float area = 0.0f;
                 float voting = 0.0f;
 
 
@@ -225,7 +171,7 @@ namespace pw {
 
                     std::vector<float> edgePointsFromCenter(edgePoints.size());
                     for (int i = 0; i < edgePoints.size(); ++i) {
-                        edgePointsFromCenter[i] = cw::calDistanceSq(edgePoints[i], myEllipse.center);
+                        edgePointsFromCenter[i] = cw::calDistanceSq(edgePoints[i], eyeCenter);
 
                     }
 
@@ -237,9 +183,9 @@ namespace pw {
 
                     elp = (myEllipse.size.width + myEllipse.size.height) * 0.25f;
                     cir = r.bestModel.GetRadius();
-                    area = (myEllipse.size.width * myEllipse.size.height) * 0.02f;
+//                    area = (myEllipse.size.width * myEllipse.size.height) * 0.02f;
 
-                    eyeRadius = area;
+                    eyeRadius = voting;
 
    
 
@@ -256,7 +202,7 @@ namespace pw {
 
 
                 circle( debugImg,
-                        myEllipse.center,
+                        eyeCenter,
                         voting,
                         Scalar(50,200,0) );
 
@@ -326,29 +272,37 @@ namespace pw {
         cv::threshold(grayEye, walkMat, th, 255, CV_THRESH_TRUNC);
 
         {
-            int ksize = grayEye.cols * 0.07;
-            float sigma = ksize * 0.20;
+            int ksize = grayEye.cols * 0.07; // can I make it bigger? let test it.
+            float sigma = ksize * this->sigma;
             Mat kernelX = getGaussianKernel(ksize, sigma);
             Mat kernelY = getGaussianKernel(ksize, sigma);
             Mat kernelXY = kernelX * kernelY.t();
 
+            // find min and max values in kernelXY.
             double min;
             double max;
             cv::minMaxIdx(kernelXY, &min, &max);
-            cv::Mat adjMap2d;
-            cv::convertScaleAbs(kernelXY, adjMap2d, 255 / max);
+            
+            // scale kernelXY to 0-255 range;
+            cv::Mat maskImage;
+            cv::convertScaleAbs(kernelXY, maskImage, 255 / max);
 
+            // create a rect that have the same size as the gausian kernel,
+            // locating it at the eye center.
             cv::Rect r;
             r.width = kernelXY.cols;
             r.height = kernelXY.rows;
             r.x = std::max(0,startingPoint.x - r.width/2);
             r.y = std::max(0,startingPoint.y - r.height/2);
 
-            walkMat(r) = walkMat(r) - ((adjMap2d/255.0f)*th);
+            //
+            walkMat(r) = walkMat(r) - (maskImage*this->prior);
 
 
         }
 
+
+        cw::showImage("thth", walkMat, 1);
 
         Point seedPoint = startingPoint;
 
@@ -432,30 +386,6 @@ namespace pw {
 //        }
 
 //        outEdgePoints.assign(edgePointThisRound.begin(), edgePointThisRound.end());
-    }
-
-    float MDStarbustNeo::getCost(int step, int eyeWidth, int thresholdValue ) const {
-
-        int ksize = eyeWidth * 0.07;
-        float sigma = ksize * 0.20;
-
-        cv::Mat gaussianKernel = cv::getGaussianKernel(ksize, sigma);
-
-
-        double min;
-        double max;
-        cv::minMaxIdx(gaussianKernel, &min, &max);
-        cv::Mat adjMap;
-        cv::convertScaleAbs(gaussianKernel, adjMap, 255 / max);
-        cv::imshow("Gaussian Kernel", adjMap);
-
-
-        const double scale = (thresholdValue * 0.5 ) / max;
-
-        /* Start at the middle of the gaussian kernel, and walk outward. */
-        const int startingPoint = ksize/2;
-
-        return *gaussianKernel.ptr<double>(startingPoint + step) * scale;
     }
 
 

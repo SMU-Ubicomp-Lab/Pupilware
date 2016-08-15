@@ -22,6 +22,13 @@ namespace cw {
                   const cv::Mat img,
                   int delayInMilliSec = 1);
 
+    int showHist(const std::string& name,
+                  const cv::Mat& img,
+                  int delayInMilliSec = 1);
+
+    int showHistRGB(const std::string& name,
+                 const cv::Mat& img,
+                 int delayInMilliSec = 1);
 
     std::shared_ptr<pw::CVWindow> createWindow( const std::string& winName);
 

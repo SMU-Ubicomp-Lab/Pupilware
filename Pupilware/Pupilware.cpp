@@ -229,8 +229,8 @@ namespace pw {
 
             Mat debugMat = colorFrame.clone();
 
-            cv::rectangle(debugMat, cv::Point(0,450), cv::Point(debugMat.cols, debugMat.rows-400), cv::Scalar(255,255,255),-1 );
-            cv::rectangle(debugMat, cv::Point(0,0), cv::Point(debugMat.cols, 300), cv::Scalar(255,255,255),-1 );
+//            cv::rectangle(debugMat, cv::Point(0,450), cv::Point(debugMat.cols, debugMat.rows-400), cv::Scalar(255,255,255),-1 );
+//            cv::rectangle(debugMat, cv::Point(0,0), cv::Point(debugMat.cols, 300), cv::Scalar(255,255,255),-1 );
 
             ostringstream convert;
             convert.str("");
@@ -292,8 +292,10 @@ namespace pw {
 
         void updateGraphs() {
 
-            const float kMinValue = 0.0f;
-            const float kMaxValue = 0.2f;
+//            const float kMinValue = 72.0f;
+//            const float kMaxValue = 79.0f;
+            const float kMinValue = 68.0f;
+            const float kMaxValue = 79.0f;
             pupilSizeGraph = std::make_shared<PWGraph>("Original(red) Neo(blue) right pupil size");
 
             int i =0;
@@ -469,7 +471,7 @@ namespace pw {
             for(auto it: algorithms) {
                 auto algorithm = it.first;
                 auto storage = it.second;
-                ofstream f{"/Users/redeian/Documents/data/videos/ID265513/" + algorithm->getName()+".csv"};
+                ofstream f{"/Users/redeian/Documents/data/videos/ID265517/" + algorithm->getName()+".csv"};
 
                 f << "time,eyedist,left,right" << std::endl;
 

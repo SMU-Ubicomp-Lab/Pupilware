@@ -60,6 +60,10 @@ namespace pw {
         void                setEyeDistancePx( float eyeDist );
         
         inline bool hasFace() const { return (faceRect.width != 0 && faceRect.height != 0); }
+
+        cv::Point    getLocalLeftEyeCenter() const;
+        cv::Point    getLocalRightEyeCenter() const;
+
         
     };
 }

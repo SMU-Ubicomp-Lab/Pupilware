@@ -36,6 +36,8 @@ set(SOURCE_FILES
         Pupilware/SignalProcessing/BasicSignalProcessor.hpp
         Pupilware/SignalProcessing/SignalProcessingHelper.hpp
         Pupilware/SignalProcessing/SignalProcessingHelper.cpp
+        Pupilware/SignalProcessing/sgsmooth.h
+        Pupilware/SignalProcessing/sgsmooth.C
         Pupilware/Helpers/CVWindow.cpp
         Pupilware/Helpers/CVWindow.hpp
         Pupilware/Helpers/PWGraph.cpp
@@ -51,6 +53,12 @@ set(SOURCE_FILES
         Pupilware/Algorithm/MDStarbustNeo.hpp
         Pupilware/Algorithm/MaximumCircleFit.cpp
         Pupilware/Algorithm/MaximumCircleFit.hpp
+        Pupilware/Algorithm/BlinkDetection.cpp
+        Pupilware/Algorithm/BlinkDetection.hpp
+        Pupilware/Algorithm/PixelCount.cpp
+        Pupilware/Algorithm/PixelCount.hpp
+        Pupilware/Algorithm/MDStarbustFuzzy.cpp
+        Pupilware/Algorithm/MDStarbustFuzzy.hpp
         Pupilware/preHeader.hpp
         Pupilware/Helpers/math/Snakuscules.cpp
         Pupilware/Helpers/math/Snakuscules.hpp)
