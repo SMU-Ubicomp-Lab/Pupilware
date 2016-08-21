@@ -9,6 +9,8 @@
 #include <numeric>
 #include <math.h>
 
+#include "sgsmooth.h"
+
 namespace cw {
 
     
@@ -242,4 +244,38 @@ namespace cw {
             return out;
         }
 
+    void sgoley(            const std::vector<float>& input,
+                            std::vector<float>& output,
+                            int windowSize,
+                            int degree)
+    {
+
+        if(input.size() < windowSize){
+            return;
+        }
+
+        std::vector<double>dat;
+        dat.assign(input.begin(), input.end());
+
+        double *x = calc_sgsmooth(dat.size(), dat.data(), windowSize, degree);
+
+        output.assign(x, x+dat.size());
+
+//-------------------------------------------------------------------
+//         Just of testing
+//-------------------------------------------------------------------
+//
+//        for (int i = 0; i < dat.size(); ++i) {
+//            std::cout << x[i] << " ,";
+//        }
+//
+//        std::cout << std::endl << "-d-d-d-d-d-" << std::endl;
+//
+//        for (int i = 0; i < output.size(); ++i) {
+//            std::cout << output[i] << " ,";
+//        }
+//-------------------------------------------------------------------
+
+
+    }
 }

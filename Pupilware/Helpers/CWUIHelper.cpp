@@ -44,7 +44,7 @@ namespace cw {
         int histSize = 256;
 
         /// Set the ranges ( for B,G,R) )
-        float range[] = { 1, 256 } ;
+        float range[] = { 0, 256 } ;
         const float* histRange = { range };
 
         bool uniform = true; bool accumulate = false;

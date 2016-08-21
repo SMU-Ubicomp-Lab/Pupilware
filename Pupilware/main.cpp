@@ -12,10 +12,14 @@
 #include "Algorithm/DummyAlgo.hpp"
 #include "Algorithm/ALOfflineFile.hpp"
 #include "Algorithm/PixelCount.hpp"
+#include "Algorithm/MDStarbustFuzzy.hpp"
 
 #include "Algorithm/BlinkDetection.hpp"
 
 #include "ImageProcessing/SimpleImageSegmenter.hpp"
+#include "SignalProcessing/SignalProcessingHelper.hpp"
+//#include "SignalProcessing/sgsmooth.h"
+
 //--------------------------------------
 
 using namespace cv;
@@ -32,6 +36,7 @@ void processPupilSignal();
  */
 int main(int argc, const char **argv) {
 
+
 //    std::cerr << cv::getBuildInformation();
 
     const string dataPath = "/Users/redeian/Documents/data/";
@@ -41,11 +46,11 @@ int main(int argc, const char **argv) {
 //    const string videoFilePath = dataPath + "videos/ID265493/xpDigitalSpanTask_Digits5_Iter2.wmv"; // brown eyes from webcam
 //    const string videoFilePath = dataPath + "videos/ID265502/ExpDigitalSpanTask_Digits5_Iter4.wmv"; // reflection eyes from webcam
 
-    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits7Iter1.mp4"; // good from phone
-//    const string videoFilePath = dataPath + "videos/ID265513/Id265513_digit7_iter2.mp4"; // noisy low contrast
+//    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits7Iter1.mp4"; // good from phone
+    const string videoFilePath = dataPath + "videos/ID265513/Id265513_digit7_iter2.mp4"; // noisy low contrast
 //    const string videoFilePath = dataPath + "videos/ID265512/Id265512_digit5_iter3.mp4"; // dark eye, left center mess up
 //    const string videoFilePath = dataPath + "videos/ID265515/ID515Digits7Iter1.mp4"; // black eye
-
+//    const string videoFilePath = dataPath + "videos/ID265516/ID516Digits7Iter1.mp4"; // big eye from phone
 //------------------------------------------------------------------------------
 
 
@@ -57,12 +62,13 @@ int main(int argc, const char **argv) {
 
     // If you want to pre cache the video put true (longer load time, but more control)
     // If not, put fault (good for a large video, and quick experiment)
-    std::shared_ptr<Pupilware> pupilware = Pupilware::Create(true);
+    std::shared_ptr<Pupilware> pupilware = Pupilware::Create(false);
 
     pupilware->loadVideo( videoFilePath );
 
-    pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
-//    pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit>("Max"));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustFuzzy>("Fuzzy"));
+    pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit>("Max"));
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustNeo>("MDStarbustNeo"));
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<ALOfflineFile>("Gaze", gazeDataPath, 885));
 

@@ -61,6 +61,12 @@ namespace cw{
     void fastMedfilt(       const std::vector<float> &input,
                             std::vector<float> &output,
                             int windowSize);
+
+    //----SGOLAY
+    void sgoley(            const std::vector<float>& input,
+                            std::vector<float>& output,
+                            int windowSize,
+                            int degree);
 }
 
 
