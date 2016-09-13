@@ -20,6 +20,10 @@ set(SOURCE_FILES
         Pupilware/Helpers/math/Ransac.h
         Pupilware/constants.h
         Pupilware/main.cpp
+        Pupilware/PWCSVExporter.hpp
+        Pupilware/PWCSVExporter.cpp
+        Pupilware/PWParameter.hpp
+        Pupilware/PWParameter.cpp
         Pupilware/Algorithm/PWFaceMeta.cpp
         Pupilware/Algorithm/PWFaceMeta.hpp
         Pupilware/Pupilware.cpp

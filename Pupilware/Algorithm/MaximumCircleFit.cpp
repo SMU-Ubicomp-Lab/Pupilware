@@ -35,8 +35,6 @@ namespace pw {
         window = std::make_shared<CVWindow>(getName() + " Debug");
         window->resize(500, 500);
         window->moveWindow(200,300);
-//        window->addTrackbar("threshold", &threshold, 255 );
-
 
         // intialization of KF...
         KF.init(2, 1, 0);
@@ -73,15 +71,15 @@ namespace pw {
                 , debugRightEye );
 
 
-        pupilSize.push_back(leftPupilRadius);
-
-        cw::sgoley(pupilSize, smooth, 31, 2);
-        // big
-        const float kMinValue = 4.0f;
-        const float kMaxValue = 30.0f;
-        auto g = PWGraph("smooth");
-        g.drawGraph("soom", smooth, Scalar(0,0,255), kMinValue, kMaxValue);
-        g.show();
+//        pupilSize.push_back(leftPupilRadius);
+//
+//        cw::trimMeanFilt(pupilSize, smooth, 31);
+//        // big
+//        const float kMinValue = 4.0f;
+//        const float kMaxValue = 15.0f;
+//        auto g = PWGraph("smooth");
+//        g.drawGraph("soom", smooth, Scalar(0,0,255), kMinValue, kMaxValue);
+//        g.show();
 
 //        float rightPupilRadius = 1;
 
@@ -153,19 +151,16 @@ namespace pw {
 
         // Only use a red channel.
         Mat grayEye = rgbChannels[2];
-        
-        
+
         Mat blur;
-        cv::GaussianBlur(grayEye, blur,Size(3,3), 3);
-
-
+        cv::GaussianBlur(grayEye, blur,Size(15,15), 7);
 
 /*-------- Snakucules Method ----------*/
         cv::Point cPoint = eyeCenter;
         Snakuscules sn;
         sn.fit(blur,               // src image
                 cPoint,             // initial seed point
-                grayEye.cols*0.14,   // radius
+                grayEye.cols*0.1,   // radius
                 2.0,                // alpha
                 20                  // max iteration
                 );
@@ -176,7 +171,6 @@ namespace pw {
                 irisRadius,
                 Scalar(200,200,0) );
 /*-------------------------------------*/
-
 
             int ksize = irisRadius*2;
             float sigma = 2;
@@ -201,10 +195,8 @@ namespace pw {
             r.x = std::max(0,eyeCenter.x - r.width/2);
             r.y = std::max(0,eyeCenter.y - r.height/2);
 
-
-
         const int tx = std::fmax(eyeCenter.x - irisRadius,0);
-        const int ty = std::fmax(eyeCenter.y-irisRadius,0);
+        const int ty = std::fmax(eyeCenter.y - irisRadius,0);
         const int thi = (irisRadius*2 + ty) > blur.rows? blur.rows - eyeCenter.y :irisRadius*2;
         Mat iris = blur(Rect( tx, ty, irisRadius*2, thi));
         cv::equalizeHist(iris,iris);

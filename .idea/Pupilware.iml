@@ -4,8 +4,10 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/constants.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/PWParameter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/math/Circle.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/math/Ransac.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/Helpers/math/Snakuscules.cpp" isTestSource="false" />
@@ -51,8 +53,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/IImageSegmenter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pupilware/Pupilware.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/PWParameter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/preHeader.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/PWCSVExporter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pupilware/PWCSVExporter.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/SignalProcessingHelper.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/BasicSignalProcessor.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pupilware/SignalProcessing/ISignalProcessor.cpp" isTestSource="false" />

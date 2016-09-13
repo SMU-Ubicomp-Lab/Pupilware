@@ -15,6 +15,7 @@ namespace pw {
     
     class PWFaceMeta;
     class PWDataModel;
+    class PWParameter;
     
     class PWCSVExporter{
         
@@ -28,6 +29,10 @@ namespace pw {
         
         PWCSVExporter& operator<<( const PWFaceMeta& meta );
         PWCSVExporter& operator<<( const PWDataModel& meta );
+        
+        
+        static void toCSV( const PWDataModel& data, const std::string& fileName );
+        static void toCSV( const PWParameter& param, const std::string& fileName );
         
     private:
         PWCSVExporter( const PWCSVExporter& other)=default;

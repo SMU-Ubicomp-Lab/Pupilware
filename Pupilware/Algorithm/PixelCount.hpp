@@ -45,7 +45,7 @@ namespace pw {
         double ticks = 0;
 
 
-        float calEnergy( const cv::Mat& eye, const cv::Point& eyeCenter );
+        float calEnergy( const cv::Mat& eye, const cv::Point& eyeCenter, cv::Mat& outDebugImage );
     };
 }
 

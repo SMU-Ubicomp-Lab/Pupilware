@@ -103,7 +103,7 @@ namespace pw {
         
         
         Mat blur;
-        cv::GaussianBlur(grayEye, blur,Size(3,3), 3);
+        cv::GaussianBlur(grayEye, blur,Size(15,15), 7);
         
 /*------- Center of Mass Method -------*/
 //        int th = cw::calDynamicThreshold( blur, 0.006 );
@@ -118,11 +118,11 @@ namespace pw {
         cv::Point cPoint = eyeCenter;
         Snakuscules sn;
         sn.fit(blur,               // src image
-                cPoint,             // initial seed point
-                grayEye.cols*0.2,   // radius
-                2.0,                // alpha
-                20                  // max iteration
-                );
+               cPoint,             // initial seed point
+               grayEye.cols*0.1,   // radius
+               2.0,                // alpha
+               20                  // max iteration
+        );
         cPoint = sn.getFitCenter();
         eyeCenter = cPoint;
         int innterRadius = sn.getInnerRadius();
@@ -163,7 +163,7 @@ namespace pw {
 
                 float elp = 0.0f;
                 float cir = 0.0f;
-//                float area = 0.0f;
+                float area = 0.0f;
                 float voting = 0.0f;
 
 
@@ -183,9 +183,9 @@ namespace pw {
 
                     elp = (myEllipse.size.width + myEllipse.size.height) * 0.25f;
                     cir = r.bestModel.GetRadius();
-//                    area = (myEllipse.size.width * myEllipse.size.height) * 0.02f;
+                    area = (myEllipse.size.width * myEllipse.size.height) * 0.02f;
 
-                    eyeRadius = voting;
+                    eyeRadius = area;
 
    
 
@@ -300,7 +300,7 @@ namespace pw {
         }
 
 
-        cw::showImage("thth", walkMat, 1);
+//        cw::showImage("thth", walkMat, 1);
 
         Point seedPoint = startingPoint;
 

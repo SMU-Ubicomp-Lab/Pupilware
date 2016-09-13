@@ -46,11 +46,12 @@ int main(int argc, const char **argv) {
 //    const string videoFilePath = dataPath + "videos/ID265493/xpDigitalSpanTask_Digits5_Iter2.wmv"; // brown eyes from webcam
 //    const string videoFilePath = dataPath + "videos/ID265502/ExpDigitalSpanTask_Digits5_Iter4.wmv"; // reflection eyes from webcam
 
-//    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits7Iter1.mp4"; // good from phone
-    const string videoFilePath = dataPath + "videos/ID265513/Id265513_digit7_iter2.mp4"; // noisy low contrast
+    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits7Iter1.mp4"; // good from phone
+//    const string videoFilePath = dataPath + "videos/ID265513/Id265513_digit7_iter2.mp4"; // noisy low contrast
 //    const string videoFilePath = dataPath + "videos/ID265512/Id265512_digit5_iter3.mp4"; // dark eye, left center mess up
 //    const string videoFilePath = dataPath + "videos/ID265515/ID515Digits7Iter1.mp4"; // black eye
 //    const string videoFilePath = dataPath + "videos/ID265516/ID516Digits7Iter1.mp4"; // big eye from phone
+//    const string videoFilePath = dataPath + "videos/IDX/idx3.mp4"; // x participant
 //------------------------------------------------------------------------------
 
 
@@ -66,11 +67,13 @@ int main(int argc, const char **argv) {
 
     pupilware->loadVideo( videoFilePath );
 
-//    pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
-//    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustFuzzy>("Fuzzy"));
+    pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
     pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit>("Max"));
-//    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustNeo>("MDStarbustNeo"));
+    pupilware->addPupilSizeAlgorithm(std::make_shared<BlinkDetection>("Blink"));
+    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustNeo>("MDStarbustNeo"));
+
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<ALOfflineFile>("Gaze", gazeDataPath, 885));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustFuzzy>("Fuzzy"));
 
     pupilware->execute(std::make_shared<SimpleImageSegmenter>(faceCascadePath) );
 

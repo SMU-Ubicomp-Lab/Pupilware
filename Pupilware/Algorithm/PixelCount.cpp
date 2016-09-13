@@ -29,6 +29,12 @@ namespace pw {
     
     void PixelCount::init()
     {
+
+        window = std::make_shared<CVWindow>(getName() + " Debug");
+        window->resize(500, 500);
+        window->moveWindow(200,300);
+
+
         // intialization of KF...
         KF.init(2, 1, 0);
         KF.transitionMatrix = (Mat_<float>(2, 2) << 1, 1, 0, 1);
@@ -48,22 +54,29 @@ namespace pw {
         cv::Mat leftEye = src(meta.getLeftEyeRect());
         cv::Mat rightEye = src(meta.getRightEyeRect());
 
-        float e = calEnergy(leftEye, meta.getLocalLeftEyeCenter()) ;
-        float er = calEnergy(rightEye, meta.getLocalRightEyeCenter()) ;
+        Mat debugLeftEye;
+        float leftEnergy = calEnergy(leftEye, meta.getLocalLeftEyeCenter(), debugLeftEye) ;
 
-//        cw::showImage("rec", r);
+        Mat debugRightEye;
+        float rightEnergy = calEnergy(rightEye, meta.getLocalRightEyeCenter(), debugRightEye) ;
+
+        // draw debug image
+        Mat debugImg;
+        hconcat(debugLeftEye,
+                debugRightEye,
+                debugImg);
+
+        window->update(debugImg);
+
+        this->debugImage = debugImg;
+
+//        leftSizes.push_back(e);
 
 
-//        std::cout << e << std::endl;
-
-        leftSizes.push_back(e);
-
-//        this->debugImage = std::move(debugImg);
-
-        std::vector<float> smooth;
+//        std::vector<float> smooth;
 //        cw::sgoley(leftSizes, smooth, 31, 2);
 
-        cw::trimMeanFilt( leftSizes, smooth, 61);
+//        cw::trimMeanFilt( leftSizes, smooth, 61);
 
 //        // good eye
 //        const float kMinValue = 72.0f;
@@ -78,11 +91,11 @@ namespace pw {
 //        const float kMaxValue = 67.0f;
 
         // big
-        const float kMinValue = 65.0f;
-        const float kMaxValue = 80.0f;
-        auto g = PWGraph("smooth");
-        g.drawGraph("soom", smooth, Scalar(0,0,255), kMinValue, kMaxValue);
-        g.show();
+//        const float kMinValue = 65.0f;
+//        const float kMaxValue = 80.0f;
+//        auto g = PWGraph("smooth");
+//        g.drawGraph("soom", smooth, Scalar(0,0,255), kMinValue, kMaxValue);
+//        g.show();
 
 //---------------------------
 //        double precTick = ticks;
@@ -102,44 +115,60 @@ namespace pw {
 //
 //        predictPupilSize = KF.correct(measurement).at<float>(0);
 
-        return PWPupilSize( e, er);
+        return PWPupilSize( leftEnergy, rightEnergy);
     }
 
 
-    float PixelCount::calEnergy( const Mat& eye, const cv::Point& eyeCenter ){
+    float PixelCount::calEnergy( const Mat& eye, const cv::Point& eyeCenter, cv::Mat& outDebugImage ){
+
+
         std::vector<cv::Mat> bgr_planes;
         cv::split(eye, bgr_planes);
 
         cv::Mat leftEyeGray = bgr_planes[2]; //red channel;
 
+
+        Mat debugImg = eye.clone();
+
 /*---------- Snakuscules technique -------------*/
         Mat blur;
-        cv::GaussianBlur(leftEyeGray, blur, Size(3,3), 3);
+//        cv::GaussianBlur(leftEyeGray, blur, Size(3,3), 3);
+        cv::GaussianBlur(leftEyeGray, blur,Size(15,15), 7);
 
         cv::Point cPoint = eyeCenter;
 
         Snakuscules sn;
-        sn.fit( blur, cPoint, 20, 2.0, 40 );
+        sn.fit(blur,               // src image
+               cPoint,             // initial seed point
+               leftEyeGray.cols*0.1,   // radius
+               2.0,                // alpha
+               20                  // max iteration
+        );
 /*----------------------------------------------*/
 
         const float irisRadius = sn.getInnerRadius();
         const Point ec = sn.getFitCenter();
 
+        circle( debugImg,
+                eyeCenter,
+                irisRadius,
+                Scalar(200,200,0) );
+
+        outDebugImage = debugImg;
+
 //        cv::Mat mask_mat = cv::Mat::zeros(eye.rows, eye.cols, CV_8UC1); // Already created
 //        cv::Mat irisMat;  // New and empty
-//
-//
-////        Mat debugImg = leftEye.clone();
+
 //        circle( mask_mat, ec, irisRadius,Scalar(255), -1);
-//
+
 //        leftEyeGray.copyTo(irisMat, mask_mat);
 
         const int tx = std::fmax(ec.x - irisRadius,0);
-        const int ty = std::fmax(ec.y-irisRadius,0);
+        const int ty = std::fmax(ec.y - irisRadius,0);
         const int thi = (irisRadius*2 + ty) > leftEyeGray.rows? leftEyeGray.rows - ec.y :irisRadius*2;
         Mat r = leftEyeGray(Rect( tx, ty,
                                   irisRadius*2, thi));
-
+//
 //        cw::showImage("mask", mask_mat);
 //        equalizeHist(irisMat,irisMat);
 ////        equalizeHist(r,r);

@@ -14,6 +14,7 @@
 #include "Helpers/PWGraph.hpp"
 #include "Algorithm/PWDataModel.hpp"
 #include "SignalProcessing/SignalProcessingHelper.hpp"
+#include "PWCSVExporter.hpp"
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -53,6 +54,8 @@ namespace pw {
 
         bool isPreCacheVideo;                       // Whether or not pre-cache video
 
+        std::string videoPath;                      // Store a video path
+        PWCSVExporter faceExporter;                 // Help export face meta
 
         std::shared_ptr<CVWindow> mainWindow;       // Main window to control frames
         std::shared_ptr<PWGraph> pupilSizeGraph;         // Maind display graph
@@ -104,6 +107,10 @@ namespace pw {
             if (!capture.open(videoFilePath)) {
                 cout << "[Error] Cannot read the video. Please check path name." << endl;
             }
+
+            videoPath = videoFilePath;
+            faceExporter.open(videoFilePath+"_face.csv");
+
 
         }
 
@@ -160,18 +167,21 @@ namespace pw {
 
                     if (!colorFrame.empty()) {
 
+                        auto faceMeta = extractFace(colorFrame, imgSeg);
+
                         for (auto it : algorithms) {
                             auto algorithm = it.first;
 
-                            auto result = executeFrame(colorFrame, imgSeg, algorithm);
+                            auto result = extractPupil(colorFrame, faceMeta, algorithm);
 
                             //! Store data to lists
                             //
                             auto storage = algorithms[algorithm];
                             storage->setPupilSizeAt( currentFrameNumber, result );
 
-                            // todo add eye distance to the storage
                         }
+
+                        faceExporter << faceMeta;
 
                     } else{
                         cerr << "[Info] the frame is empty. The system is terminated." << std::endl;
@@ -189,6 +199,8 @@ namespace pw {
                 processPupilSignal();
 
                 saveDataToFile();
+
+                faceExporter.close();
 
             }
             else {
@@ -360,14 +372,9 @@ namespace pw {
 
 //------------------------------------------------------------------------------------------------------------------
 
-        /*!
-         * Execute Pupilware pipeline only one given frame
-         * */
-        PWPupilSize executeFrame(const cv::Mat colorFrame,
-                          std::shared_ptr<IImageSegmenter> imgSeg,
-                          std::shared_ptr<IPupilAlgorithm> algorithm ){
+        PWFaceMeta extractFace(const cv::Mat colorFrame,
+                                 std::shared_ptr<IImageSegmenter> imgSeg ) {
 
-            REQUIRES(algorithm != nullptr, "Finding Pupil size algorithm must not be null.");
             REQUIRES(imgSeg != nullptr, "Image Segmenter must not be null.");
             REQUIRES(!colorFrame.empty(), "The source must not be empty.");
 
@@ -380,7 +387,7 @@ namespace pw {
 
             if (!imgSeg->findFace(frameGray, faceRect)) {
                 cout << "[Waning] There is no face found this frame." << endl;
-                return PWPupilSize();
+                return PWFaceMeta();
             }
 
 
@@ -422,7 +429,21 @@ namespace pw {
             eyeMeta.setFaceRect(faceRect);
             eyeMeta.setLeftEyeRect(leftEyeRegion);
             eyeMeta.setRightEyeRect(rightEyeRegion);
-            PWPupilSize result = computePupilSize( colorFrame, eyeMeta, algorithm );
+
+            return eyeMeta;
+        }
+        /*!
+         * Execute Pupilware pipeline only one given frame
+         * */
+        PWPupilSize extractPupil(const cv::Mat colorFrame,
+                          const PWFaceMeta& faceMeta,
+                          std::shared_ptr<IPupilAlgorithm> algorithm ){
+
+            REQUIRES(algorithm != nullptr, "Finding Pupil size algorithm must not be null.");
+            REQUIRES(!colorFrame.empty(), "The source must not be empty.");
+
+
+            PWPupilSize result = computePupilSize( colorFrame, faceMeta, algorithm );
 
             return result;
 
@@ -473,22 +494,11 @@ namespace pw {
 
         void saveDataToFile() const{
 
-            const float spf = 1.0/30.0;
-
             for(auto it: algorithms) {
                 auto algorithm = it.first;
                 auto storage = it.second;
-                ofstream f{"/Users/redeian/Documents/data/videos/ID265517/" + algorithm->getName()+".csv"};
 
-                f << "time,eyedist,left,right" << std::endl;
-
-                for (int i = 0; i < storage->getRightPupilSizes().size(); ++i) {
-                    f << i * spf
-                    << "," << eyeDistance[i]
-                    << "," << storage->getLeftPupilSizes()[i]
-                    << "," << storage->getRightPupilSizes()[i]
-                    << std::endl;
-                }
+                pw::PWCSVExporter::toCSV( *storage, videoPath +"_"+algorithm->getName()+".csv");
 
             }
         }
