@@ -98,6 +98,8 @@ namespace pw {
         vector<Mat> rgbChannels(3);
         split(colorEyeFrame, rgbChannels);
 
+        if(rgbChannels.size() <= 0 ) return 0.0f;
+
         // Only use a red channel.
         Mat grayEye = rgbChannels[2];
         
@@ -125,12 +127,29 @@ namespace pw {
         );
         cPoint = sn.getFitCenter();
         eyeCenter = cPoint;
-        int innterRadius = sn.getInnerRadius();
+        int irisRadius = sn.getInnerRadius();
         circle( debugImg,
                 eyeCenter,
-                innterRadius,
+                irisRadius,
                 Scalar(200,200,0) );
 /*-------------------------------------*/
+
+        const int tx = std::fmax(cPoint.x - irisRadius,0);
+        const int ty = std::fmax(cPoint.y - irisRadius,0);
+        const int thi = (irisRadius*2 + ty) > grayEye.rows? grayEye.rows - cPoint.y :irisRadius*2;
+        Mat r = grayEye(Rect( tx, ty, irisRadius*2, thi));
+//
+//        cw::showImage("mask", mask_mat);
+//        equalizeHist(irisMat,irisMat);
+        Mat r2;
+        equalizeHist(r,r);
+        cw::showImage("ratinaH", r);
+        cw::showHist("hist", r);
+//
+//        cw::openOperation(r2,r2);
+//        cw::showImage("ratinaH2", r2);
+//        cw::showHist("hist2", r2);
+
 
         vector<Point2f>edgePoints;
         findEdgePoints(grayEye, eyeCenter, rays, edgePoints, debugImg);
@@ -157,7 +176,7 @@ namespace pw {
             //---------------------------------------------------------------------------------
             if (edgePoints.size() > MIM_NUM_INLIER_POINTS)
             {
-                RotatedRect myEllipse = fitEllipse( edgePoints );
+
 
                 float eyeRadius = 0.0f;
 
@@ -166,6 +185,7 @@ namespace pw {
                 float area = 0.0f;
                 float voting = 0.0f;
 
+                RotatedRect myEllipse = fitEllipse( edgePoints );
 
                     //TODO: Use RANSAC Circle radius? How about Ellipse wight?
 
@@ -183,9 +203,9 @@ namespace pw {
 
                     elp = (myEllipse.size.width + myEllipse.size.height) * 0.25f;
                     cir = r.bestModel.GetRadius();
-                    area = (myEllipse.size.width * myEllipse.size.height) * 0.02f;
+                    area = (myEllipse.size.width * myEllipse.size.height) * 0.03f;
 
-                    eyeRadius = area;
+                    eyeRadius = elp;
 
    
 
@@ -203,7 +223,7 @@ namespace pw {
 
                 circle( debugImg,
                         eyeCenter,
-                        voting,
+                        eyeRadius,
                         Scalar(50,200,0) );
 
 //                elps.push_back(elp);

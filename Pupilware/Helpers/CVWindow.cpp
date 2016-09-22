@@ -82,6 +82,8 @@ namespace pw{
 
     int CVWindow::update(cv::Mat mat) {
 
+        if(mat.empty()) return 0;
+
         cv::imshow(winName, mat);
         return cv::waitKey(1);
     }

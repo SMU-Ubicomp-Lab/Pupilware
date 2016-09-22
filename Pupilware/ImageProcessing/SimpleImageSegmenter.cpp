@@ -67,7 +67,7 @@ namespace pw{
 
         const float kEyePercentTop = 30.0f;
         const float kEyePercentSide = 16.0f;
-        const float kEyePercentHeight = 25.0f;
+        const float kEyePercentHeight = 22.0f;
         const float kEyePercentWidth = 35.0f;
 
         //-- Find eye regions

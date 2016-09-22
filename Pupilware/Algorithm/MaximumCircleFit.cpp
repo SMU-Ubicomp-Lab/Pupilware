@@ -149,6 +149,7 @@ namespace pw {
         vector<Mat> rgbChannels(3);
         split(colorEyeFrame, rgbChannels);
 
+        if(rgbChannels.size() <= 0 ) return 0.0f;
         // Only use a red channel.
         Mat grayEye = rgbChannels[2];
 
@@ -197,11 +198,12 @@ namespace pw {
 
         const int tx = std::fmax(eyeCenter.x - irisRadius,0);
         const int ty = std::fmax(eyeCenter.y - irisRadius,0);
-        const int thi = (irisRadius*2 + ty) > blur.rows? blur.rows - eyeCenter.y :irisRadius*2;
-        Mat iris = blur(Rect( tx, ty, irisRadius*2, thi));
+        const int t_height = (irisRadius*2 + ty) >= blur.rows? blur.rows - eyeCenter.y :irisRadius*2;
+        const int t_width = (irisRadius*2 + tx) >= blur.cols? blur.cols - eyeCenter.x :irisRadius*2;
+        Mat iris = blur(Rect( tx, ty, t_width, t_height));
         cv::equalizeHist(iris,iris);
 
-        blur(r) = blur(r) - (maskImage*0.5);
+        blur(r) = blur(r) - (maskImage(cv::Rect(0,0,t_width, t_height))*0.5);
 
 //        cw::showImage("open", iris);
 //        cw::showImage("m", maskImage);

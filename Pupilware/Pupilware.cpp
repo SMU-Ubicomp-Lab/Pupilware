@@ -304,8 +304,8 @@ namespace pw {
 
         void updateGraphs() {
 
-            const float kMinValue = 0.03f;
-            const float kMaxValue = 0.1f;
+//            const float kMinValue = 0.03f;
+//            const float kMaxValue = 0.1f;
 //            const float kMinValue = 68.0f;
 //            const float kMaxValue = 79.0f;
 //            const float kMinValue = 58.0f;
@@ -313,8 +313,8 @@ namespace pw {
 //            const float kMinValue = 72.0f;
 //            const float kMaxValue = 78.0f;
             //big
-//            const float kMinValue = 65.0f;
-//            const float kMaxValue = 80.0f;
+            const float kMinValue = 0.0f;
+            const float kMaxValue = 0.0f;
             pupilSizeGraph = std::make_shared<PWGraph>("Original(red) Neo(blue) right pupil size");
 
             int i =0;

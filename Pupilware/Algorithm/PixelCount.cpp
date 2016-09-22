@@ -54,8 +54,9 @@ namespace pw {
         cv::Mat leftEye = src(meta.getLeftEyeRect());
         cv::Mat rightEye = src(meta.getRightEyeRect());
 
-        Mat debugLeftEye;
-        float leftEnergy = calEnergy(leftEye, meta.getLocalLeftEyeCenter(), debugLeftEye) ;
+        Mat debugLeftEye = leftEye.clone() ;
+//        float leftEnergy = calEnergy(leftEye, meta.getLocalLeftEyeCenter(), debugLeftEye) ;
+        float leftEnergy = 0;
 
         Mat debugRightEye;
         float rightEnergy = calEnergy(rightEye, meta.getLocalRightEyeCenter(), debugRightEye) ;
@@ -66,54 +67,12 @@ namespace pw {
                 debugRightEye,
                 debugImg);
 
-        window->update(debugImg);
+        if(!debugImg.empty()){
+            window->update(debugImg);
 
-        this->debugImage = debugImg;
+            this->debugImage = debugImg;
+        }
 
-//        leftSizes.push_back(e);
-
-
-//        std::vector<float> smooth;
-//        cw::sgoley(leftSizes, smooth, 31, 2);
-
-//        cw::trimMeanFilt( leftSizes, smooth, 61);
-
-//        // good eye
-//        const float kMinValue = 72.0f;
-//        const float kMaxValue = 78.0f;
-
-//         nosiy
-//        const float kMinValue = 68.0f;
-//        const float kMaxValue = 79.0f;
-
-        // dark eye
-//        const float kMinValue = 61.0f;
-//        const float kMaxValue = 67.0f;
-
-        // big
-//        const float kMinValue = 65.0f;
-//        const float kMaxValue = 80.0f;
-//        auto g = PWGraph("smooth");
-//        g.drawGraph("soom", smooth, Scalar(0,0,255), kMinValue, kMaxValue);
-//        g.show();
-
-//---------------------------
-//        double precTick = ticks;
-//        ticks = (double) cv::getTickCount();
-//        double dT = (ticks - precTick) / cv::getTickFrequency(); //seconds
-//        KF.transitionMatrix.at<float>(1) = dT;
-//
-//        Mat prediction = KF.predict();
-//
-//        double predictPupilSize = 0.0;
-//        predictPupilSize = prediction.at<float>(0);
-//
-//        double mesPupilRadius=e;
-//
-//        Mat measurement = Mat::zeros(1, 1, CV_32F);
-//        measurement.at<float>(0) = mesPupilRadius;
-//
-//        predictPupilSize = KF.correct(measurement).at<float>(0);
 
         return PWPupilSize( leftEnergy, rightEnergy);
     }
@@ -124,6 +83,8 @@ namespace pw {
 
         std::vector<cv::Mat> bgr_planes;
         cv::split(eye, bgr_planes);
+
+        if(bgr_planes.size() <= 0)return 0.0f;
 
         cv::Mat leftEyeGray = bgr_planes[2]; //red channel;
 
@@ -171,9 +132,15 @@ namespace pw {
 //
 //        cw::showImage("mask", mask_mat);
 //        equalizeHist(irisMat,irisMat);
-////        equalizeHist(r,r);
-//        cw::showImage("ratinaH", irisMat);
-//        cw::showHist("hist", irisMat);
+        Mat r2;
+        equalizeHist(r,r2);
+        cw::showImage("ratinaH", r);
+        cw::showHist("hist", r);
+
+        cw::openOperation(r2,r2);
+        cw::showImage("ratinaH2", r2);
+        cw::showHist("hist2", r2);
+
 
 
         const float sq = irisRadius*irisRadius;

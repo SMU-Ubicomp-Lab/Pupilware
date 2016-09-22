@@ -38,6 +38,8 @@ namespace pw {
         std::vector<cv::Mat> bgr_planes;
         cv::split(leftEye, bgr_planes);
 
+        if(bgr_planes.size() <= 0)return PWPupilSize();
+
         cv::Mat leftEyeGray = bgr_planes[2]; //green channel;
 //        cv::cvtColor(leftEye, leftEyeGray, CV_BGR2GRAY);
         const float th = 0.01;

@@ -54,25 +54,18 @@ int main(int argc, const char **argv) {
 //    const string videoFilePath = dataPath + "videos/IDX/idx3.mp4"; // x participant
 //------------------------------------------------------------------------------
 
-
-//    const string videoFilePath = dataPath + "videos/ID265517/ID517Digits6Iter1.mp4"; // good from phone
-
     const string faceCascadePath = dataPath + "haarcascade_frontalface_alt.xml";
-
-    const string gazeDataPath = dataPath + "/videos/ID265517/ID265517_ExpDigitalSpanTask_Digits6_Iter1_GazeData.txt";
 
     // If you want to pre cache the video put true (longer load time, but more control)
     // If not, put fault (good for a large video, and quick experiment)
-    std::shared_ptr<Pupilware> pupilware = Pupilware::Create(false);
+    std::shared_ptr<Pupilware> pupilware = Pupilware::Create(true);
 
     pupilware->loadVideo( videoFilePath );
 
-    pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
-    pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit>("Max"));
-    pupilware->addPupilSizeAlgorithm(std::make_shared<BlinkDetection>("Blink"));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit>("Max"));
+//    pupilware->addPupilSizeAlgorithm(std::make_shared<BlinkDetection>("Blink"));
     pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustNeo>("MDStarbustNeo"));
-
-//    pupilware->addPupilSizeAlgorithm(std::make_shared<ALOfflineFile>("Gaze", gazeDataPath, 885));
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustFuzzy>("Fuzzy"));
 
     pupilware->execute(std::make_shared<SimpleImageSegmenter>(faceCascadePath) );
