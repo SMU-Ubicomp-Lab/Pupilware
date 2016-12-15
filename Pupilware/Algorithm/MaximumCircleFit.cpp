@@ -203,7 +203,7 @@ namespace pw {
         Mat iris = blur(Rect( tx, ty, t_width, t_height));
         cv::equalizeHist(iris,iris);
 
-        blur(r) = blur(r) - (maskImage(cv::Rect(0,0,t_width, t_height))*0.5);
+//        blur(r) = blur(r) - (maskImage(cv::Rect(0,0,r.width, r.height))*0.5);
 
 //        cw::showImage("open", iris);
 //        cw::showImage("m", maskImage);

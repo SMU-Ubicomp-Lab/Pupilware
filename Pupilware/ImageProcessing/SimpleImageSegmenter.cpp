@@ -10,6 +10,8 @@
 #include "../Helpers/CWUIHelper.hpp"
 #include "../Helpers/math/Snakuscules.hpp"
 
+#include <opencv2/photo/photo.hpp>
+
 using namespace std;
 using namespace cv;
 
@@ -67,7 +69,7 @@ namespace pw{
 
         const float kEyePercentTop = 30.0f;
         const float kEyePercentSide = 16.0f;
-        const float kEyePercentHeight = 22.0f;
+        const float kEyePercentHeight = 17.0f;
         const float kEyePercentWidth = 35.0f;
 
         //-- Find eye regions
@@ -91,7 +93,9 @@ namespace pw{
         outRightEyeRegion = rightEyeRegion;
     }
 
-
+    int thB = 7;
+    int lowth = 37;
+    int highth = 255;
 
     cv::Point2f SimpleImageSegmenter::fineEyeCenter(const Mat grayEyeROI) {
 
@@ -103,8 +107,7 @@ namespace pw{
             return Point2f();
 
         Mat blur;
-        cv::GaussianBlur(grayEyeROI, blur,Size(3,3), 3);
-
+        cv::GaussianBlur(grayEyeROI, blur,Size(15,15), 7);
         
 /*-------- Center of Mass technique -------------*/
         int th = cw::calDynamicThreshold( blur, 0.006 );
@@ -113,7 +116,7 @@ namespace pw{
         cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
 
         cv::Point p = cw::calCenterOfMass(binary);
-        return p;
+//        return p;
 /*----------------------------------------------*/
 
 /*---------- Snakuscules technique -------------*/
@@ -126,6 +129,45 @@ namespace pw{
 //
 //        return cPoint;
 /*----------------------------------------------*/
+
+        cv::Point cPoint = p;
+        Snakuscules sn;
+        sn.fit(blur,               // src image
+               cPoint,             // initial seed point
+               grayEyeROI.cols*0.1,   // radius
+               2.0,                // alpha
+               20                  // max iteration
+        );
+        cPoint = sn.getFitCenter();
+
+        int irisRadius = sn.getInnerRadius();
+
+
+//        {
+//            int th = cw::calDynamicThreshold( blur, thB/100.0f );
+//
+//            Rect irisRect =Rect(cPoint.x-irisRadius*0.6,
+//                               cPoint.y-irisRadius*0.6,
+//                               irisRadius*1.2,
+//                               irisRadius*1.2);
+//
+////            irisRect.width = std::min(irisRect.width+irisRect.x, )
+////            irisRect.height = std::min(irisRect.height+irisRect.y, )
+//
+//            Mat mask;
+//            cv::threshold(grayEyeROI(irisRect), mask, th, 255, CV_THRESH_BINARY);
+//
+//            cv::inpaint(grayEyeROI(irisRect), mask, grayEyeROI(irisRect), 5, INPAINT_NS);
+//
+//            cw::createTrackbar("thB", "eye", thB, 255 );
+//            cw::createTrackbar("lowth", "eye", lowth, 255 );
+//            cw::createTrackbar("highth", "eye", highth, 255 );
+//            cw::showImage("eye", mask);
+//            cw::showImage("eyeAfter", grayEyeROI);
+//        }
+
+
+        return p;
         
 
     }

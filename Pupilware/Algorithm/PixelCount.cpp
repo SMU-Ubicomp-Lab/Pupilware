@@ -51,30 +51,30 @@ namespace pw {
 
     PWPupilSize PixelCount::process( const cv::Mat& src, const PWFaceMeta &meta )
     {
-        cv::Mat leftEye = src(meta.getLeftEyeRect());
-        cv::Mat rightEye = src(meta.getRightEyeRect());
-
-        Mat debugLeftEye = leftEye.clone() ;
+//        cv::Mat leftEye = src(meta.getLeftEyeRect());
+//        cv::Mat rightEye = src(meta.getRightEyeRect());
+//
+//        Mat debugLeftEye = leftEye.clone() ;
 //        float leftEnergy = calEnergy(leftEye, meta.getLocalLeftEyeCenter(), debugLeftEye) ;
-        float leftEnergy = 0;
+////        float leftEnergy = 0;
+//
+//        Mat debugRightEye;
+//        float rightEnergy = calEnergy(rightEye, meta.getLocalRightEyeCenter(), debugRightEye) ;
+//
+//        // draw debug image
+//        Mat debugImg;
+//        hconcat(debugLeftEye,
+//                debugRightEye,
+//                debugImg);
+//
+//        if(!debugImg.empty()){
+//            window->update(debugImg);
+//
+//            this->debugImage = debugImg;
+//        }
 
-        Mat debugRightEye;
-        float rightEnergy = calEnergy(rightEye, meta.getLocalRightEyeCenter(), debugRightEye) ;
 
-        // draw debug image
-        Mat debugImg;
-        hconcat(debugLeftEye,
-                debugRightEye,
-                debugImg);
-
-        if(!debugImg.empty()){
-            window->update(debugImg);
-
-            this->debugImage = debugImg;
-        }
-
-
-        return PWPupilSize( leftEnergy, rightEnergy);
+        return PWPupilSize( 0.0, 0.0);
     }
 
 
@@ -134,12 +134,12 @@ namespace pw {
 //        equalizeHist(irisMat,irisMat);
         Mat r2;
         equalizeHist(r,r2);
-        cw::showImage("ratinaH", r);
-        cw::showHist("hist", r);
+//        cw::showImage("ratinaH", r);
+//        cw::showHist("hist", r);
 
         cw::openOperation(r2,r2);
-        cw::showImage("ratinaH2", r2);
-        cw::showHist("hist2", r2);
+//        cw::showImage("ratinaH2", r2);
+//        cw::showHist("hist2", r2);
 
 
 

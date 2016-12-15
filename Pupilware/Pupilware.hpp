@@ -28,7 +28,6 @@ namespace pw {
          * */
         virtual void loadVideo(const std::string &videoFilePath)=0;
 
-
         /*!
          * Execute Pupilware pipeline.
          * */
@@ -39,6 +38,11 @@ namespace pw {
 
 
         static std::shared_ptr<Pupilware> Create(bool isPreCacheVideo);
+
+        /**
+         *  Hacking just for exporting
+         * */
+        virtual void setEyeOutputPath(std::string path)=0;
     };
 }
 

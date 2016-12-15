@@ -15,6 +15,7 @@
 #include "Algorithm/PWDataModel.hpp"
 #include "SignalProcessing/SignalProcessingHelper.hpp"
 #include "PWCSVExporter.hpp"
+#include "PWFaceLandmarkDetector.hpp"
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -60,11 +61,17 @@ namespace pw {
         std::shared_ptr<CVWindow> mainWindow;       // Main window to control frames
         std::shared_ptr<PWGraph> pupilSizeGraph;         // Maind display graph
 
+        PWFaceLandmarkDetector landmark;
+
 
 //------------------------------------------------------------------------------------------------------------------
 //      Methods
 //------------------------------------------------------------------------------------------------------------------
 
+
+        virtual void setEyeOutputPath(std::string path){
+            landmark.documentPath = path;
+        }
 
         PupilwareImpl(bool isPreCacheVideo):
                 currentFrameNumber(0),
@@ -77,6 +84,9 @@ namespace pw {
 
             mainWindow->addTrackbar("play", &isPlaying, 1);
             mainWindow->moveWindow(0,0);
+
+
+            landmark.loadLandmarkFile("/Users/redeian/Documents/projects/Pupilware/Pupilware/shape_predictor_68_face_landmarks.dat");
 
         }
 
@@ -113,6 +123,7 @@ namespace pw {
 
 
         }
+
 
 
 //------------------------------------------------------------------------------------------------------------------
@@ -390,6 +401,11 @@ namespace pw {
                 return PWFaceMeta();
             }
 
+            Mat facelandmark;
+            landmark.currentFrame = currentFrameNumber;
+            landmark.searchLandMark(colorFrame, facelandmark, faceRect);
+
+            cw::showImage("land",facelandmark);
 
             //! Extract eyes from the frame
             cv::Rect leftEyeRegion;
