@@ -111,18 +111,28 @@ namespace pw{
         REQUIRES( innerRadius >= 0, "the inner must be more than zero. Now alpha is " << innerRadius );
 
 
-        auto outerRE = _calRegionEnergy(srcGray, center, outerRadius);
-        auto innerRE = _calRegionEnergy(srcGray, center, innerRadius);
+        auto level1 = _calRegionEnergy(srcGray, center, outerRadius);
+        auto level2 = _calRegionEnergy(srcGray, center, innerRadius);
+//        auto level3 = _calRegionEnergy(srcGray, center, innerRadius*0.8f);
 
-        double outerEnergy = (outerRE.intensity - innerRE.intensity)
-                             / static_cast<double>( outerRE.numPixel - innerRE.numPixel );
+        double outerEnergy = (level1.intensity - level2.intensity)
+                             / static_cast<double>( level1.numPixel - level2.numPixel );
 
-        double innerEnergy = innerRE.intensity
-                             / static_cast<double>(innerRE.numPixel);
+        double innerEnergy = level2.intensity
+                             / static_cast<double>(level2.numPixel);
 
-        double diff = outerEnergy - innerEnergy;
+        double e1 = outerEnergy - innerEnergy;
 
-        return diff;
+//         outerEnergy = (level2.intensity - level3.intensity)
+//                             / static_cast<double>( level2.numPixel - level3.numPixel );
+//
+//         innerEnergy = level3.intensity
+//                             / static_cast<double>(level3.numPixel);
+
+
+//        double e2 = outerEnergy - innerEnergy;
+
+        return e1;
 
     }
 
@@ -188,6 +198,9 @@ namespace pw{
             }
 
         }
+
+//        cv::imshow("x",srcGray);
+//        cv::waitKey(1);
 
         m_center = cPoint;
         m_outerRadius = radius;

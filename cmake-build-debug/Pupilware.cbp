@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Pupilware"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\TestPupilwareCore\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Pupilware">
+				<Option output="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Pupilware" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/opencv3/3.1.0_3/include"/>
+					<Add directory="/usr/local/Cellar/dlib/19.2/include"/>
+					<Add directory="/Users/redeian/Documents/projects"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 Pupilware"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Pupilware/fast">
+				<Option output="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Pupilware" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/opencv3/3.1.0_3/include"/>
+					<Add directory="/usr/local/Cellar/dlib/19.2/include"/>
+					<Add directory="/Users/redeian/Documents/projects"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 Pupilware/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pupilware_tests">
+				<Option output="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/pupilware_tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/opencv3/3.1.0_3/include"/>
+					<Add directory="/usr/local/Cellar/dlib/19.2/include"/>
+					<Add directory="/Users/redeian/Documents/projects"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 pupilware_tests"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pupilware_tests/fast">
+				<Option output="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/pupilware_tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/opencv3/3.1.0_3/include"/>
+					<Add directory="/usr/local/Cellar/dlib/19.2/include"/>
+					<Add directory="/Users/redeian/Documents/projects"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 pupilware_tests/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/ALOfflineFile.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/ALOfflineFile.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/BlinkDetection.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/BlinkDetection.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/DummyAlgo.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/DummyAlgo.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/IPupilAlgorithm.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/IPupilAlgorithm.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbust.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbust.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbustFuzzy.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbustFuzzy.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbustG.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbustG.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbustNeo.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MDStarbustNeo.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MaximumCircleFit.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MaximumCircleFit.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MaximumCircleFit2.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/MaximumCircleFit2.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PWDataModel.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PWDataModel.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PWFaceMeta.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PWFaceMeta.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PWTypes.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PixelCount.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Algorithm/PixelCount.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/CVWindow.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/CVWindow.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/CWCVHelper.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/CWCVHelper.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/CWUIHelper.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/CWUIHelper.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/PWGraph.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/PWGraph.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/math/Circle.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/math/Circle.h">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/math/Ransac.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/math/Ransac.h">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/math/Snakuscules.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/math/Snakuscules.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/simpleGraph/GraphUtils.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Helpers/simpleGraph/GraphUtils.h">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/ImageProcessing/IImageSegmenter.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/ImageProcessing/IImageSegmenter.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/ImageProcessing/SimpleImageSegmenter.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/ImageProcessing/SimpleImageSegmenter.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/PWCSVExporter.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/PWCSVExporter.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/PWFaceLandmarkDetector.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/PWFaceLandmarkDetector.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/PWParameter.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/PWParameter.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Pupilware.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/Pupilware.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/BasicSignalProcessor.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/BasicSignalProcessor.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/ISignalProcessor.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/ISignalProcessor.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/SignalProcessingHelper.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/SignalProcessingHelper.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/sgsmooth.C">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/SignalProcessing/sgsmooth.h">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/constants.h">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/main.cpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/Pupilware/preHeader.hpp">
+			<Option target="Pupilware"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/TestPupilwareCore/main.cpp">
+			<Option target="pupilware_tests"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/TestPupilwareCore/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\TestPupilwareCore\"/>
+		</Unit>
+		<Unit filename="/Users/redeian/Documents/projects/Pupilware/TestPupilwareCore/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\TestPupilwareCore\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

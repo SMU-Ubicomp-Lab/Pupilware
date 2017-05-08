@@ -25,7 +25,7 @@ namespace pw{
     public:
         PWFaceLandmarkDetector();
         void loadLandmarkFile(const std::string& landmarkFilePath);
-        void searchLandMark( const cv::Mat& frameBGR,cv::Mat& out, cv::Rect faceLoc );
+        void searchLandMark( const cv::Mat& frameBGR,std::vector<cv::Point>& outLandmarkPoints, cv::Rect faceLoc );
 
         std::string documentPath;
         unsigned int currentFrame;

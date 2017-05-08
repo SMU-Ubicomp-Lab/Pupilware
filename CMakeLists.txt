@@ -22,6 +22,8 @@ set(SOURCE_FILES
         Pupilware/main.cpp
         Pupilware/PWCSVExporter.hpp
         Pupilware/PWCSVExporter.cpp
+        Pupilware/PWFaceLandmarkDetector.hpp
+        Pupilware/PWFaceLandmarkDetector.cpp
         Pupilware/PWParameter.hpp
         Pupilware/PWParameter.cpp
         Pupilware/Algorithm/PWFaceMeta.cpp
@@ -57,6 +59,8 @@ set(SOURCE_FILES
         Pupilware/Algorithm/MDStarbustNeo.hpp
         Pupilware/Algorithm/MaximumCircleFit.cpp
         Pupilware/Algorithm/MaximumCircleFit.hpp
+        Pupilware/Algorithm/MaximumCircleFit2.cpp
+        Pupilware/Algorithm/MaximumCircleFit2.hpp
         Pupilware/Algorithm/BlinkDetection.cpp
         Pupilware/Algorithm/BlinkDetection.hpp
         Pupilware/Algorithm/PixelCount.cpp
@@ -78,14 +82,30 @@ set(OpenCV_LIBS
         opencv_objdetect
         opencv_imgproc
         opencv_video
-        opencv_videoio)
+        opencv_videoio
+        opencv_photo
+        opencv_imgcodecs)
 
+set(DLIB_DIR "/usr/local/Cellar/dlib/19.2/")
+set(DLIB_INCLUDE_DIRS "${DLIB_DIR}include")
+set(DLIB_LIBARY_DIR "/Users/redeian/Documents/projects/dlib19/build")
+set(DLIB_LIBS
+        -L${DLIB_LIBARY_DIR}
+        libdlib.a)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
+include_directories(${DLIB_INCLUDE_DIRS})
+include_directories(/Users/redeian/Documents/projects/)
+
+
+#For the static library:
+#set ( DLIB_LIBS libdlib.a )
+link_directories( ${DLIB_INCLUDE_DIRS} )
 
 #find_package( OpenCV REQUIRED )
 add_executable( Pupilware ${SOURCE_FILES})
 
+add_subdirectory(TestPupilwareCore)
 
+target_link_libraries( Pupilware ${OpenCV_LIBS} ${DLIB_LIBS})
 
-target_link_libraries( Pupilware ${OpenCV_LIBS} )

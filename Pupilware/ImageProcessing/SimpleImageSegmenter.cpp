@@ -67,9 +67,9 @@ namespace pw{
                                           cv::Rect &outLeftEyeRegion,
                                           cv::Rect &outRightEyeRegion) {
 
-        const float kEyePercentTop = 30.0f;
+        const float kEyePercentTop = 25.0f;
         const float kEyePercentSide = 16.0f;
-        const float kEyePercentHeight = 17.0f;
+        const float kEyePercentHeight = 22.0f;
         const float kEyePercentWidth = 35.0f;
 
         //-- Find eye regions
@@ -107,16 +107,16 @@ namespace pw{
             return Point2f();
 
         Mat blur;
-        cv::GaussianBlur(grayEyeROI, blur,Size(15,15), 7);
+        cv::GaussianBlur(grayEyeROI, blur,Size(5,5), 7);
         
 /*-------- Center of Mass technique -------------*/
-        int th = cw::calDynamicThreshold( blur, 0.006 );
+        int th = cw::calDynamicThreshold( blur, 0.014 );
 
         Mat binary;
         cv::threshold(grayEyeROI, binary, th, 255, CV_THRESH_BINARY_INV);
 
         cv::Point p = cw::calCenterOfMass(binary);
-//        return p;
+        return p;
 /*----------------------------------------------*/
 
 /*---------- Snakuscules technique -------------*/

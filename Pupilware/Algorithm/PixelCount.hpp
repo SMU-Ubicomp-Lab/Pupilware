@@ -11,6 +11,7 @@
 
 #include "IPupilAlgorithm.hpp"
 #include "opencv2/video/tracking.hpp"
+#include "../PWFaceLandmarkDetector.hpp"
 
 namespace pw {
 
@@ -27,6 +28,8 @@ namespace pw {
         virtual void init() override final;
         virtual PWPupilSize process( const cv::Mat& src, const PWFaceMeta &meta ) override final;
         virtual void exit() override final;
+
+        PWFaceLandmarkDetector landmark;
         
     private:
         int th;
@@ -43,7 +46,6 @@ namespace pw {
         cv::Mat processNoise= cv::Mat::zeros(2, 1, CV_32F);
 
         double ticks = 0;
-
 
         float calEnergy( const cv::Mat& eye, const cv::Point& eyeCenter, cv::Mat& outDebugImage );
     };

@@ -86,7 +86,7 @@ namespace pw {
             mainWindow->moveWindow(0,0);
 
 
-            landmark.loadLandmarkFile("/Users/redeian/Documents/projects/Pupilware/Pupilware/shape_predictor_68_face_landmarks.dat");
+//            landmark.loadLandmarkFile("/Users/redeian/Documents/projects/Pupilware/Pupilware/shape_predictor_68_face_landmarks.dat");
 
         }
 
@@ -180,17 +180,32 @@ namespace pw {
 
                         auto faceMeta = extractFace(colorFrame, imgSeg);
 
-                        for (auto it : algorithms) {
-                            auto algorithm = it.first;
+                        //if no face, store zeros.
+                        if(faceMeta.getFaceRect().width == 0) {
 
-                            auto result = extractPupil(colorFrame, faceMeta, algorithm);
+                            for (auto it : algorithms) {
+                                auto algorithm = it.first;
+                                auto storage = algorithms[algorithm];
+                                storage->setPupilSizeAt(currentFrameNumber, PWPupilSize());
 
-                            //! Store data to lists
-                            //
-                            auto storage = algorithms[algorithm];
-                            storage->setPupilSizeAt( currentFrameNumber, result );
+                            }
+                        }
+                        else{
+
+                            for (auto it : algorithms) {
+                                auto algorithm = it.first;
+
+                                auto result = extractPupil(colorFrame, faceMeta, algorithm);
+
+                                //! Store data to lists
+                                //
+                                auto storage = algorithms[algorithm];
+                                storage->setPupilSizeAt( currentFrameNumber, result );
+
+                            }
 
                         }
+
 
                         faceExporter << faceMeta;
 
@@ -401,11 +416,11 @@ namespace pw {
                 return PWFaceMeta();
             }
 
-            Mat facelandmark;
-            landmark.currentFrame = currentFrameNumber;
-            landmark.searchLandMark(colorFrame, facelandmark, faceRect);
+//            Mat facelandmark;
+//            landmark.currentFrame = currentFrameNumber;
+//            landmark.searchLandMark(colorFrame, facelandmark, faceRect);
 
-            cw::showImage("land",facelandmark);
+//            cw::showImage("land",facelandmark);
 
             //! Extract eyes from the frame
             cv::Rect leftEyeRegion;

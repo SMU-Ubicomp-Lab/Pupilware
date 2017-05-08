@@ -117,34 +117,35 @@ namespace pw {
 
         
 /*-------- Snakucules Method ----------*/
-        cv::Point cPoint = eyeCenter;
-        Snakuscules sn;
-        sn.fit(blur,               // src image
-               cPoint,             // initial seed point
-               grayEye.cols*0.1,   // radius
-               2.0,                // alpha
-               20                  // max iteration
-        );
-        cPoint = sn.getFitCenter();
-        eyeCenter = cPoint;
-        int irisRadius = sn.getInnerRadius();
-        circle( debugImg,
-                eyeCenter,
-                irisRadius,
-                Scalar(200,200,0) );
+//        cv::Point cPoint = eyeCenter;
+//        Snakuscules sn;
+//        sn.fit(blur,               // src image
+//               cPoint,             // initial seed point
+//               grayEye.cols*0.1,   // radius
+//               2.0,                // alpha
+//               20                  // max iteration
+//        );
+//        cPoint = sn.getFitCenter();
+//        eyeCenter = cPoint;
+//        int irisRadius = sn.getInnerRadius();
+//        circle( debugImg,
+//                eyeCenter,
+//                irisRadius,
+//                Scalar(200,200,0) );
 /*-------------------------------------*/
 
-        const int tx = std::fmax(cPoint.x - irisRadius,0);
-        const int ty = std::fmax(cPoint.y - irisRadius,0);
-        const int thi = (irisRadius*2 + ty) > grayEye.rows? grayEye.rows - cPoint.y :irisRadius*2;
-        Mat r = grayEye(Rect( tx, ty, irisRadius*2, thi));
+//        const int tx = std::fmax(cPoint.x - irisRadius,0);
+//        const int ty = std::fmax(cPoint.y - irisRadius,0);
+//        const int t_height = (irisRadius*2 + ty) >= grayEye.rows?(irisRadius*2 + ty) - grayEye.rows-1 :irisRadius*2;
+//        const int t_width = (irisRadius*2 + tx) >= grayEye.cols?(irisRadius*2 + tx) - grayEye.cols-1 :irisRadius*2;
+//        Mat r = grayEye(Rect( tx, ty, t_width, t_height));
 //
 //        cw::showImage("mask", mask_mat);
 //        equalizeHist(irisMat,irisMat);
-        Mat r2;
-        equalizeHist(r,r);
-        cw::showImage("ratinaH", r);
-        cw::showHist("hist", r);
+//        Mat r2;
+//        equalizeHist(r,r);
+//        cw::showImage("ratinaH", r);
+//        cw::showHist("hist", r);
 //
 //        cw::openOperation(r2,r2);
 //        cw::showImage("ratinaH2", r2);
@@ -212,7 +213,7 @@ namespace pw {
                 //---------------------------------------------------------------------------------
                 //! Draw debug image
                 //---------------------------------------------------------------------------------
-                ellipse( debugImg, myEllipse, Scalar(255,50,0) );
+                ellipse( debugImg, myEllipse, Scalar(255,50,250) );
 //
 //
 //                circle( debugImg,
@@ -221,10 +222,10 @@ namespace pw {
 //                            Scalar(50,255,255) );
 
 
-                circle( debugImg,
-                        eyeCenter,
-                        eyeRadius,
-                        Scalar(50,200,0) );
+//                circle( debugImg,
+//                        eyeCenter,
+//                        eyeRadius,
+//                        Scalar(50,200,0) );
 
 //                elps.push_back(elp);
 //                cirs.push_back(cir);
@@ -292,31 +293,31 @@ namespace pw {
         cv::threshold(grayEye, walkMat, th, 255, CV_THRESH_TRUNC);
 
         {
-            int ksize = grayEye.cols * 0.07; // can I make it bigger? let test it.
-            float sigma = ksize * this->sigma;
-            Mat kernelX = getGaussianKernel(ksize, sigma);
-            Mat kernelY = getGaussianKernel(ksize, sigma);
-            Mat kernelXY = kernelX * kernelY.t();
-
-            // find min and max values in kernelXY.
-            double min;
-            double max;
-            cv::minMaxIdx(kernelXY, &min, &max);
-            
-            // scale kernelXY to 0-255 range;
-            cv::Mat maskImage;
-            cv::convertScaleAbs(kernelXY, maskImage, 255 / max);
-
-            // create a rect that have the same size as the gausian kernel,
-            // locating it at the eye center.
-            cv::Rect r;
-            r.width = kernelXY.cols;
-            r.height = kernelXY.rows;
-            r.x = std::max(0,startingPoint.x - r.width/2);
-            r.y = std::max(0,startingPoint.y - r.height/2);
-
-            //
-            walkMat(r) = walkMat(r) - (maskImage*this->prior);
+//            int ksize = grayEye.cols * 0.07; // can I make it bigger? let test it.
+//            float sigma = ksize * this->sigma;
+//            Mat kernelX = getGaussianKernel(ksize, sigma);
+//            Mat kernelY = getGaussianKernel(ksize, sigma);
+//            Mat kernelXY = kernelX * kernelY.t();
+//
+//            // find min and max values in kernelXY.
+//            double min;
+//            double max;
+//            cv::minMaxIdx(kernelXY, &min, &max);
+//
+//            // scale kernelXY to 0-255 range;
+//            cv::Mat maskImage;
+//            cv::convertScaleAbs(kernelXY, maskImage, 255 / max);
+//
+//            // create a rect that have the same size as the gausian kernel,
+//            // locating it at the eye center.
+//            cv::Rect r;
+//            r.width = kernelXY.cols;
+//            r.height = kernelXY.rows;
+//            r.x = std::max(0,startingPoint.x - r.width/2);
+//            r.y = std::max(0,startingPoint.y - r.height/2);
+//
+//            //
+//            walkMat(r) = walkMat(r) - (maskImage*this->prior);
         }
 
 

@@ -1,0 +1,6 @@
+/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/CMakeFiles/Pupilware.dir
+/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/CMakeFiles/rebuild_cache.dir
+/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/CMakeFiles/edit_cache.dir
+/Users/redeian/Documents/projects/Pupilware/cmake-build-debug/TestPupilwareCore/CMakeFiles/pupilware_tests.dir

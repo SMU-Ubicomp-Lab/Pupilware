@@ -213,7 +213,7 @@ namespace pw {
         sn2.fit(blur,               // src image
                cPoint,             // initial seed point
                irisRadius*0.3,   // radius
-               1.6,                // alpha
+               1.3,                // alpha
                10                  // max iteration
         );
         Point pPoint = sn2.getFitCenter();

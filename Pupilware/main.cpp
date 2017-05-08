@@ -9,6 +9,7 @@
 #include "Algorithm/MDStarbustG.hpp"
 #include "Algorithm/MDStarbustNeo.hpp"
 #include "Algorithm/MaximumCircleFit.hpp"
+#include "Algorithm/MaximumCircleFit2.hpp"
 #include "Algorithm/DummyAlgo.hpp"
 #include "Algorithm/ALOfflineFile.hpp"
 #include "Algorithm/PixelCount.hpp"
@@ -40,7 +41,7 @@ int main(int argc, const char **argv) {
 
 //    std::cerr << cv::getBuildInformation();
 
-    const string dataPath = "/Users/redeian/Documents/data/";
+    const string dataPath = "/Volumes/MarkBits/pupilwareWebcam/";
 
     //-------- Other fun videos you can pick -----------------------------------
 //    const string videoFilePath = dataPath + "videos/ID265489/xpDigitalSpanTask_Digits7_Iter2.wmv"; // bad from webcam
@@ -56,84 +57,104 @@ int main(int argc, const char **argv) {
 //------------------------------------------------------------------------------
 
 
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit5_iter1.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit5_iter2.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit5_iter3.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit5_iter4.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit6_iter1.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit6_iter2.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit6_iter3.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit6_iter4.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit7_iter1.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit7_iter2.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit7_iter3.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265510/Id265510_digit7_iter4.mp4";
 
-//12,16,17
-    std::string videoPath = "/Users/redeian/Google Drive/ParticipantsMP4Videos/";
+    std::string p_id = "p18";
+
+//    std::string videoPath = "/Users/redeian/Documents/data/videos/ID265" + p_id + "/";
+
+//    std::string videoPath = "/Users/redeian/Documents/data/videos/ID265500/";
+
+    std::string videoPath = "/Volumes/Seagate Backup Plus Drive/pupilwareData/" + p_id + "/";
+
     std::vector<std::string> videos;
-    videos.push_back(videoPath + "ID515Digits5iter1.mp4");
-    videos.push_back(videoPath + "ID515Digits5iter2.mp4");
-    videos.push_back(videoPath + "ID515Digits5iter3.mp4");
-    videos.push_back(videoPath + "ID515Digits5iter4.mp4");
-    videos.push_back(videoPath + "ID515Digits6iter1.mp4");
-    videos.push_back(videoPath + "ID515Digits6iter2.mp4");
-    videos.push_back(videoPath + "ID515Digits6iter3.mp4");
-    videos.push_back(videoPath + "ID515Digits6iter4.mp4");
-    videos.push_back(videoPath + "ID515Digits7iter1.mp4");
-    videos.push_back(videoPath + "ID515Digits7iter2.mp4");
-    videos.push_back(videoPath + "ID515Digits7iter3.mp4");
-    videos.push_back(videoPath + "ID515Digits7iter4.mp4");
-    videos.push_back(videoPath + "ID515Digits8iter1.mp4");
-    videos.push_back(videoPath + "ID515Digits8iter2.mp4");
-    videos.push_back(videoPath + "ID515Digits8iter3.mp4");
-    videos.push_back(videoPath + "ID515Digits8iter4.mp4");
-//    videos.push_back(dataPath + "videos/ID265512/Id265512_digit9_iter1.mp4");
-//    videos.push_back(dataPath + "videos/ID265512/Id265512_digit9_iter2.mp4");
-//    videos.push_back(dataPath + "videos/ID265512/Id265512_digit9_iter3.mp4");
-//    videos.push_back(dataPath + "videos/ID265512/Id265512_digit9_iter4.mp4");
+
+
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt6_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt6_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt6_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt6_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt7_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt7_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt7_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt7_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt8_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt8_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt8_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux1_dgt8_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt6_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt6_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt6_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt6_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt7_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt7_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt7_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt7_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt8_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt8_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt8_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux2_dgt8_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt6_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt6_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt6_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt6_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt7_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt7_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt7_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt7_itr4_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt8_itr1_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt8_itr2_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt8_itr3_face.mp4");
+    videos.push_back(videoPath + p_id + "_digit_lux3_dgt8_itr4_face.mp4");
+
+
 
     std::vector<std::string> eyePaths;
-    eyePaths.push_back(dataPath + "eyes/id515/t5_1");
-    eyePaths.push_back(dataPath + "eyes/id515/t5_2");
-    eyePaths.push_back(dataPath + "eyes/id515/t5_3");
-    eyePaths.push_back(dataPath + "eyes/id515/t5_4");
-    eyePaths.push_back(dataPath + "eyes/id515/t6_1");
-    eyePaths.push_back(dataPath + "eyes/id515/t6_2");
-    eyePaths.push_back(dataPath + "eyes/id515/t6_3");
-    eyePaths.push_back(dataPath + "eyes/id515/t6_4");
-    eyePaths.push_back(dataPath + "eyes/id515/t7_1");
-    eyePaths.push_back(dataPath + "eyes/id515/t7_2");
-    eyePaths.push_back(dataPath + "eyes/id515/t7_3");
-    eyePaths.push_back(dataPath + "eyes/id515/t7_4");
-    eyePaths.push_back(dataPath + "eyes/id515/t8_1");
-    eyePaths.push_back(dataPath + "eyes/id515/t8_2");
-    eyePaths.push_back(dataPath + "eyes/id515/t8_3");
-    eyePaths.push_back(dataPath + "eyes/id515/t8_4");
-//    eyePaths.push_back(dataPath + "eyes/id512/t9_1");
-//    eyePaths.push_back(dataPath + "eyes/id512/t9_2");
-//    eyePaths.push_back(dataPath + "eyes/id512/t9_3");
-//    eyePaths.push_back(dataPath + "eyes/id512/t9_4");
 
-//      const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit5_iter1.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit5_iter2.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit5_iter3.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit5_iter4.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit6_iter1.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit6_iter2.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit6_iter3.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit6_iter4.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit7_iter1.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit7_iter2.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit7_iter3.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit7_iter4.mp4";
-//    const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit8_iter1.mp4";
-//        const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit8_iter2.mp4";
-//        const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit8_iter3.mp4";
-//        const string videoFilePath = dataPath + "videos/ID265511/Id265511_digit8_iter4.mp4";
+
+    eyePaths.push_back(dataPath + p_id + "/lum1/t6_1");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t6_2");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t6_3");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t6_4");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t7_1");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t7_2");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t7_3");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t7_4");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t8_1");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t8_2");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t8_3");
+    eyePaths.push_back(dataPath + p_id + "/lum1/t8_4");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t6_1");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t6_2");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t6_3");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t6_4");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t7_1");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t7_2");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t7_3");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t7_4");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t8_1");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t8_2");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t8_3");
+    eyePaths.push_back(dataPath + p_id + "/lum2/t8_4");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t6_1");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t6_2");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t6_3");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t6_4");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t7_1");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t7_2");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t7_3");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t7_4");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t8_1");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t8_2");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t8_3");
+    eyePaths.push_back(dataPath + p_id + "/lum3/t8_4");
+
+
+
+
+
 //    const string videoFilePath = "/Users/redeian/Desktop/untitled folder/mark_digit_lux1_dgt6_itr2_face.mp4";
 
-    const string faceCascadePath = dataPath + "haarcascade_frontalface_alt.xml";
+    const string faceCascadePath = "/Users/redeian/Documents/data/haarcascade_frontalface_alt.xml";
 
     for( int i=0; i<videos.size(); ++i) {
 
@@ -142,12 +163,14 @@ int main(int argc, const char **argv) {
         // If not, put fault (good for a large video, and quick experiment)
         std::shared_ptr<Pupilware> pupilware = Pupilware::Create(false);
 
-        pupilware->setEyeOutputPath(eyePaths[i]);
-
+        auto algo = std::make_shared<PixelCount>("PC");
+        algo->landmark.documentPath = eyePaths[i];
         pupilware->loadVideo(videos[i]);
+        pupilware->addPupilSizeAlgorithm(algo);
 
-        pupilware->addPupilSizeAlgorithm(std::make_shared<PixelCount>("PC"));
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit>("Max"));
+//        pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit2>("Max1",0)); // 0 is mean
+//        pupilware->addPupilSizeAlgorithm(std::make_shared<MaximumCircleFit2>("Max2",1)); // 1 is softmax
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<BlinkDetection>("Blink"));
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustNeo>("MDStarbustNeo"));
 //    pupilware->addPupilSizeAlgorithm(std::make_shared<MDStarbustFuzzy>("Fuzzy"));
