@@ -86,7 +86,7 @@ namespace pw {
             mainWindow->moveWindow(0,0);
 
 
-//            landmark.loadLandmarkFile("/Users/redeian/Documents/projects/Pupilware/Pupilware/shape_predictor_68_face_landmarks.dat");
+            landmark.loadLandmarkFile("/Users/redeian/Documents/projects/Pupilware/Pupilware/shape_predictor_68_face_landmarks.dat");
 
         }
 
@@ -416,11 +416,14 @@ namespace pw {
                 return PWFaceMeta();
             }
 
-//            Mat facelandmark;
-//            landmark.currentFrame = currentFrameNumber;
-//            landmark.searchLandMark(colorFrame, facelandmark, faceRect);
+            std::vector<cv::Point> landmarkPoints;
+            Mat leftEye;
+            Mat rightEye;
+            landmark.currentFrame = currentFrameNumber;
+            landmark.searchLandMark(colorFrame, landmarkPoints, faceRect, leftEye, rightEye);
 
-//            cw::showImage("land",facelandmark);
+//            cw::showImage("leftEye",leftEye);
+//            cw::showImage("rightEye",rightEye);
 
             //! Extract eyes from the frame
             cv::Rect leftEyeRegion;
@@ -460,6 +463,9 @@ namespace pw {
             eyeMeta.setFaceRect(faceRect);
             eyeMeta.setLeftEyeRect(leftEyeRegion);
             eyeMeta.setRightEyeRect(rightEyeRegion);
+
+            eyeMeta.leftEye = leftEye;
+            eyeMeta.rightEye = rightEye;
 
             return eyeMeta;
         }

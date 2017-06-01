@@ -25,10 +25,12 @@ namespace pw{
     public:
         PWFaceLandmarkDetector();
         void loadLandmarkFile(const std::string& landmarkFilePath);
-        void searchLandMark( const cv::Mat& frameBGR,std::vector<cv::Point>& outLandmarkPoints, cv::Rect faceLoc );
+        void searchLandMark( const cv::Mat& frameBGR, std::vector<cv::Point>& outLandmarkPoints,
+                             cv::Rect faceLoc, cv::Mat& leftEye, cv::Mat& rightEye );
 
         std::string documentPath;
         unsigned int currentFrame;
+
     private:
         std::string landmarkFilePath;
         dlib::shape_predictor sp;

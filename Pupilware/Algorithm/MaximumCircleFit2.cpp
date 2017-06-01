@@ -53,21 +53,18 @@ namespace pw {
     {
         assert(!src.empty());
         
-        cv::Point leftEyeCenterEyeCoord( meta.getLeftEyeCenter().x - meta.getLeftEyeRect().x ,
-                                         meta.getLeftEyeCenter().y - meta.getLeftEyeRect().y );
+
         
-        Mat debugLeftEye = src(meta.getLeftEyeRect()).clone();
-        float leftPupilRadius = findPupilSize( src(meta.getLeftEyeRect())
-                , leftEyeCenterEyeCoord
+        Mat debugLeftEye = meta.leftEye.clone();
+        float leftPupilRadius = findPupilSize( meta.leftEye
+                , Point(meta.leftEye.cols/2, meta.leftEye.rows/2)
                 , debugLeftEye );
 
 
-        cv::Point rightEyeCenterEyeCoord( meta.getRightEyeCenter().x - meta.getRightEyeRect().x ,
-                                          meta.getRightEyeCenter().y - meta.getRightEyeRect().y);
         
-        Mat debugRightEye = src(meta.getRightEyeRect()).clone();
-        float rightPupilRadius = findPupilSize( src(meta.getRightEyeRect())
-                , rightEyeCenterEyeCoord
+        Mat debugRightEye = meta.rightEye.clone();
+        float rightPupilRadius = findPupilSize( meta.rightEye
+                , Point(meta.rightEye.cols/2, meta.rightEye.rows/2)
                 , debugRightEye );
 
 
@@ -98,12 +95,30 @@ namespace pw {
         vector<Mat> rgbChannels(3);
         split(colorEyeFrame, rgbChannels);
 
+        cw::showImage("color", colorEyeFrame);
+
         if(rgbChannels.size() <= 0 ) return 0.0f;
         // Only use a red channel.
         Mat grayEye = rgbChannels[2];
 
+        cw::showImage("gray", grayEye);
+
+//        cw::showHist("hit",grayEye);
+
+//        cv::equalizeHist(grayEye,grayEye);
+
+        int th = cw::calDynamicThreshold( grayEye, 0.4 );
+
+//        std::cout << th << std::endl;
+
+        cv::threshold(grayEye, grayEye, th, 255, THRESH_TRUNC);
+
+        cw::showImage("thr", grayEye);
+
         Mat blur;
-        cv::GaussianBlur(grayEye, blur,Size(5,5), 7);
+        cv::GaussianBlur(grayEye, blur,Size(11,11), 5);
+
+        cw::showImage("blur", blur);
 
 /*-------- Snakucules Method ----------*/
         cv::Point cPoint = eyeCenter;
@@ -184,10 +199,13 @@ namespace pw {
         std::vector<float> energys;
         std::vector<int> radians;
 
+        Mat blur2;
+        cv::GaussianBlur(grayEye, blur2,Size(5,5), 3);
+
         if(irisRadius>5)
         {
 
-            float f = fmax(irisRadius * 0.3f, 1.0f);
+            float f = fmax(irisRadius * 0.2f, 1.0f);
 
 
 //            std::cout << ">>> start with f =" << f << std::endl;
@@ -197,12 +215,12 @@ namespace pw {
                 size_t smallSum = 0;
                 size_t smallCount = 1;
 
-                calCircularEnergy(grayEye, eyeCenter, r + f, bigSum, bigCount);
-                calCircularEnergy(grayEye, eyeCenter, r, smallSum, smallCount);
+                calCircularEnergy(blur2, eyeCenter, r + f, bigSum, bigCount);
+                calCircularEnergy(blur2, eyeCenter, r, smallSum, smallCount);
 
                 float e1 = (bigSum - smallSum) / (double) (bigCount - smallCount);
                 float e2 = smallSum / (float) smallCount;
-                float e = e1 - e2;
+                float e = fmax(0, e1 - e2);
 
 //                std::cout << (double) (bigCount - smallCount) << ":" << e1 << " , " << e2 << ", " << e << std::endl;
 
@@ -237,14 +255,15 @@ namespace pw {
                 }
             }
 
-            newR = fmax(0.0f,newR);
+
+            newR = fmax(0.0f, newR);
 
 //            std::cout << "<<<--- end " << maxE << ":" << newR << ":" << maxR << std::endl;
 
-            circle(debugImg,
-                   eyeCenter,
-                   maxR,
-                   Scalar(200, 100, 200));
+//            circle(debugImg,
+//                   eyeCenter,
+//                   maxR,
+//                   Scalar(200, 100, 200));
             circle(debugImg,
                    eyeCenter,
                    newR,

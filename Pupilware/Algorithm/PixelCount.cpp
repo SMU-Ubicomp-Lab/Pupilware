@@ -43,10 +43,11 @@ namespace pw {
     PWPupilSize PixelCount::process( const cv::Mat& src, const PWFaceMeta &meta )
     {
 
+        Mat leftEye, rightEye;
+
         std::vector<cv::Point> landmarkPoints;
         landmark.currentFrame = meta.getFrameNumber();
-        landmark.searchLandMark(src, landmarkPoints, meta.getFaceRect());
-
+        landmark.searchLandMark(src, landmarkPoints, meta.getFaceRect(), leftEye, rightEye);
 
         return PWPupilSize( 0.0, 0.0);
     }

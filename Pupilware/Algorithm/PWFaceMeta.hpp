@@ -21,6 +21,8 @@ namespace pw {
         cv::Rect rightEyeRect;
         cv::Point leftEyeCenter;
         cv::Point rightEyeCenter;
+
+
         bool leftEyeClosed;
         bool rightEyeClosed;
         
@@ -64,7 +66,12 @@ namespace pw {
         cv::Point    getLocalLeftEyeCenter() const;
         cv::Point    getLocalRightEyeCenter() const;
 
-        
+
+        //hacking just for testing
+        //todo require clean up
+        cv::Mat leftEye;
+        cv::Mat rightEye;
+        //--------------------
     };
 }
 

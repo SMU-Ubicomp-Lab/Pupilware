@@ -35,7 +35,11 @@ namespace pw{
     }
 
 
-    void PWFaceLandmarkDetector::searchLandMark( const cv::Mat& frameBGR,std::vector<cv::Point>& outLandmarkPoints, cv::Rect faceLoc )
+    void PWFaceLandmarkDetector::searchLandMark( const cv::Mat& frameBGR,
+                                                 std::vector<cv::Point>& outLandmarkPoints,
+                                                 cv::Rect faceLoc,
+                                                 cv::Mat& leftEye,
+                                                 cv::Mat& rightEye)
     {
 
         // Convert to dlib image
@@ -80,6 +84,8 @@ namespace pw{
             {
                 draw_solid_circle(dlibimg, p, 3, dlib::rgb_pixel(0, 0, 255));
             }
+
+            draw_solid_circle(dlibimg, p, 7, dlib::rgb_pixel(0, 255, 255));
 
 
             outLandmarkPoints.push_back(cv::Point(p.x(), p.y()));
@@ -151,7 +157,8 @@ namespace pw{
 
 
 //        // convert back to OpenCV-Mat
-//        out = dlib::toMat(dlibimg).clone();
+        cv::Mat out = dlib::toMat(dlibimg).clone();
+        cv::imshow("land", out);
 
         std::stringstream ss;
         ss << documentPath << "/L_" << currentFrame <<  ".png";
@@ -161,6 +168,9 @@ namespace pw{
         ss << documentPath << "/R_" << currentFrame <<  ".png";
         cv::imwrite(ss.str(), src(eyeRectR));
 
+
+        leftEye = src(eyeRectL).clone();
+        rightEye = src(eyeRectR).clone();
 
 //        std::stringstream ss;
 //        ss << documentPath << "/L_" << currentFrame <<  ".png";

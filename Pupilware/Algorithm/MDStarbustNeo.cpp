@@ -53,22 +53,23 @@ namespace pw {
     PWPupilSize MDStarbustNeo::process( const cv::Mat& src, const PWFaceMeta &meta )
     {
         assert(!src.empty());
-        
+
+
         cv::Point leftEyeCenterEyeCoord( meta.getLeftEyeCenter().x - meta.getLeftEyeRect().x ,
                                          meta.getLeftEyeCenter().y - meta.getLeftEyeRect().y );
         
-        Mat debugLeftEye = src(meta.getLeftEyeRect()).clone();
-        float leftPupilRadius = findPupilSize( src(meta.getLeftEyeRect())
-                , leftEyeCenterEyeCoord
+        Mat debugLeftEye = meta.leftEye.clone();
+        float leftPupilRadius = findPupilSize( meta.leftEye
+                , Point(meta.leftEye.cols/2, meta.leftEye.rows/2)
                 , debugLeftEye );
 
 
         cv::Point rightEyeCenterEyeCoord( meta.getRightEyeCenter().x - meta.getRightEyeRect().x ,
                                           meta.getRightEyeCenter().y - meta.getRightEyeRect().y);
         
-        Mat debugRightEye = src(meta.getRightEyeRect()).clone();
-        float rightPupilRadius = findPupilSize( src(meta.getRightEyeRect())
-                , rightEyeCenterEyeCoord
+        Mat debugRightEye = meta.rightEye.clone();
+        float rightPupilRadius = findPupilSize( meta.rightEye
+                , Point(meta.rightEye.cols/2, meta.rightEye.rows/2)
                 , debugRightEye );
 
 
@@ -117,21 +118,21 @@ namespace pw {
 
         
 /*-------- Snakucules Method ----------*/
-//        cv::Point cPoint = eyeCenter;
-//        Snakuscules sn;
-//        sn.fit(blur,               // src image
-//               cPoint,             // initial seed point
-//               grayEye.cols*0.1,   // radius
-//               2.0,                // alpha
-//               20                  // max iteration
-//        );
-//        cPoint = sn.getFitCenter();
-//        eyeCenter = cPoint;
-//        int irisRadius = sn.getInnerRadius();
-//        circle( debugImg,
-//                eyeCenter,
-//                irisRadius,
-//                Scalar(200,200,0) );
+        cv::Point cPoint = eyeCenter;
+        Snakuscules sn;
+        sn.fit(blur,               // src image
+               cPoint,             // initial seed point
+               grayEye.cols*0.1,   // radius
+               2.0,                // alpha
+               20                  // max iteration
+        );
+        cPoint = sn.getFitCenter();
+        eyeCenter = cPoint;
+        int irisRadius = sn.getInnerRadius();
+        circle( debugImg,
+                eyeCenter,
+                irisRadius,
+                Scalar(200,200,0) );
 /*-------------------------------------*/
 
 //        const int tx = std::fmax(cPoint.x - irisRadius,0);
@@ -278,7 +279,7 @@ namespace pw {
                                     vector<Point2f> &outEdgePoints,
                                     Mat debugColorEye) const {
 
-        const unsigned int MAX_WALKING_STEPS = grayEye.cols * 0.1f;
+        const unsigned int MAX_WALKING_STEPS = grayEye.cols * 0.2f;
 
         Mat debugGray = Mat::zeros(grayEye.rows, grayEye.cols, CV_8UC1);
 
@@ -293,31 +294,31 @@ namespace pw {
         cv::threshold(grayEye, walkMat, th, 255, CV_THRESH_TRUNC);
 
         {
-//            int ksize = grayEye.cols * 0.07; // can I make it bigger? let test it.
-//            float sigma = ksize * this->sigma;
-//            Mat kernelX = getGaussianKernel(ksize, sigma);
-//            Mat kernelY = getGaussianKernel(ksize, sigma);
-//            Mat kernelXY = kernelX * kernelY.t();
-//
-//            // find min and max values in kernelXY.
-//            double min;
-//            double max;
-//            cv::minMaxIdx(kernelXY, &min, &max);
-//
-//            // scale kernelXY to 0-255 range;
-//            cv::Mat maskImage;
-//            cv::convertScaleAbs(kernelXY, maskImage, 255 / max);
-//
-//            // create a rect that have the same size as the gausian kernel,
-//            // locating it at the eye center.
-//            cv::Rect r;
-//            r.width = kernelXY.cols;
-//            r.height = kernelXY.rows;
-//            r.x = std::max(0,startingPoint.x - r.width/2);
-//            r.y = std::max(0,startingPoint.y - r.height/2);
-//
-//            //
-//            walkMat(r) = walkMat(r) - (maskImage*this->prior);
+            int ksize = grayEye.cols * 0.07; // can I make it bigger? let test it.
+            float sigma = ksize * this->sigma;
+            Mat kernelX = getGaussianKernel(ksize, sigma);
+            Mat kernelY = getGaussianKernel(ksize, sigma);
+            Mat kernelXY = kernelX * kernelY.t();
+
+            // find min and max values in kernelXY.
+            double min;
+            double max;
+            cv::minMaxIdx(kernelXY, &min, &max);
+
+            // scale kernelXY to 0-255 range;
+            cv::Mat maskImage;
+            cv::convertScaleAbs(kernelXY, maskImage, 255 / max);
+
+            // create a rect that have the same size as the gausian kernel,
+            // locating it at the eye center.
+            cv::Rect r;
+            r.width = kernelXY.cols;
+            r.height = kernelXY.rows;
+            r.x = std::max(0,startingPoint.x - r.width/2);
+            r.y = std::max(0,startingPoint.y - r.height/2);
+
+            //
+            walkMat(r) = walkMat(r) - (maskImage*this->prior);
         }
 
 
