@@ -55,11 +55,13 @@ namespace pw {
 
         bool isPreCacheVideo;                       // Whether or not pre-cache video
 
+        bool m_forceStop;                           // force stop execution.
+
         std::string videoPath;                      // Store a video path
         PWCSVExporter faceExporter;                 // Help export face meta
 
         std::shared_ptr<CVWindow> mainWindow;       // Main window to control frames
-        std::shared_ptr<PWGraph> pupilSizeGraph;         // Maind display graph
+        std::shared_ptr<PWGraph> pupilSizeGraph;    // Main display graph
 
         PWFaceLandmarkDetector landmark;
 
@@ -77,7 +79,8 @@ namespace pw {
                 currentFrameNumber(0),
                 isPlaying(1),
                 mainWindow(new CVWindow("MainWindow")),
-                isPreCacheVideo(isPreCacheVideo)
+                isPreCacheVideo(isPreCacheVideo),
+                m_forceStop(false)
         {
 
             cv::VideoCapture capture = cv::VideoCapture();
@@ -85,8 +88,6 @@ namespace pw {
             mainWindow->addTrackbar("play", &isPlaying, 1);
             mainWindow->moveWindow(0,0);
 
-
-            landmark.loadLandmarkFile("/Users/redeian/Documents/projects/Pupilware/Pupilware/shape_predictor_68_face_landmarks.dat");
 
         }
 
@@ -105,23 +106,51 @@ namespace pw {
         /*!
          * load a video file.
          * */
-        void loadVideo(const std::string &videoFilePath){
+        bool loadVideo(const std::string &videoFilePath){
 
             REQUIRES(!videoFilePath.empty(), "The video path must not be empty.");
 
             if (videoFilePath.empty()) {
                 cout << "[Error] The video name is empty. Please check your path name." << endl;
+                return false;
             }
 
 
             if (!capture.open(videoFilePath)) {
                 cout << "[Error] Cannot read the video. Please check path name." << endl;
+                return false;
             }
 
             videoPath = videoFilePath;
             faceExporter.open(videoFilePath+"_face.csv");
 
+            return true;
 
+        }
+
+//------------------------------------------------------------------------------------------------------------------
+
+
+        /*!
+         * load a facial landmark model.
+         * */
+        bool loadFacialLandmarkModel(const std::string &filePath){
+
+            REQUIRES(!filePath.empty(), "The facial landmark path must not be empty.");
+
+            if (filePath.empty()) {
+                cout << "[Error] The facial landmark file is missing. " << endl;
+                return false;
+            }
+
+            cout << "Loading facial Landmark model. It will take several seconds..." << endl;
+
+            if (!landmark.loadLandmarkFile(filePath)){
+                cout << "[Error] Error occurred while loading the facial landmark file" << endl;
+                return false;
+            }
+
+            return true;
         }
 
 
@@ -168,7 +197,7 @@ namespace pw {
 
                 initAlgorithms();
 
-                while (true) {
+                while (!m_forceStop) {
 
                     advanceFrame();
 
@@ -206,11 +235,15 @@ namespace pw {
 
                         }
 
-
                         faceExporter << faceMeta;
 
+                        if(cv::waitKey(1) == static_cast<int>('q'))
+                        {
+                            break;
+                        }
+
                     } else{
-                        cerr << "[Info] the frame is empty. The system is terminated." << std::endl;
+                        std::cout << " +(-_-)+ ->(the frame is empty. The system is terminated.)" << std::endl;
                         break;
                     }
 
@@ -222,11 +255,13 @@ namespace pw {
 
                 exitAlgorithms();
 
-                processPupilSignal();
+                std::cout << " +(-_-)+ ->(OK, let me save files before you go.)" << std::endl;
 
                 saveDataToFile();
 
                 faceExporter.close();
+
+                std::cout << " +(-_-)+ ->(Done! Bye~)" << std::endl;
 
             }
             else {
@@ -263,7 +298,7 @@ namespace pw {
 
 //------------------------------------------------------------------------------------------------------------------
 
-        void updateUI(const Mat &colorFrame, double secondPFrame) const {
+        void updateUI(const Mat &colorFrame, double secondPFrame) {
 
             Mat debugMat = colorFrame.clone();
 
@@ -280,6 +315,10 @@ namespace pw {
             if(key == 's'){
                 saveDataToFile();
                 std::cout << "[info] Data is saved." << std::endl;
+            }else if(key=='q')
+            {
+                m_forceStop = true;
+                std::cout << " +(-_-)+ ->(OK, let me save files before you go, Bye!)" << std::endl;
             }
 
             // Make the Trackbar value to reflex the actual current frame number.
@@ -330,18 +369,9 @@ namespace pw {
 
         void updateGraphs() {
 
-//            const float kMinValue = 0.03f;
-//            const float kMaxValue = 0.1f;
-//            const float kMinValue = 68.0f;
-//            const float kMaxValue = 79.0f;
-//            const float kMinValue = 58.0f;
-//            const float kMaxValue = 64.0f;
-//            const float kMinValue = 72.0f;
-//            const float kMaxValue = 78.0f;
-            //big
             const float kMinValue = 0.0f;
             const float kMaxValue = 0.0f;
-            pupilSizeGraph = std::make_shared<PWGraph>("Original(red) Neo(blue) right pupil size");
+            pupilSizeGraph = std::make_shared<PWGraph>("Starburst(red) : 2LevelSnakes(blue)");
 
             int i =0;
             for(auto it: algorithms) {
@@ -398,8 +428,8 @@ namespace pw {
 
 //------------------------------------------------------------------------------------------------------------------
 
-        PWFaceMeta extractFace(const cv::Mat colorFrame,
-                                 std::shared_ptr<IImageSegmenter> imgSeg ) {
+        PWFaceMeta extractFace( const cv::Mat colorFrame,
+                                std::shared_ptr<IImageSegmenter> imgSeg ) {
 
             REQUIRES(imgSeg != nullptr, "Image Segmenter must not be null.");
             REQUIRES(!colorFrame.empty(), "The source must not be empty.");
@@ -469,6 +499,7 @@ namespace pw {
 
             return eyeMeta;
         }
+
         /*!
          * Execute Pupilware pipeline only one given frame
          * */
@@ -506,24 +537,7 @@ namespace pw {
          * */
         void processPupilSignal(){
 
-            //TODO: Tempolary Disabled for now because we do not need it yet.
-
             std::cerr << "[INFO] Processing signal is not fully implementated." << std::endl;
-
-//            std::unique_ptr<BasicSignalProcessor> sp(new BasicSignalProcessor());
-//
-//            std::vector<float> result;
-//
-//            for( auto it: algorithms){
-//                auto storage = it.second;
-//                sp->process( storage->getLeftPupilSizes(),
-//                             storage->getRightPupilSizes(),
-//                             eyeDistance,
-//                             result);
-//
-//            }
-
-//            cw::showGraph("after signal processing", result, 0);
 
         }
 

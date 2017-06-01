@@ -38,8 +38,8 @@ namespace pw {
         window = std::make_shared<CVWindow>(getName() + " Debug");
         window->resize(500, 500);
         window->moveWindow(200,300);
-        window->addTrackbar("degree offset", &degreeOffset, 180);
-        window->addTrackbar("ray number",&rayNumber, 200);
+//        window->addTrackbar("degree offset", &degreeOffset, 180);
+//        window->addTrackbar("ray number",&rayNumber, 200);
 //        window->addTrackbar("threshold", &threshold, 255 );
 //        window->addTrackbar("primer", &prior, precision*100);
         

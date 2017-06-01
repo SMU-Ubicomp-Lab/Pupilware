@@ -1,5 +1,5 @@
 //
-//  MaximumCircleFit2.hpp
+//  TwoLevelSnake.hpp
 //  Pupilware
 //
 //  Created by Chatchai Wangwiwattana on 5/25/16.
@@ -13,16 +13,16 @@
 
 namespace pw {
 
-    class MaximumCircleFit2 : public IPupilAlgorithm {
+    class TwoLevelSnake : public IPupilAlgorithm {
 
     public:
-        MaximumCircleFit2( const std::string& name );
-        MaximumCircleFit2( const std::string& name, int mode );
-        MaximumCircleFit2( const MaximumCircleFit2& other)=default;
-        MaximumCircleFit2( MaximumCircleFit2&& other)=default;
-        MaximumCircleFit2& operator=( const MaximumCircleFit2& other)=default;
-        MaximumCircleFit2& operator=( MaximumCircleFit2&& other)=default;
-        virtual ~MaximumCircleFit2();
+        TwoLevelSnake( const std::string& name );
+        TwoLevelSnake( const std::string& name, int mode );
+        TwoLevelSnake( const TwoLevelSnake& other)=default;
+        TwoLevelSnake( TwoLevelSnake&& other)=default;
+        TwoLevelSnake& operator=( const TwoLevelSnake& other)=default;
+        TwoLevelSnake& operator=( TwoLevelSnake&& other)=default;
+        virtual ~TwoLevelSnake();
 
         virtual void init() override ;
 

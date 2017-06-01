@@ -31,9 +31,9 @@ namespace pw{
             leftPupilSizes.resize( (index+1) * 2 );
             rightPupilSizes.resize( (index+1) * 2 );
 
-            std::cout<< "[Warning] index is more than storage: "
-                    << "We try to resize the buffer. Now the buffer size is "
-                    << leftPupilSizes.size() << " elements " << std::endl;
+//            std::cout<< "[Warning] index is more than storage: "
+//                    << "We try to resize the buffer. Now the buffer size is "
+//                    << leftPupilSizes.size() << " elements " << std::endl;
         }
 
         leftPupilSizes[index] = ps.leftRadius;

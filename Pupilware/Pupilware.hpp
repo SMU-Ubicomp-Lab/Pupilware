@@ -23,10 +23,18 @@ namespace pw {
     class Pupilware {
 
     public:
+
         /*!
          * load a video file.
          * */
-        virtual void loadVideo(const std::string &videoFilePath)=0;
+        virtual bool loadVideo(const std::string &videoFilePath)=0;
+
+
+        /*!
+         * load a facial landmark file.
+         * */
+        virtual bool loadFacialLandmarkModel(const std::string &filePath) =0;
+
 
         /*!
          * Execute Pupilware pipeline.
@@ -34,15 +42,23 @@ namespace pw {
         virtual void execute( std::shared_ptr<IImageSegmenter> imgProcessor )=0;
 
 
+        /*!
+         * Execute add pupilware algorithm
+         * */
         virtual void addPupilSizeAlgorithm( std::shared_ptr<IPupilAlgorithm> algorithm)=0;
 
-
+        /*!
+         * Create the object.
+         * */
         static std::shared_ptr<Pupilware> Create(bool isPreCacheVideo);
 
+
         /**
-         *  Hacking just for exporting
+         *  Hacking just for exporting. TODO: need refactoring. :P
          * */
         virtual void setEyeOutputPath(std::string path)=0;
+
+
     };
 }
 

@@ -1,12 +1,12 @@
 //
-//  MaximumCircleFit2.cpp
+//  TwoLevelSnake.cpp
 //  Pupilware
 //
 //  Created by Chatchai Wangwiwattana on 6/20/16.
 //  Copyright © 2016 Chatchai Wangwiwattana. All rights reserved.
 //
 
-#include "MaximumCircleFit2.hpp"
+#include "TwoLevelSnake.hpp"
 #include "../Helpers/PWGraph.hpp"
 #include "../Helpers/math/Snakuscules.hpp"
 #include "../Helpers/CWCVHelper.hpp"
@@ -20,27 +20,27 @@ using namespace std;
 
 namespace pw {
 
-    MaximumCircleFit2::MaximumCircleFit2( const string& name ):
+    TwoLevelSnake::TwoLevelSnake( const string& name ):
             IPupilAlgorithm(name),
             mode(0),
             ticks(0.0f){
 
     }
 
-    MaximumCircleFit2::MaximumCircleFit2( const string& name, int mode ):
+    TwoLevelSnake::TwoLevelSnake( const string& name, int mode ):
             IPupilAlgorithm(name),
             mode(mode),
             ticks(0.0f){
 
     }
 
-    MaximumCircleFit2::~MaximumCircleFit2()
+    TwoLevelSnake::~TwoLevelSnake()
     {
 
     }
 
 
-    void MaximumCircleFit2::init()
+    void TwoLevelSnake::init()
     {
         window = std::make_shared<CVWindow>(getName() + " Debug");
         window->resize(500, 500);
@@ -49,7 +49,7 @@ namespace pw {
     
     }
 
-    PWPupilSize MaximumCircleFit2::process( const cv::Mat& src, const PWFaceMeta &meta )
+    PWPupilSize TwoLevelSnake::process( const cv::Mat& src, const PWFaceMeta &meta )
     {
         assert(!src.empty());
         
@@ -83,25 +83,21 @@ namespace pw {
 
     }
 
-    void MaximumCircleFit2::exit()
+    void TwoLevelSnake::exit()
     {
         // Clean up code here.
     }
 
-    float MaximumCircleFit2::findPupilSize(const Mat &colorEyeFrame,
+    float TwoLevelSnake::findPupilSize(const Mat &colorEyeFrame,
                                        cv::Point eyeCenter,
                                        Mat &debugImg) {
 
         vector<Mat> rgbChannels(3);
         split(colorEyeFrame, rgbChannels);
 
-        cw::showImage("color", colorEyeFrame);
-
         if(rgbChannels.size() <= 0 ) return 0.0f;
         // Only use a red channel.
         Mat grayEye = rgbChannels[2];
-
-        cw::showImage("gray", grayEye);
 
 //        cw::showHist("hit",grayEye);
 
@@ -113,12 +109,12 @@ namespace pw {
 
         cv::threshold(grayEye, grayEye, th, 255, THRESH_TRUNC);
 
-        cw::showImage("thr", grayEye);
+//        cw::showImage("thr", grayEye);
 
         Mat blur;
         cv::GaussianBlur(grayEye, blur,Size(11,11), 5);
 
-        cw::showImage("blur", blur);
+//        cw::showImage("blur", blur);
 
 /*-------- Snakucules Method ----------*/
         cv::Point cPoint = eyeCenter;
@@ -137,60 +133,6 @@ namespace pw {
                 Scalar(200,200,0) );
 /*-------------------------------------*/
 
-//            int ksize = irisRadius*2;
-//            float sigma = 2;
-//            Mat kernelX = getGaussianKernel(ksize, sigma);
-//            Mat kernelY = getGaussianKernel(ksize, sigma);
-//            Mat kernelXY = kernelX * kernelY.t();
-//
-//            // find min and max values in kernelXY.
-//            double min;
-//            double max;
-//            cv::minMaxIdx(kernelXY, &min, &max);
-//
-//            // scale kernelXY to 0-255 range;
-//            cv::Mat maskImage;
-//            cv::convertScaleAbs(kernelXY, maskImage, 255 / max);
-//
-//            // create a rect that have the same size as the gausian kernel,
-//            // locating it at the eye center.
-//            cv::Rect r;
-//            r.width = kernelXY.cols;
-//            r.height = kernelXY.rows;
-//            r.x = std::max(0,eyeCenter.x - r.width/2);
-//            r.y = std::max(0,eyeCenter.y - r.height/2);
-//
-//        const int tx = std::fmax(eyeCenter.x - irisRadius,0);
-//        const int ty = std::fmax(eyeCenter.y - irisRadius,0);
-//        const int t_height = (irisRadius*2 + ty) >= blur.rows? blur.rows - eyeCenter.y :irisRadius*2;
-//        const int t_width = (irisRadius*2 + tx) >= blur.cols? blur.cols - eyeCenter.x :irisRadius*2;
-//        Mat iris = blur(Rect( tx, ty, t_width, t_height));
-//        cv::equalizeHist(iris,iris);
-
-//        blur(r) = blur(r) - (maskImage(cv::Rect(0,0,r.width, r.height))*0.5);
-
-//        cw::showImage("open", iris);
-//        cw::showImage("m", maskImage);
-
-///*-------- Snakucules Method ----------*/
-//        Snakuscules sn2;
-//        sn2.fit(blur,               // src image
-//               cPoint,             // initial seed point
-//               irisRadius*0.3,   // radius
-//               1.3,                // alpha
-//               10                  // max iteration
-//        );
-//        Point pPoint = sn2.getFitCenter();
-//        int pupilRadius = sn2.getInnerRadius();
-//        circle( debugImg,
-//                eyeCenter,
-//                pupilRadius,
-//                Scalar(200,0,200) );
-//        circle( debugImg,
-//                eyeCenter,
-//                sn2.getOuterRadius(),
-//                Scalar(200,0,200) );
-///*-------------------------------------*/
 
         float newR = 0.0f;
         float maxE = -1000;
@@ -208,7 +150,6 @@ namespace pw {
             float f = fmax(irisRadius * 0.2f, 1.0f);
 
 
-//            std::cout << ">>> start with f =" << f << std::endl;
             for (int r = 2; r < irisRadius - f; ++r) {
                 size_t bigSum = 0;
                 size_t bigCount = 1; //not 0 to avoid divide by zero
@@ -275,7 +216,7 @@ namespace pw {
 
     }
 
-    float MaximumCircleFit2::calCircularEnergy(const cv::Mat& src,
+    float TwoLevelSnake::calCircularEnergy(const cv::Mat& src,
                                               const cv::Point& center,
                                               int radius, size_t& outSum, size_t& outCount){
 
@@ -308,12 +249,12 @@ namespace pw {
     }
 
 
-    const cv::Mat& MaximumCircleFit2::getDebugImage() const{
+    const cv::Mat& TwoLevelSnake::getDebugImage() const{
         return this->debugImage;
     }
 
     
-    void MaximumCircleFit2::setMode( int mode ){
+    void TwoLevelSnake::setMode( int mode ){
         this->mode = mode;
     }
     

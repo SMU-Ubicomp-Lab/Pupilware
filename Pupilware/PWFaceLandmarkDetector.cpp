@@ -7,6 +7,7 @@
 //
 
 #include "PWFaceLandmarkDetector.hpp"
+#include "preHeader.hpp"
 
 #include <dlib/opencv.h>
 #include <dlib/image_processing/frontal_face_detector.h>
@@ -16,21 +17,33 @@ using namespace dlib;
 
 namespace pw{
 
-//    dlib::frontal_face_detector detector;
 
     PWFaceLandmarkDetector::PWFaceLandmarkDetector(){
         currentFrame = 0;
     }
 
-    void PWFaceLandmarkDetector::loadLandmarkFile(const std::string& landmarkFilePath)
+    bool PWFaceLandmarkDetector::loadLandmarkFile(const std::string& landmarkFilePath)
     {
+        REQUIRES(!landmarkFilePath.empty(), "Landmark File path must not be empty");
+
+        if(landmarkFilePath.empty())
+        {
+            std::cout << "Landmark file is empty. Please check file name." << std::endl;
+            return false;
+        }
 
         this->landmarkFilePath = landmarkFilePath;
         dlib::deserialize(landmarkFilePath) >> sp;
 
-        std::cout << "Landmark has loaded" << std::endl;
+        if(sp.num_features() <= 0)
+        {
+            std::cout << "Landmark loading is error. Please make sure the file is a facial landmark model." << std::endl;
+            return false;
+        }
 
-//        detector = dlib::get_frontal_face_detector();
+        std::cout << "Landmark has loaded. Cool!" << std::endl;
+
+        return true;
 
     }
 
@@ -85,7 +98,7 @@ namespace pw{
                 draw_solid_circle(dlibimg, p, 3, dlib::rgb_pixel(0, 0, 255));
             }
 
-            draw_solid_circle(dlibimg, p, 7, dlib::rgb_pixel(0, 255, 255));
+            draw_solid_circle(dlibimg, p, 3, dlib::rgb_pixel(0, 255, 255));
 
 
             outLandmarkPoints.push_back(cv::Point(p.x(), p.y()));
@@ -106,8 +119,6 @@ namespace pw{
 
         const float scaleFactor = std_distance/dist;
 
-        std::cout << dist << ", " << scaleFactor << std::endl;
-
         std::vector<cv::Point> roiPointsL;
         std::vector<cv::Point> roiPointsR;
 
@@ -122,8 +133,6 @@ namespace pw{
                 roiPointsR.push_back(outLandmarkPoints[k]);
             }
         }
-
-
 
         const cv::Point* ppt[2] = { roiPointsL.data(),roiPointsR.data() };
         int npt[] = { static_cast<int>(roiPointsL.size()), static_cast<int>(roiPointsR.size()) };
@@ -158,7 +167,8 @@ namespace pw{
 
 //        // convert back to OpenCV-Mat
         cv::Mat out = dlib::toMat(dlibimg).clone();
-        cv::imshow("land", out);
+        cv::namedWindow("Facial Landmark", cv::WINDOW_NORMAL);
+        cv::imshow("Facial Landmark", out);
 
         std::stringstream ss;
         ss << documentPath << "/L_" << currentFrame <<  ".png";

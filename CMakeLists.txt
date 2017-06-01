@@ -59,8 +59,8 @@ set(SOURCE_FILES
         Pupilware/Algorithm/MDStarbustNeo.hpp
         Pupilware/Algorithm/MaximumCircleFit.cpp
         Pupilware/Algorithm/MaximumCircleFit.hpp
-        Pupilware/Algorithm/MaximumCircleFit2.cpp
-        Pupilware/Algorithm/MaximumCircleFit2.hpp
+        Pupilware/Algorithm/TwoLevelSnake.cpp
+        Pupilware/Algorithm/TwoLevelSnake.hpp
         Pupilware/Algorithm/BlinkDetection.cpp
         Pupilware/Algorithm/BlinkDetection.hpp
         Pupilware/Algorithm/PixelCount.cpp
@@ -88,18 +88,17 @@ set(OpenCV_LIBS
 
 set(DLIB_DIR "/usr/local/Cellar/dlib/19.2/")
 set(DLIB_INCLUDE_DIRS "${DLIB_DIR}include")
-set(DLIB_LIBARY_DIR "/Users/redeian/Documents/projects/dlib19/build")
+set(DLIB_LIBARY_DIR "${DLIB_DIR}lib")
+
 set(DLIB_LIBS
         -L${DLIB_LIBARY_DIR}
         libdlib.a)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${DLIB_INCLUDE_DIRS})
-include_directories(/Users/redeian/Documents/projects/)
 
 
 #For the static library:
-#set ( DLIB_LIBS libdlib.a )
 link_directories( ${DLIB_INCLUDE_DIRS} )
 
 #find_package( OpenCV REQUIRED )

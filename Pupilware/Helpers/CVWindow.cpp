@@ -43,7 +43,7 @@ namespace pw{
 
     CVWindow::CVWindow(const std::string& winName):
     winName(winName){
-        cv::namedWindow(winName, CV_WINDOW_NORMAL);
+        cv::namedWindow(winName, CV_WINDOW_KEEPRATIO);
     }
 
     CVWindow::CVWindow(const CVWindow &other) {
@@ -85,7 +85,7 @@ namespace pw{
         if(mat.empty()) return 0;
 
         cv::imshow(winName, mat);
-        return cv::waitKey(1);
+        return 0;
     }
 
     void CVWindow::setTrackbarValue( const std::string& name, int value ) const{
