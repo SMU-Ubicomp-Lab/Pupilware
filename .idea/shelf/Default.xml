@@ -1,0 +1,9 @@
+<changelist name="Default" date="1511642837962" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Default/shelved.patch" />
+  <option name="DESCRIPTION" value="Default" />
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/Pupilware.dir/Pupilware/main.cpp.o" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/Pupilware.dir/Pupilware/main.cpp.o" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Default/main.cpp.o" />
+  </binary>
+</changelist>
